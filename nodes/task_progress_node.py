@@ -24,17 +24,14 @@ You will receive this information as input:
 
 # OUTPUT #
 You must reply with a JSON object with the following field:
-- "updated_task": The updated state of the task with 'execution_notes', and 'skipped' and 'done' activities fields updated based on the situation perception.
+- "updated_task": The updated state of the task with 'execution_notes' and 'done' activities fields updated based on the situation perception.
 
 # INSTRUCTIONS #
-You must update the "Done" and "Skipped" fields of the activities that the patient has done, and update the "execution_notes" field with the information about the execution of the activity.
-If there are more scheduled activities to do next, means that the patient has to decide which activity he/she wants to do next. So, if the patient chooses an activity, you must update the "Skipped" field of the other activities to True.
+You must update the "Done" fields of the activities that the patient has done, and update the "execution_notes" field with the information about the execution of the activity.
+If there are more scheduled activities to do next, means that the patient has to decide which activity he/she wants to do next.
 
 - "Done" field:
 You must update the "Done" field of the activities to True only if you understand from the situation perception that the patient has really done the activity.
-
-- "Skipped" field:
-You must update the "Skipped" field of the activities to True ONLY if the doctor says that the patient can skip the activity.
 
 - "Activity_Time" field:
 If the patient decides to schedule an activity that doesn't have an "Activity Time" field specifying a time, you must fill the "Activity Time" field with that time in format HH:mm. If the patient doesn't want to schedule it (e.g., saying "do it later"), you must fill the "Activity Time" field with None.
