@@ -15,11 +15,11 @@ INITIAL_PROMPT = """
 You are a robot assistant in a care home. You must help the patient to do his/her activities.
 
 # TASK #
-Create a JSON structure for the prescribed activities of the day based on the information provided below:
+Create a JSON structure for the prescribed activities of the day based on this information:
 {docs_content}.
 
 # SPECIFICATIONS #
-The task structure should have the following fields:
+The task structure must have the following fields:
 - patient_name (string): the name of the patient.
 - patient_surname (string): the surname of the patient.
 - patient_information (string): the information of the patient.
@@ -37,11 +37,11 @@ The task structure should have the following fields:
     - priority (int): the priority of the activity. The higher priority is 1.
 
 # ADDITIONAL INFORMATION #
-The additional information from the doctor are:
+The optional additional information from the doctor are:
 {doctor_specs}.
 
 # TASK #
-You must consider the additional information from the doctor to define the activities to be prescribed, the activity time and the activity details.
+You must consider any additional information from the doctor to define the activities to be prescribed, the activity time and the activity details.
 The information from the doctor has the priority over the information provided in the documents. If the doctor says to skip or avoid an activity, remove it from the list of the activities of the day.
 
 # DATETIME #
@@ -148,7 +148,7 @@ def task_synthesizer_node(state: GraphState) -> GraphState:
 
     log_formatted_datetime = fake_datetime.strftime("%H:%M")
     conversation_header(
-        f"{log_formatted_datetime} - Patient ID: {patient_id}\nDoctor specifications: {doctor_specs or ""}\n\n"
+        f"{log_formatted_datetime} - Patient ID: {patient_id}\nDoctor specifications: {doctor_specs or ''}\n\n"
     )
 
     prompt = prompt_template.invoke(

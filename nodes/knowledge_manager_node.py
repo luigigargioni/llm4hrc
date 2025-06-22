@@ -92,6 +92,9 @@ def knowledge_manager_node(state: GraphState) -> GraphState:
     # If the vector is already created, add new knowledge to it through the conversation history
     vector_store = state["vector_store"]
 
+    # REMOVE: This is a temporary solution to NOT add knowledge to the vector store
+    return {**state, "vector_store": vector_store, "end": True}
+
     formatted_datetime = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
     initial_prompt_template = PromptTemplate.from_template(INITIAL_PROMPT)
     initial_prompt = initial_prompt_template.invoke(

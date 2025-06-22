@@ -60,16 +60,20 @@ def robot_perception_node(state: GraphState) -> GraphState:
     # TODO: Record the situation perception from the robot's camera and interpret it using a VLM
     while True:
         situation_perception = input(
-            Fore.MAGENTA + "\nEnter the situation perception: " + Style.RESET_ALL
+            Fore.MAGENTA
+            + "\nEnter the situation perception (default: Patient is speaking): "
+            + Style.RESET_ALL
         ).strip()
         if situation_perception != "":
             break
         else:
-            print(
-                Fore.MAGENTA
-                + "Situation perception cannot be empty. Please enter a valid perception."
-                + Style.RESET_ALL
-            )
+            situation_perception = "Patient is speaking"
+            break
+            # print(
+            #     Fore.MAGENTA
+            #     + "Situation perception cannot be empty. Please enter a valid perception."
+            #     + Style.RESET_ALL
+            # )
 
     conversation_message(
         fake_datetime.strftime("%H:%M"),

@@ -16,32 +16,29 @@ INITIAL_PROMPT = """
 You are a robot assistant in a care home. You must help the patient to do his/her activities.
 
 # INPUT #
-You will receive these information as input:
+You will receive this information as input:
 - The previous state of the activities of the day (previous state of the task).
 - What the patient is doing and what is happening around the patient (the situation perception).
 - The patient request.
 - The list of the next scheduled activities.
 
 # OUTPUT #
-You have to reply with a JSON object with the following fields:
-- "updated_task": The updated state of the task with execution_notes, and skipped and done activities fields updated based on the situation perception. 
+You must reply with a JSON object with the following field:
+- "updated_task": The updated state of the task with 'execution_notes', and 'skipped' and 'done' activities fields updated based on the situation perception.
 
 # INSTRUCTIONS #
-You have to update the "Done" and "Skipped" fields of the activities that the patient has done, and update the "execution_notes" field with the information about the execution of the activity (for example "The patient took the medicine correctly" or "The patient did only half of the exercises prescribed").
-You must be sure that the "Done" and "Skipped" fields are updated correctly only based on the situation perception.
+You must update the "Done" and "Skipped" fields of the activities that the patient has done, and update the "execution_notes" field with the information about the execution of the activity.
 If there are more scheduled activities to do next, means that the patient has to decide which activity he/she wants to do next. So, if the patient chooses an activity, you must update the "Skipped" field of the other activities to True.
 
 - "Done" field:
 You must update the "Done" field of the activities to True only if you understand from the situation perception that the patient has really done the activity.
 
 - "Skipped" field:
-You must update the "Skipped" field of the activities to True only if you understand from the situation perception that those activities have been skipped by the patient (e.g. the doctor says that the patient can skip the activity).
+You must update the "Skipped" field of the activities to True ONLY if the doctor says that the patient can skip the activity.
 
 - "Activity_Time" field:
-If the patient decides to schedule an activity that doesn't have an "Activity Time" field, you must fill the "Activity Time" field with the time that the patient asks you to schedule it.
-If the patient specifies a time, you must fill the "Activity Time" field with that time in format HH:mm. If the patient doesn't want to schedule it (e.g., "do it later"), you must fill the "Activity Time" field with None.
+If the patient decides to schedule an activity that doesn't have an "Activity Time" field specifying a time, you must fill the "Activity Time" field with that time in format HH:mm. If the patient doesn't want to schedule it (e.g., saying "do it later"), you must fill the "Activity Time" field with None.
 """
-# IMPORTANT: The JSON structure of the task and the other information should be kept as the previous state task. Don't remove or add activities to the task, but only update the fields of the activities.
 
 NEW_REQUEST_PROMPT = """
 The previous state of the task is:
@@ -52,6 +49,12 @@ The situation perception is:
 
 The patient request is:
 {patient_request}
+
+The previous robot answer was:
+{vocal_answer}
+
+The robot action was:
+{robot_action}
 """
 # The next scheduled activities are:
 # {next_activities}
@@ -106,6 +109,8 @@ def task_progress_node(state: GraphState) -> GraphState:
             "situation_perception": state["situation_perception"],
             "patient_request": state["patient_request"],
             # "next_activities": state["next_activities"],
+            "vocal_answer": state["vocal_answer"],
+            "robot_action": state["robot_action"],
         }
     )
 

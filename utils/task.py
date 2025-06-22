@@ -11,10 +11,8 @@ def set_skipped_activities(task: Task, current_time: datetime) -> None:
             activity["done"] is True
             or activity["skipped"] is True
             or activity["without_time"] is True
+            or activity["activity_time"] is None
         ):
-            continue
-
-        if activity["activity_time"] is None:
             continue
 
         administration_time = datetime.strptime(

@@ -19,6 +19,9 @@ class LlmProvider(str, Enum):
 class OpenAiModel(str, Enum):
     GPT_4O_MINI = "gpt-4o-mini"
     GPT_4O = "gpt-4o"
+    GPT_4_1 = "gpt-4.1"
+    GPT_4_1_MINI = "gpt-4.1-mini"
+    GPT_4_1_NANO = "gpt-4.1-nano"
 
 
 class OllamaModel(str, Enum):
@@ -45,7 +48,10 @@ def define_model(
     if os.getenv("LLM_PROVIDER") == LlmProvider.OPENAI.value:
         if response_template:
             model = ChatOpenAI(model=openai_model, temperature=TEMPERATURE).bind_tools(
-                [response_template], strict=True
+                tools=[response_template],
+                tool_choice="required",
+                strict=True,
+                parallel_tool_calls=False,
             )
         else:
             model = ChatOpenAI(model=openai_model, temperature=TEMPERATURE)
