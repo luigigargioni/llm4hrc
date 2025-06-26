@@ -28,13 +28,14 @@ You must reply with a JSON object with the following field:
 
 # INSTRUCTIONS #
 You must update the "Done" fields of the activities that the patient has done, and update the "execution_notes" field with the information about the execution of the activity.
-If there are more scheduled activities to do next, means that the patient has to decide which activity he/she wants to do next.
+Do not update the "Skipped" field of the activities, as it is not your responsibility to decide if an activity is skipped or not.
 
 - "Done" field:
 You must update the "Done" field of the activities to True only if you understand from the situation perception that the patient has really done the activity.
 
 - "Activity_Time" field:
-If the patient decides to schedule an activity that doesn't have an "Activity Time" field specifying a time, you must fill the "Activity Time" field with that time in format HH:mm. If the patient doesn't want to schedule it (e.g., saying "do it later"), you must fill the "Activity Time" field with None.
+If the patient decides to schedule an activity that has "without_time" to true specifying a time, you must fill the "Activity Time" field with that time in format HH:mm.
+If the patient doesn't want to schedule it (e.g., saying "do it later"), you must leave the "Activity Time" field blank.
 """
 
 NEW_REQUEST_PROMPT = """
