@@ -1,4 +1,5 @@
 import json
+import os
 from langchain_core.prompts import PromptTemplate
 from langchain_core.tools import tool
 from langchain_core.messages import SystemMessage, AIMessage, HumanMessage
@@ -29,7 +30,7 @@ You have to reply with a JSON object with the following fields:
 
 - "robot_action": The physical action that the robot must perform. For example, to move a specific medication next to the patient, or speak to the patient.
 You must call the doctor if the patient does an activity in the wrong way, for example if the patient takes a wrong critical medication, or a wrong dosage or at the wrong time.
-Express the action in uppercase and snake_case for the action. For example, "MOVE_MEDICATION", "REMOVE_MEDICATION", "CALL_DOCTOR", "NO_ACTION", "SPEAKING", etc.
+Express the action in uppercase and snake_case for the action. For example, "MOVE_MEDICATION", "REMOVE_MEDICATION", "CALL_DOCTOR", "NO_ACTION", "SPEAKING", "WAKE_UP_PATIENT", "WAIT_FOR_PATIENT", etc.
 
 - "vocal_answer": The vocal answer for the patient. For example, "Please take this medication, etc..." or other explanations about the activty.
 When you reply suggesting to do an activity, you should also provide the detail of the activity. Stay adherent to what it is reported in the prescription. For example, "Please, take the medicine X, it is a pill and it helps for ...".
@@ -49,6 +50,9 @@ The tolerance for each activity is {tolerance_start_time_activity} minutes befor
 
 # DATETIME #
 Take into account the actual datetime that will be provided in the each new request.
+
+# LANGUAGE #
+Always reply in {SYSTEM_LANGUAGE} language, both for the robot_action and vocal_answer.
 """
 
 
@@ -100,7 +104,10 @@ def next_steps_node(state: GraphState) -> GraphState:
 
     initial_prompt_template = PromptTemplate.from_template(INITIAL_PROMPT)
     initial_prompt = initial_prompt_template.invoke(
-        {"tolerance_start_time_activity": TOLERANCE_START_TIME_ACTIVITY}
+        {
+            "tolerance_start_time_activity": TOLERANCE_START_TIME_ACTIVITY,
+            "SYSTEM_LANGUAGE": os.getenv("SYSTEM_LANGUAGE"),
+        }
     )
 
     scheduled_activities, next_activities = schedule_activities(

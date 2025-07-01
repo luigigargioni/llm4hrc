@@ -31,7 +31,7 @@ def robot_effector_node(state: GraphState) -> GraphState:
     # TODO: Add information about task and domain (or pre-defined knowledge)
 
     print(
-        Fore.RED + "\nROBOT_EFFECTOR_NODE - Play vocal response: " + Style.RESET_ALL,
+        Fore.RED + "\nROBOT - Play vocal response: " + Style.RESET_ALL,
         state["vocal_answer"],
     )
     # if state["vocal_answer"] is not None:
@@ -40,7 +40,7 @@ def robot_effector_node(state: GraphState) -> GraphState:
     # TODO: Play vocal response on the real robot through the speakers
 
     print(
-        Fore.GREEN + "\nROBOT_EFFECTOR_NODE - Execute robot action: " + Style.RESET_ALL,
+        Fore.GREEN + "\nROBOT - Execute robot action: " + Style.RESET_ALL,
         state["robot_action"],
     )
     # TODO: Execute robot action on the real robot through motion planning
