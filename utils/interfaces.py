@@ -101,7 +101,7 @@ class GraphNodes(str, Enum):
 
 
 GRAPH_CONFIG: RunnableConfig = {
-    "recursion_limit": 1000,
+    "recursion_limit": 10000,
     "configurable": {
         "thread_id": "1",
     },

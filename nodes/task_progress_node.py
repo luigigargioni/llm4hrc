@@ -32,10 +32,12 @@ Do not update the "Skipped" field of the activities, as it is not your responsib
 
 - "Done" field:
 You must update the "Done" field of the activities to True only if you understand from the situation perception that the patient has really done the activity.
+Update the "Done" field based only on the situation perception, not on the patient request. The patient might say that he/she has done an activity, but you must update the "Done" field only if you understand from the situation perception that the patient has really done the activity.
 
 - "Activity_Time" field:
 If the patient decides to schedule an activity that has "without_time" to true specifying a time, you must fill the "Activity Time" field with that time in format HH:mm.
 If the patient doesn't want to schedule it (e.g., saying "do it later"), you must leave the "Activity Time" field blank.
+You can update the "Skipped" field only for this type of activities, if the patient doesn't want to do it in the whole day.
 """
 
 NEW_REQUEST_PROMPT = """
@@ -150,8 +152,6 @@ def task_progress_node(state: GraphState) -> GraphState:
             **state,
             "updated_task": None,
         }
-
-    log_message(result["kwargs"]["tool_calls"][0]["args"]["updated_task"])
 
     updated_task = None
     # TODO: Sometimes the updated_task is a dictionary with keys "type" and "value"

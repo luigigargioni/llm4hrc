@@ -7,9 +7,12 @@ TOLERANCE_START_TIME_ACTIVITY = timedelta(minutes=30)
 
 def set_skipped_activities(task: Task, current_time: datetime) -> None:
     for activity in task["activities"]:
+        if activity["done"] is True:
+            activity["skipped"] = False
+            continue
+
         if (
-            activity["done"] is True
-            or activity["skipped"] is True
+            activity["skipped"] is True
             or activity["without_time"] is True
             or activity["activity_time"] is None
         ):

@@ -1,6 +1,4 @@
-import os
-
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 from graph.graph_init import GraphState
 from utils.logs import conversation_message, log_graph_state
 

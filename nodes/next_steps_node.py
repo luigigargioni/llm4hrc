@@ -153,8 +153,6 @@ def next_steps_node(state: GraphState) -> GraphState:
     if result["kwargs"]["tool_calls"] is None:
         raise ValueError("nNEXT_STEPS_NODE - tool_calls is None")
 
-    log_message(json.dumps(result["kwargs"]))
-
     log_message(
         "robot_action - " + result["kwargs"]["tool_calls"][0]["args"]["robot_action"]
     )
