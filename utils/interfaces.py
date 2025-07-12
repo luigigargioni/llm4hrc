@@ -107,4 +107,4 @@ GRAPH_CONFIG: RunnableConfig = {
     },
 }
 
-PATIENTS_ID_LIST: list[str] = ["123", "456", "789"]
+PATIENTS_ID_LIST: list[str] = ["123", "456", "789", "0789"]

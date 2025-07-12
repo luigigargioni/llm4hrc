@@ -1,3 +1,4 @@
+import os
 from langchain_core.prompts import PromptTemplate
 from datetime import datetime, timedelta
 from langchain_core.tools import tool
@@ -168,6 +169,12 @@ def task_synthesizer_node(state: GraphState) -> GraphState:
     new_task = result["kwargs"]["tool_calls"][0]["args"]["task"]
 
     set_skipped_activities(new_task, fake_datetime)
+    if os.getenv("ABLATION_MODE", "false").lower() == "true":
+        log_message(
+            "Skipping skipped_activities as per environment variable ABLATION_MODE"
+        )
+        new_task = result["kwargs"]["tool_calls"][0]["args"]["task"]
+
     log_message("\nTASK_SYNTHESIZER_NODE - new_task")
     log_message(new_task)
     return {

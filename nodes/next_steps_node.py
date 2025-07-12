@@ -113,6 +113,13 @@ def next_steps_node(state: GraphState) -> GraphState:
     scheduled_activities, next_activities = schedule_activities(
         state["updated_task"]["activities"], state["fake_datetime"]
     )
+
+    # Ablation test: Skip scheduler if the environment variable is set
+    if os.getenv("ABLATION_MODE", "false").lower() == "true":
+        log_message("Skipping scheduler as per environment variable ABLATION_MODE")
+        scheduled_activities = state["updated_task"]["activities"]
+        next_activities = state["updated_task"]["activities"]
+
     log_message("next_steps_node - scheduled_activities")
     log_message(json.dumps(scheduled_activities))
     log_message("next_steps_node - next_activities")

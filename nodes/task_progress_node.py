@@ -1,4 +1,5 @@
 import json
+import os
 from langchain_core.prompts import PromptTemplate
 from langchain_core.tools import tool
 from langchain_core.messages import SystemMessage, HumanMessage
@@ -98,6 +99,12 @@ def task_progress_node(state: GraphState) -> GraphState:
 
     log_message("\nTASK_PROGRESS_NODE - task_with_skipped_activities")
     log_message(json.dumps(task_with_skipped_activities))
+
+    if os.getenv("ABLATION_MODE", "false").lower() == "true":
+        log_message(
+            "Skipping skipped_activities as per environment variable ABLATION_MODE"
+        )
+        task_with_skipped_activities = state["task"]
 
     initial_prompt_template = PromptTemplate.from_template(INITIAL_PROMPT)
     initial_prompt = initial_prompt_template.invoke({})
