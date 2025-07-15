@@ -1,3 +1,4 @@
+import os
 from colorama import Fore, Style
 from graph.graph_init import GraphState
 from utils.logs import conversation_message, log_graph_state
@@ -32,8 +33,11 @@ def robot_effector_node(state: GraphState) -> GraphState:
         Fore.RED + "\nROBOT - Play vocal response: " + Style.RESET_ALL,
         state["vocal_answer"],
     )
-    # if state["vocal_answer"] is not None:
-    #    asyncio.run(speak_openai(state["vocal_answer"]))
+    if (
+        state["vocal_answer"] is not None
+        and os.getenv("AUDIO_ENABLED", "false").lower() == "true"
+    ):
+        asyncio.run(speak_openai(state["vocal_answer"]))
 
     # TODO: Play vocal response on the real robot through the speakers
 
