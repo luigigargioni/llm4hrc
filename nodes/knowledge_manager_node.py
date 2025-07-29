@@ -13,7 +13,7 @@ from langchain.docstore.document import Document
 from langchain_core.messages import SystemMessage, HumanMessage
 
 from graph.graph_init import GraphState
-from utils.generics import OllamaModel, define_model
+from utils.models import OllamaModel, define_model
 from utils.logs import log_graph_state, log_message
 
 

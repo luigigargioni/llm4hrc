@@ -7,7 +7,7 @@ from utils.interfaces import ProgressCheckingResponseTypes, ProgressCheckingResp
 import json
 
 from graph.graph_init import GraphState
-from utils.generics import TEMPERATURE, OllamaModel, define_model
+from utils.models import TEMPERATURE, OllamaModel, define_model
 from utils.logs import log_graph_state, log_message
 
 

@@ -6,9 +6,9 @@ from langchain_core.messages import SystemMessage, HumanMessage
 import copy
 
 from graph.graph_init import GraphState
+from deterministic.activity_planner import set_skipped_activities
 from utils.interfaces import Task
-from nodes.task_synthesizer_node import set_skipped_activities
-from utils.generics import define_model
+from utils.models import define_model
 from utils.logs import log_graph_state, log_message
 
 

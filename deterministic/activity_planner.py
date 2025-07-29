@@ -1,10 +1,10 @@
 from datetime import datetime, timedelta
 import math
 
-from utils.interfaces import Activity
-from utils.task import TOLERANCE_START_TIME_ACTIVITY
+from utils.interfaces import Activity, Task
 from utils.logs import log_message
 
+TOLERANCE_START_TIME_ACTIVITY = timedelta(minutes=30)
 
 START_DAY_TIME_LIMIT = datetime.combine(
     datetime.today(), datetime.strptime("07:00", "%H:%M").time()
@@ -12,6 +12,30 @@ START_DAY_TIME_LIMIT = datetime.combine(
 END_DAY_TIME_LIMIT = datetime.combine(
     datetime.today(), datetime.strptime("22:00", "%H:%M").time()
 )
+
+
+def set_skipped_activities(task: Task, current_time: datetime) -> None:
+    for activity in task["activities"]:
+        if activity["done"] is True:
+            activity["skipped"] = False
+            continue
+
+        if (
+            activity["skipped"] is True
+            or activity["without_time"] is True
+            or activity["activity_time"] is None
+        ):
+            continue
+
+        administration_time = datetime.strptime(
+            activity["activity_time"], "%H:%M"
+        ).replace(
+            year=current_time.year, month=current_time.month, day=current_time.day
+        )
+
+        if current_time - administration_time >= TOLERANCE_START_TIME_ACTIVITY:
+            activity["skipped"] = True
+            activity["done"] = False
 
 
 def parse_time(time_str: str | None):

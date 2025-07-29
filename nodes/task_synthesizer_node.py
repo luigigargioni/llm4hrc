@@ -5,10 +5,10 @@ from langchain_core.tools import tool
 from colorama import Fore, Back, Style
 
 from graph.graph_init import GraphState
+from deterministic.activity_planner import set_skipped_activities
 from utils.interfaces import PATIENTS_ID_LIST, Task
-from utils.generics import define_model
+from utils.models import define_model
 from utils.logs import conversation_header, log_graph_state, log_message
-from utils.task import set_skipped_activities
 
 
 INITIAL_PROMPT = """

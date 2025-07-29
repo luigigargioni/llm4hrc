@@ -5,10 +5,18 @@ from langchain_core.tools import tool
 from langchain_core.messages import SystemMessage, AIMessage, HumanMessage
 
 from graph.graph_init import GraphState
-from utils.activity_planner import schedule_activities
-from utils.generics import define_model
+
+from deterministic.activity_planner import (
+    schedule_activities,
+    TOLERANCE_START_TIME_ACTIVITY,
+)
+
+# from utils.new_activity_planner import (
+#     schedule_activities,
+#     TOLERANCE_START_TIME_ACTIVITY,
+# )
+from utils.models import define_model
 from utils.logs import log_graph_state, log_message
-from utils.task import TOLERANCE_START_TIME_ACTIVITY
 
 INITIAL_PROMPT = """
 # CONTEXT #
