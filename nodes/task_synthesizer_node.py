@@ -44,6 +44,7 @@ The optional additional information from the doctor are:
 # TASK #
 You must consider any additional information from the doctor to define the activities to be prescribed, the activity time and the activity details.
 The information from the doctor has the priority over the information provided in the documents. If the doctor says to skip or avoid an activity, remove it from the list of the activities of the day.
+The priority of the activities is from 1 to 3, where 1 is the highest priority and 3 is the lowest priority.
 
 # DATETIME #
 The actual datetime is {datetime}.

@@ -30,6 +30,7 @@ You must reply with a JSON object with the following field:
 # INSTRUCTIONS #
 You must update the "Done" fields of the activities that the patient has done, and update the "execution_notes" field with the information about the execution of the activity.
 Do not update the "Skipped" field of the activities, as it is not your responsibility to decide if an activity is skipped or not.
+The priority of the activities is from 1 to 3, where 1 is the highest priority and 3 is the lowest priority.
 
 - "Done" field:
 You must update the "Done" field of the activities to True only if you understand from the situation perception that the patient has really done the activity.
