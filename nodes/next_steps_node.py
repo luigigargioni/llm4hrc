@@ -6,7 +6,7 @@ from langchain_core.messages import SystemMessage, AIMessage, HumanMessage
 
 from graph.graph_init import GraphState
 
-from deterministic.new_activity_planner import (
+from deterministic.activity_planner import (
     schedule_activities,
     TOLERANCE_START_TIME_ACTIVITY,
 )
