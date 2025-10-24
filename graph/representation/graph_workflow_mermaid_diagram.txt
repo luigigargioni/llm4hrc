@@ -1,0 +1,33 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	robot_effector_node(robot_effector_node)
+	situation_assessment_node(situation_assessment_node)
+	knowledge_manager_node(knowledge_manager_node)
+	progress_checking_node(progress_checking_node)
+	robot_perception_node(robot_perception_node)
+	task_synthesizer_node(task_synthesizer_node)
+	task_progress_node(task_progress_node)
+	next_steps_node(next_steps_node)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> knowledge_manager_node;
+	knowledge_manager_node -.-> __end__;
+	knowledge_manager_node -.-> situation_assessment_node;
+	next_steps_node --> progress_checking_node;
+	progress_checking_node -.-> robot_effector_node;
+	progress_checking_node -.-> situation_assessment_node;
+	robot_effector_node -.-> knowledge_manager_node;
+	robot_effector_node -.-> robot_perception_node;
+	robot_perception_node --> situation_assessment_node;
+	situation_assessment_node -.-> robot_effector_node;
+	situation_assessment_node -.-> task_progress_node;
+	situation_assessment_node -.-> task_synthesizer_node;
+	task_progress_node --> next_steps_node;
+	task_synthesizer_node --> situation_assessment_node;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
