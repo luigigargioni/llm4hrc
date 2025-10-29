@@ -82,7 +82,7 @@ def robot_perception_node(state: GraphState) -> GraphState:
     )
     conversation_message(
         fake_datetime.strftime("%H:%M"),
-        "Perception",
+        "Robot (perception)",
         situation_perception,
     )
 
