@@ -1,0 +1,2049 @@
+{
+  "summary": {
+    "total_scenarios": 28,
+    "scenarios_passed": 18,
+    "scenario_pass_rate": 0.6429,
+    "total_activities": 35,
+    "activities_correctly_classified": 25,
+    "activity_accuracy": 0.7143,
+    "avg_latency_seconds": 3.03,
+    "total_latency_seconds": 84.826,
+    "total_prompt_tokens": 39710,
+    "total_completion_tokens": 2153,
+    "total_tokens": 41863,
+    "model": "qwen/qwen3-30b-a3b-instruct-2507",
+    "provider": "openrouter",
+    "temperature": 0.0,
+    "structured_output": false,
+    "reasoning_effort": "low",
+    "parse_errors": 0
+  },
+  "scenarios": [
+    {
+      "id": "S01",
+      "description": "All preconditions satisfied for critical medication",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 1.726,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Take Paracetamol"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Take Paracetamol"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Take Paracetamol"
+          ],
+          "observed": [
+            "Take Paracetamol"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1419,
+        "completion_tokens": 41,
+        "total_tokens": 1460
+      },
+      "generation_id": "gen-1790240440-M8AHfPhwvxv7wRjGPM9Q",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Paracetamol\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "Nebius",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S02",
+      "description": "Critical full rehabilitation blocked by missing patient_fed, recovery available",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 0.961,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Full Rehab Session"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab Session"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab Session": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Full Rehab Session"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab Session"
+          ]
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab Session"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab Session"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1421,
+        "completion_tokens": 39,
+        "total_tokens": 1460
+      },
+      "generation_id": "gen-1790240441-0NKKNT0VvUhzYqPsLYX1",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Full Rehab Session\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "Nebius",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S03",
+      "description": "Non-critical stretching blocked by missing patient_fed",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 1.588,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Stretching Session"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Stretching Session"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Stretching Session"
+          ],
+          "missing": [],
+          "extra": [
+            "Stretching Session"
+          ]
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [
+            "Stretching Session"
+          ],
+          "observed": [],
+          "missing": [
+            "Stretching Session"
+          ],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1412,
+        "completion_tokens": 39,
+        "total_tokens": 1451
+      },
+      "generation_id": "gen-1790240442-YzDvK5YJXHqqvJHtMWOM",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Stretching Session\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "Nebius",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S04",
+      "description": "Unknown canonical action triggers fail-closed",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 4.322,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Do some yoga"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Do some yoga"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Do some yoga"
+          ],
+          "observed": [
+            "Do some yoga"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1410,
+        "completion_tokens": 54,
+        "total_tokens": 1464
+      },
+      "generation_id": "gen-1790240444-VvpTRuTwsKBZR581hndw",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Do some yoga\",\n      \"status\": \"BLOCKED_NON_CRITICAL\",\n      \"reasons\": [\n        \"Canonical action 'unknown' is not in the dictionary\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S05",
+      "description": "Critical full rehab blocked by multiple missing preconditions, partial recovery",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 4.275,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab Session"
+        ],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab Session"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab Session": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Full Rehab Session"
+          ],
+          "observed": [
+            "Full Rehab Session"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1414,
+        "completion_tokens": 76,
+        "total_tokens": 1490
+      },
+      "generation_id": "gen-1790240448-P40EgITSEEqmuACXl2m8",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Full Rehab Session\",\n      \"status\": \"BLOCKED_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'stretching_completed' is not satisfied (False in world state)\",\n        \"Precondition 'patient_fed' is not satisfied (False in world state)\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S06",
+      "description": "Activity within time window -> EXECUTABLE",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 0.803,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Paracetamol"
+        ],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Take Paracetamol"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Take Paracetamol"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Paracetamol"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Take Paracetamol"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Paracetamol"
+          ]
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1419,
+        "completion_tokens": 64,
+        "total_tokens": 1483
+      },
+      "generation_id": "gen-1790240453-U30bK1zcXYYDRVPFI3Lj",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Paracetamol\",\n      \"status\": \"BLOCKED_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'correct_time' is not satisfied (expected True, but not in world state)\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "Nebius",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S07",
+      "description": "Activity too early -> DEFERRED",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 2.357,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Antibiotic"
+        ],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [
+          "Take Antibiotic"
+        ],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Take Antibiotic"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Antibiotic"
+          ]
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": false,
+          "expected": [
+            "Take Antibiotic"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Antibiotic"
+          ],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1418,
+        "completion_tokens": 119,
+        "total_tokens": 1537
+      },
+      "generation_id": "gen-1790240453-UkwlUMngkVgR86bmbnpF",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Antibiotic\",\n      \"status\": \"BLOCKED_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'after_meal' is required but not satisfied (current state: after_meal = True, but the action requires it to be true; however, the precondition list in the canonical action does not include 'after_meal' as a requirement — correction: the actual preconditions are [patient_awake, medication_available, after_meal], and all are satisfied).\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "Alibaba",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S08",
+      "description": "Activity expired (past time window + tolerance) -> BLOCKED_NON_CRITICAL",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 2.678,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Vitamin D"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Vitamin D"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Take Vitamin D"
+          ],
+          "observed": [
+            "Take Vitamin D"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1417,
+        "completion_tokens": 120,
+        "total_tokens": 1537
+      },
+      "generation_id": "gen-1790240456-r27mRe6BdrW7lxhHD6kx",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Vitamin D\",\n      \"status\": \"BLOCKED_NON_CRITICAL\",\n      \"reasons\": [\n        \"The canonical action 'take_medication' requires precondition 'correct_time', which is not satisfied in the current world state.\",\n        \"The activity has a scheduled time of '07:30', and the current time is 12:00, which is after the window (07:30 + 30min = 08:00).\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "Alibaba",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S09",
+      "description": "Activity without_time -> EXECUTABLE if preconditions OK",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 0.927,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Read a book"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Read a book"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Read a book"
+          ],
+          "observed": [
+            "Read a book"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1411,
+        "completion_tokens": 38,
+        "total_tokens": 1449
+      },
+      "generation_id": "gen-1790240458-KNk6GKknVSI66XgE1Kmv",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Read a book\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "Alibaba",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S10",
+      "description": "Chain: have_lunch (done) -> stretching (done) -> full_rehab (executable)",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 1.512,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Full Rehab Session"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Full Rehab Session"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Full Rehab Session"
+          ],
+          "observed": [
+            "Full Rehab Session"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1429,
+        "completion_tokens": 38,
+        "total_tokens": 1467
+      },
+      "generation_id": "gen-1790240459-VZ5YKuQ4SPAFZj9L7xjb",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Full Rehab Session\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "Alibaba",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S11",
+      "description": "Chain: full_rehab requested but patient_fed=False -> recovery suggests have_lunch",
+      "pass": false,
+      "accuracy": 0.5,
+      "latency_seconds": 4.043,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Full Rehab Session",
+          "Have Lunch"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Have Lunch"
+        ],
+        "blocked_critical": [
+          "Full Rehab Session"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab Session": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Have Lunch"
+          ],
+          "observed": [
+            "Full Rehab Session",
+            "Have Lunch"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab Session"
+          ]
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab Session"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab Session"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1460,
+        "completion_tokens": 66,
+        "total_tokens": 1526
+      },
+      "generation_id": "gen-1790240461-w9HURP8KuVE3TocXSa0p",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Full Rehab Session\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    },\n    {\n      \"activity_name\": \"Have Lunch\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S12",
+      "description": "Chain with fatigue: exercise executable, rest allowed although not tired yet",
+      "pass": false,
+      "accuracy": 0.5,
+      "latency_seconds": 2.238,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Rest"
+        ],
+        "blocked_critical": [
+          "Legs Exercise"
+        ],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Legs Exercise",
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Legs Exercise",
+            "Rest"
+          ],
+          "observed": [
+            "Rest"
+          ],
+          "missing": [
+            "Legs Exercise"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Legs Exercise"
+          ],
+          "missing": [],
+          "extra": [
+            "Legs Exercise"
+          ]
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1446,
+        "completion_tokens": 97,
+        "total_tokens": 1543
+      },
+      "generation_id": "gen-1790240465-UHMGU4VFAztbVNOZOWHq",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Legs Exercise\",\n      \"status\": \"BLOCKED_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'patient_available' is False in world state\",\n        \"Precondition 'patient_not_tired' is False in world state\"\n      ]\n    },\n    {\n      \"activity_name\": \"Rest\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "Alibaba",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S13",
+      "description": "Goal decomposition: backward chaining for rehabilitation_completed",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 1.489,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab Session"
+        ],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab Session"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab Session": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Full Rehab Session"
+          ],
+          "observed": [
+            "Full Rehab Session"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1414,
+        "completion_tokens": 77,
+        "total_tokens": 1491
+      },
+      "generation_id": "gen-1790240467-Q8EEMGUQTZv76nNCHfe5",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Full Rehab Session\",\n      \"status\": \"BLOCKED_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'stretching_completed' is not satisfied (False in world state)\",\n        \"Precondition 'patient_fed' is not satisfied (False in world state)\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "Nebius",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S14",
+      "description": "Critical activity blocked with recovery available",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 0.64,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Full Rehab"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Full Rehab"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab"
+          ]
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1420,
+        "completion_tokens": 38,
+        "total_tokens": 1458
+      },
+      "generation_id": "gen-1790240469-K9TwSz0nU9xcHL2WPfYB",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Full Rehab\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "Nebius",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S15",
+      "description": "Critical activity blocked with NO recovery (patient asleep)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 0.524,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Full Rehab"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Full Rehab"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab"
+          ]
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1420,
+        "completion_tokens": 38,
+        "total_tokens": 1458
+      },
+      "generation_id": "gen-1790240469-RIEunSmXoYTrLL9WuiJc",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Full Rehab\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "Nebius",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S16",
+      "description": "Critical vs non-critical both blocked, different statuses",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 5.552,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [
+          "Stretching"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [
+          "Stretching"
+        ],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Full Rehab"
+          ],
+          "observed": [
+            "Full Rehab"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Stretching"
+          ],
+          "observed": [
+            "Stretching"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1452,
+        "completion_tokens": 124,
+        "total_tokens": 1576
+      },
+      "generation_id": "gen-1790240470-26YhgnuMtfTkXykuYdTE",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Full Rehab\",\n      \"status\": \"BLOCKED_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'stretching_completed' is not satisfied (False in world state)\",\n        \"Precondition 'patient_fed' is not satisfied (False in world state)\"\n      ]\n    },\n    {\n      \"activity_name\": \"Stretching\",\n      \"status\": \"BLOCKED_NON_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'patient_fed' is not satisfied (False in world state)\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S17",
+      "description": "Empty world state -> all activities with preconditions fail",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 6.145,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [
+          "Drink Water"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [
+          "Drink Water"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Drink Water"
+          ],
+          "observed": [
+            "Drink Water"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1239,
+        "completion_tokens": 134,
+        "total_tokens": 1373
+      },
+      "generation_id": "gen-1790240475-t5IYgtRqouhOraQOUDhr",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Meds\",\n      \"status\": \"BLOCKED_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'patient_awake' is not satisfied\",\n        \"Precondition 'medication_available' is not satisfied\",\n        \"Precondition 'correct_time' is not satisfied\"\n      ]\n    },\n    {\n      \"activity_name\": \"Drink Water\",\n      \"status\": \"BLOCKED_NON_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'patient_awake' is not satisfied\",\n        \"Precondition 'water_available' is not satisfied\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S18",
+      "description": "Activity already done -> world_state_updater applies effects, validator skips it",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 2.325,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Take Paracetamol",
+          "Check Vitals"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Take Paracetamol",
+          "Check Vitals"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Check Vitals",
+            "Take Paracetamol"
+          ],
+          "observed": [
+            "Check Vitals",
+            "Take Paracetamol"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1454,
+        "completion_tokens": 130,
+        "total_tokens": 1584
+      },
+      "generation_id": "gen-1790240481-NMP2Eoes5WkCnlu5Wi7x",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Paracetamol\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": [\n        \"Activity is marked as done, so it is executable\"\n      ]\n    },\n    {\n      \"activity_name\": \"Check Vitals\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": [\n        \"Preconditions [patient_awake] are satisfied in the world state\",\n        \"No time window constraint (activity_time is null)\",\n        \"Preconditions are met and activity is not critical, but still executable\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "Alibaba",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S19",
+      "description": "Malformed activity_time -> invalid_activity_time",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 1.312,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Meds"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Meds"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1417,
+        "completion_tokens": 86,
+        "total_tokens": 1503
+      },
+      "generation_id": "gen-1790240484-KkSk9pD0WlCXviPrLzRO",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Meds\",\n      \"status\": \"BLOCKED_NON_CRITICAL\",\n      \"reasons\": [\n        \"Scheduled time '25:99' is invalid (hours > 23, minutes > 59)\",\n        \"Activity has a time window that is not valid, so it cannot be executed\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "Nebius",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S20",
+      "description": "All activities executable -> no blocks, no overrides",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 5.881,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Drink Water",
+          "Read a Book",
+          "Speak with Nurse"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Drink Water",
+          "Read a Book",
+          "Speak with Nurse"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Drink Water",
+            "Read a Book",
+            "Speak with Nurse"
+          ],
+          "observed": [
+            "Drink Water",
+            "Read a Book",
+            "Speak with Nurse"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1491,
+        "completion_tokens": 95,
+        "total_tokens": 1586
+      },
+      "generation_id": "gen-1790240485-pLYY3dssZdCXLwVRzn8Y",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Drink Water\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    },\n    {\n      \"activity_name\": \"Read a Book\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    },\n    {\n      \"activity_name\": \"Speak with Nurse\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S21",
+      "description": "Real: patient sleeping at medication time (User 2, 07:38)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 1.919,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Take Ibuprofen"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Ibuprofen"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Take Ibuprofen": [
+            "wake_patient"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Take Ibuprofen"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Ibuprofen"
+          ]
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Take Ibuprofen"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Ibuprofen"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1418,
+        "completion_tokens": 102,
+        "total_tokens": 1520
+      },
+      "generation_id": "gen-1790240491-LCDOhFrxDAbAW5t2oBGj",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Ibuprofen\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": [\n        \"All preconditions for 'take_medication' are satisfied: patient_awake, medication_available, correct_time\",\n        \"Activity is critical but preconditions are met\",\n        \"Scheduled time (07:30) is within acceptable window (current time is 07:30)\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "Alibaba",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S22",
+      "description": "Real: medication taken late, window expired (User 9, 08:05 vs 07:30)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 1.563,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Ibuprofen"
+        ],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Ibuprofen"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Take Ibuprofen"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Ibuprofen"
+          ]
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [
+            "Take Ibuprofen"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Ibuprofen"
+          ],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1418,
+        "completion_tokens": 82,
+        "total_tokens": 1500
+      },
+      "generation_id": "gen-1790240493-aUo4tLEwFVWsu9y0lQRg",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Ibuprofen\",\n      \"status\": \"BLOCKED_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'correct_time' is not satisfied (False in world state)\",\n        \"Precondition 'patient_awake' is satisfied\",\n        \"Precondition 'medication_available' is satisfied\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "Alibaba",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S23",
+      "description": "Real: skipped breakfast, antibiotic blocked (User 1, no colazione)",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 6.481,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Antibiotic"
+        ],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Antibiotic"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Take Antibiotic": [
+            "eat_meal"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Take Antibiotic"
+          ],
+          "observed": [
+            "Take Antibiotic"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1403,
+        "completion_tokens": 71,
+        "total_tokens": 1474
+      },
+      "generation_id": "gen-1790240494-VpwbsYDNUmVHAmVNUHfA",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Antibiotic\",\n      \"status\": \"BLOCKED_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'after_meal' is not satisfied (False in world state)\",\n        \"Activity is critical and preconditions are not fully met\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S24",
+      "description": "Real: patient wants walk before scheduled time (User 2, 09:00 vs 10:00)",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 1.634,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [
+          "Walk in Park"
+        ]
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [
+          "Walk in Park"
+        ],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [
+            "Walk in Park"
+          ],
+          "observed": [
+            "Walk in Park"
+          ],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1418,
+        "completion_tokens": 88,
+        "total_tokens": 1506
+      },
+      "generation_id": "gen-1790240501-uap7veFCTGaFcLqW5adn",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Walk in Park\",\n      \"status\": \"DEFERRED\",\n      \"reasons\": [\n        \"Scheduled time is 10:00, but current time is 09:00, which is before the window (10:00 - 30min = 09:30).\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "Alibaba",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S25",
+      "description": "Real: tired after walk, rehab blocked (User 5, post-passeggiata)",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 6.24,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Physical Rehabilitation"
+        ],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Physical Rehabilitation"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Physical Rehabilitation": [
+            "rest"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Physical Rehabilitation"
+          ],
+          "observed": [
+            "Physical Rehabilitation"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1432,
+        "completion_tokens": 82,
+        "total_tokens": 1514
+      },
+      "generation_id": "gen-1790240503-z6fCppeCw1wRqE7YxSJI",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Physical Rehabilitation\",\n      \"status\": \"BLOCKED_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'patient_not_tired' is not satisfied (patient_tired is True)\",\n        \"Precondition 'patient_available' is satisfied\",\n        \"Precondition 'patient_awake' is satisfied\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S26",
+      "description": "Real: correct breakfast-then-antibiotic sequence (User 11, 07:50)",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 7.515,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Take Antibiotic"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Take Antibiotic"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Take Antibiotic"
+          ],
+          "observed": [
+            "Take Antibiotic"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1426,
+        "completion_tokens": 96,
+        "total_tokens": 1522
+      },
+      "generation_id": "gen-1790240509-YTMlrvfoHpWAP1KZPBX3",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Take Antibiotic\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": [\n        \"All preconditions are satisfied: patient_awake, medication_available, after_meal\",\n        \"Activity is critical but preconditions are met\",\n        \"Scheduled time (08:00) is within acceptable window (current time is 08:00)\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S27",
+      "description": "Real: patient wants to read but no book available (User 11+14)",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 5.403,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a Book"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a Book"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Read a Book"
+          ],
+          "observed": [
+            "Read a Book"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1404,
+        "completion_tokens": 83,
+        "total_tokens": 1487
+      },
+      "generation_id": "gen-1790240516-wl5GZpSZADLfpqp2m1wc",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Read a Book\",\n      \"status\": \"BLOCKED_NON_CRITICAL\",\n      \"reasons\": [\n        \"Precondition 'book_available' is not in the world state (assumed False)\",\n        \"Canonical action 'reading_activity' requires 'book_available' which is not present in the current world state\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S28",
+      "description": "Real: patient wants to rest although not tired, and may (User 14, rest-all-day)",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 2.775,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Rest"
+          ],
+          "observed": [
+            "Rest"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1408,
+        "completion_tokens": 36,
+        "total_tokens": 1444
+      },
+      "generation_id": "gen-1790240522-SPjCIqThMgQ0FU1fu6Yp",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Rest\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": []\n    }\n  ]\n}",
+      "provider_name": "SiliconFlow",
+      "reasoning_tokens": 0
+    }
+  ]
+}

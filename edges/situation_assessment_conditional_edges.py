@@ -9,7 +9,7 @@ from utils.logs import log_message
 def situation_assessment_conditional_edges(
     state: GraphState,
 ) -> Literal[
-    GraphNodes.TASK_SYNTHESIZER.value,
+    GraphNodes.TASK_SYNTHESIZER.value, #type hint, significa che la f può restituire solo uno di questi valori
     GraphNodes.TASK_PROGRESS.value,
     GraphNodes.ROBOT_EFFECTOR.value,
 ]:
@@ -28,6 +28,9 @@ def situation_assessment_conditional_edges(
 
     # If the patient_request, situation_perception are None and the robot is reactive, go to the Robot Effector node and wait for a patient request or a situation perception.
     # This can happen during the first iteration of the graph, because it is supposed that the situation_perception is not None in the other cases.
+    
+    # sono reattivo quindi agisco solo quando qualcuno parla o succede qualcosa, e non ho nessuna richiesta paziente o percezione,
+    #vai a robot effector, cioè aspetta input.
     if (
         state["patient_request"] is None
         and state["situation_perception"] is None
@@ -38,6 +41,12 @@ def situation_assessment_conditional_edges(
 
     # If the task progress output is None and situation perception is not None, we need to go to the task progress node
     # If there is a situation perception, it means that it is possible to interpret the situation and progress in the task
+
+    #cioè Abbiamo:
+    #una percezione nuova
+    # il task non è ancora aggiornato
+    #il sistema non è terminato
+
     if (
         state["updated_task"] is None
         and state["situation_perception"] is not None

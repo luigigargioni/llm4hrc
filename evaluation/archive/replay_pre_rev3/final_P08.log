@@ -1,0 +1,508 @@
+1 sessioni selezionate da C:\Users\Gargioni\Il mio Drive\Academic\_Unibs\PhD\Hybrid Architecture\User Study\Users (>= 3 turni, 3 turni totali)
+
+===== [1/1] P08/30072025_141138 (3 turni) =====
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK SYNTHESIZER NODE][0m
+[replay] input #1 -> '789'
+[replay] input #2 -> ''
+[replay] input #3 -> '07:00'
+model defined correctly
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Discuss with doctor, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Stay with patient during doctor visit, Done: False
+Activity: Read a book (morning), Done: False
+Activity: Read a book (afternoon), Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Give journal, Done: False
+Activity: Document medication allergy or adverse reaction, Done: False
+Activity: Notify nurse about medication skip and allergy concern, Done: False
+Activity: Provide warm blanket, Done: False
+Activity: Offer afternoon snack, Done: False
+Activity: Provide white chocolate snack, Done: False
+Activity: Remind patient of medication schedule, Done: False
+Activity: Listen to music, Done: False
+Activity: Remind patient to have breakfast, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Discuss with doctor'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Discuss with doctor' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Postpone physical exercises to tomorrow'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list' -> 'unknown'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Stay with patient during doctor visit'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Stay with patient during doctor visit' -> 'unknown'
+canonicalization: 'Read a book (morning)' -> 'reading_activity'
+canonicalization: 'Read a book (afternoon)' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Give journal'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Give journal' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Document medication allergy or adverse reaction'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Document medication allergy or adverse reaction' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Notify nurse about medication skip and allergy concern'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Notify nurse about medication skip and allergy concern' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Provide warm blanket'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Provide warm blanket' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Offer afternoon snack'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Offer afternoon snack' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Provide white chocolate snack'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Provide white chocolate snack' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Remind patient of medication schedule'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Remind patient of medication schedule' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Remind patient to have breakfast'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Remind patient to have breakfast' -> 'unknown'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+Activity 'Discuss with doctor' not executable: unknown or missing canonical action
+Activity 'Discuss with doctor' not executable: outside time window (09:00)
+Activity 'Postpone physical exercises to tomorrow' not executable: unknown or missing canonical action
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+Activity 'Prepare shopping list' not executable: unknown or missing canonical action
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Stay with patient during doctor visit' not executable: unknown or missing canonical action
+Activity 'Read a book (morning)' not executable: outside time window (10:00)
+Activity 'Read a book (afternoon)' not executable: outside time window (15:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+Activity 'Give journal' not executable: unknown or missing canonical action
+Activity 'Give journal' not executable: outside time window (15:00)
+Activity 'Document medication allergy or adverse reaction' not executable: unknown or missing canonical action
+Activity 'Notify nurse about medication skip and allergy concern' not executable: unknown or missing canonical action
+Activity 'Provide warm blanket' not executable: unknown or missing canonical action
+Activity 'Provide warm blanket' not executable: outside time window (09:45)
+Activity 'Offer afternoon snack' not executable: unknown or missing canonical action
+Activity 'Offer afternoon snack' not executable: outside time window (15:30)
+Activity 'Provide white chocolate snack' not executable: unknown or missing canonical action
+Activity 'Provide white chocolate snack' not executable: outside time window (12:00)
+Activity 'Remind patient of medication schedule' not executable: unknown or missing canonical action
+Activity 'Listen to music' not executable: outside time window (10:00)
+Activity 'Remind patient to have breakfast' not executable: unknown or missing canonical action
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+- Discuss with doctor - executable: False - status: BLOCKED_NON_CRITICAL
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare shopping list - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Stay with patient during doctor visit - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book (morning) - executable: False - status: DEFERRED
+- Read a book (afternoon) - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Give journal - executable: False - status: BLOCKED_NON_CRITICAL
+- Document medication allergy or adverse reaction - executable: False - status: BLOCKED_NON_CRITICAL
+- Notify nurse about medication skip and allergy concern - executable: False - status: BLOCKED_NON_CRITICAL
+- Provide warm blanket - executable: False - status: BLOCKED_NON_CRITICAL
+- Offer afternoon snack - executable: False - status: BLOCKED_NON_CRITICAL
+- Provide white chocolate snack - executable: False - status: BLOCKED_NON_CRITICAL
+- Remind patient of medication schedule - executable: False - status: BLOCKED_NON_CRITICAL
+- Listen to music - executable: False - status: DEFERRED
+- Remind patient to have breakfast - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Good morning Anna, there are no scheduled activities at the moment. Is there anything you would like to do right now?
+[32m
+ROBOT - Execute robot action: [0m WAIT_FOR_PATIENT
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #4 -> '07:00'
+[replay] input #5 -> 'Hmm, okay, but how do I know it’s safe to take Ibuprofen right now? What if I haven’t eaten enough? Also, can you confirm the exact dosage and if there are any side effects I should watch for? I want to be sure before I take it'
+[replay] input #6 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Discuss with doctor, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Stay with patient during doctor visit, Done: False
+Activity: Read a book (morning), Done: False
+Activity: Read a book (afternoon), Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Give journal, Done: False
+Activity: Document medication allergy or adverse reaction, Done: False
+Activity: Notify nurse about medication skip and allergy concern, Done: False
+Activity: Provide warm blanket, Done: False
+Activity: Offer afternoon snack, Done: False
+Activity: Provide white chocolate snack, Done: False
+Activity: Remind patient of medication schedule, Done: False
+Activity: Listen to music, Done: False
+Activity: Remind patient to have breakfast, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Discuss with doctor'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Discuss with doctor' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Postpone physical exercises to tomorrow'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list' -> 'unknown'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Stay with patient during doctor visit' -> 'social_interaction'
+canonicalization: 'Read a book (morning)' -> 'reading_activity'
+canonicalization: 'Read a book (afternoon)' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Give journal'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Give journal' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Document medication allergy or adverse reaction'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Document medication allergy or adverse reaction' -> 'unknown'
+canonicalization: 'Notify nurse about medication skip and allergy concern' -> 'speak_with_nurse'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Provide warm blanket'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Provide warm blanket' -> 'unknown'
+canonicalization: 'Offer afternoon snack' -> 'eat_meal'
+canonicalization: 'Provide white chocolate snack' -> 'eat_meal'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Remind patient of medication schedule'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Remind patient of medication schedule' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Remind patient to have breakfast'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Remind patient to have breakfast' -> 'unknown'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+Activity 'Discuss with doctor' not executable: unknown or missing canonical action
+Activity 'Discuss with doctor' not executable: outside time window (09:00)
+Activity 'Postpone physical exercises to tomorrow' not executable: unknown or missing canonical action
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+Activity 'Prepare shopping list' not executable: unknown or missing canonical action
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Read a book (morning)' not executable: outside time window (10:00)
+Activity 'Read a book (afternoon)' not executable: outside time window (15:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+Activity 'Give journal' not executable: unknown or missing canonical action
+Activity 'Give journal' not executable: outside time window (15:00)
+Activity 'Document medication allergy or adverse reaction' not executable: unknown or missing canonical action
+Activity 'Provide warm blanket' not executable: unknown or missing canonical action
+Activity 'Provide warm blanket' not executable: outside time window (09:45)
+Activity 'Offer afternoon snack' not executable: outside time window (15:30)
+Activity 'Provide white chocolate snack' not executable: outside time window (12:00)
+Activity 'Remind patient of medication schedule' not executable: unknown or missing canonical action
+Activity 'Listen to music' not executable: outside time window (10:00)
+Activity 'Remind patient to have breakfast' not executable: unknown or missing canonical action
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+- Discuss with doctor - executable: False - status: BLOCKED_NON_CRITICAL
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare shopping list - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Stay with patient during doctor visit - executable: True - status: EXECUTABLE
+- Read a book (morning) - executable: False - status: DEFERRED
+- Read a book (afternoon) - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Give journal - executable: False - status: BLOCKED_NON_CRITICAL
+- Document medication allergy or adverse reaction - executable: False - status: BLOCKED_NON_CRITICAL
+- Notify nurse about medication skip and allergy concern - executable: True - status: EXECUTABLE
+- Provide warm blanket - executable: False - status: BLOCKED_NON_CRITICAL
+- Offer afternoon snack - executable: False - status: DEFERRED
+- Provide white chocolate snack - executable: False - status: DEFERRED
+- Remind patient of medication schedule - executable: False - status: BLOCKED_NON_CRITICAL
+- Listen to music - executable: False - status: DEFERRED
+- Remind patient to have breakfast - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, I understand you want to be sure it's safe to take ibuprofen. Because you have a known allergy and you haven't eaten yet, I cannot give you the exact dosage or list side effects right now. I will immediately inform the on‑duty nurse about your concern and ask for confirmation of the proper protocol. Please wait for the nurse's guidance before taking any ibuprofen.
+[32m
+ROBOT - Execute robot action: [0m NOTIFY_NURSE
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #7 -> '07:00'
+[replay] input #8 -> 'Alright, I appreciate the explanation, but what if I just want to skip the medication for now? I sometimes feel okay without it in the morning. Also, what if I’m allergic or have had a bad reaction before—do you remember that? How do you handle those exceptions?'
+[replay] input #9 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Discuss with doctor, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Stay with patient during doctor visit, Done: False
+Activity: Read a book (morning), Done: False
+Activity: Read a book (afternoon), Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Give journal, Done: False
+Activity: Document medication allergy or adverse reaction, Done: False
+Activity: Notify nurse about medication skip and allergy concern, Done: False
+Activity: Provide warm blanket, Done: False
+Activity: Offer afternoon snack, Done: False
+Activity: Provide white chocolate snack, Done: False
+Activity: Remind patient of medication schedule, Done: False
+Activity: Listen to music, Done: False
+Activity: Remind patient to have breakfast, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Discuss with doctor'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Discuss with doctor' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Postpone physical exercises to tomorrow'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list' -> 'unknown'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Stay with patient during doctor visit'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Stay with patient during doctor visit' -> 'unknown'
+canonicalization: 'Read a book (morning)' -> 'reading_activity'
+canonicalization: 'Read a book (afternoon)' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Give journal'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Give journal' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Document medication allergy or adverse reaction'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Document medication allergy or adverse reaction' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Notify nurse about medication skip and allergy concern'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Notify nurse about medication skip and allergy concern' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Provide warm blanket'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Provide warm blanket' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Offer afternoon snack'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Offer afternoon snack' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Provide white chocolate snack'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Provide white chocolate snack' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Remind patient of medication schedule'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Remind patient of medication schedule' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Remind patient to have breakfast'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Remind patient to have breakfast' -> 'unknown'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+Activity 'Discuss with doctor' not executable: unknown or missing canonical action
+Activity 'Discuss with doctor' not executable: outside time window (09:00)
+Activity 'Postpone physical exercises to tomorrow' not executable: unknown or missing canonical action
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+Activity 'Prepare shopping list' not executable: unknown or missing canonical action
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Stay with patient during doctor visit' not executable: unknown or missing canonical action
+Activity 'Read a book (morning)' not executable: outside time window (10:00)
+Activity 'Read a book (afternoon)' not executable: outside time window (15:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+Activity 'Give journal' not executable: unknown or missing canonical action
+Activity 'Give journal' not executable: outside time window (15:00)
+Activity 'Document medication allergy or adverse reaction' not executable: unknown or missing canonical action
+Activity 'Notify nurse about medication skip and allergy concern' not executable: unknown or missing canonical action
+Activity 'Provide warm blanket' not executable: unknown or missing canonical action
+Activity 'Provide warm blanket' not executable: outside time window (09:45)
+Activity 'Offer afternoon snack' not executable: unknown or missing canonical action
+Activity 'Offer afternoon snack' not executable: outside time window (15:30)
+Activity 'Provide white chocolate snack' not executable: unknown or missing canonical action
+Activity 'Provide white chocolate snack' not executable: outside time window (12:00)
+Activity 'Remind patient of medication schedule' not executable: unknown or missing canonical action
+Activity 'Listen to music' not executable: outside time window (10:00)
+Activity 'Remind patient to have breakfast' not executable: unknown or missing canonical action
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+- Discuss with doctor - executable: False - status: BLOCKED_NON_CRITICAL
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare shopping list - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Stay with patient during doctor visit - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book (morning) - executable: False - status: DEFERRED
+- Read a book (afternoon) - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Give journal - executable: False - status: BLOCKED_NON_CRITICAL
+- Document medication allergy or adverse reaction - executable: False - status: BLOCKED_NON_CRITICAL
+- Notify nurse about medication skip and allergy concern - executable: False - status: BLOCKED_NON_CRITICAL
+- Provide warm blanket - executable: False - status: BLOCKED_NON_CRITICAL
+- Offer afternoon snack - executable: False - status: BLOCKED_NON_CRITICAL
+- Provide white chocolate snack - executable: False - status: BLOCKED_NON_CRITICAL
+- Remind patient of medication schedule - executable: False - status: BLOCKED_NON_CRITICAL
+- Listen to music - executable: False - status: DEFERRED
+- Remind patient to have breakfast - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, I understand you would like to skip your morning medication. Right now, the system cannot process a medication skip request because the required action is not defined, so I cannot record the skip directly. I will make sure a nurse is informed right away about your allergy to ibuprofen and your wish to skip the dose. If you notice any symptoms or have any concerns, please let me know.
+[32m
+ROBOT - Execute robot action: [0m CALL_NURSE
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #10 -> '07:15'
+[replay] input #11 -> 'I prefer to discuss with the doctor'
+[replay] input #12 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Discuss with doctor, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Stay with patient during doctor visit, Done: False
+Activity: Read a book (morning), Done: False
+Activity: Read a book (afternoon), Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Give journal, Done: False
+Activity: Document medication allergy or adverse reaction, Done: False
+Activity: Notify nurse about medication skip and allergy concern, Done: False
+Activity: Provide warm blanket, Done: False
+Activity: Offer afternoon snack, Done: False
+Activity: Provide white chocolate snack, Done: False
+Activity: Remind patient of medication schedule, Done: False
+Activity: Listen to music, Done: False
+Activity: Remind patient to have breakfast, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Discuss with doctor'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Discuss with doctor' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Postpone physical exercises to tomorrow'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list' -> 'unknown'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Stay with patient during doctor visit' -> 'emotional_support'
+canonicalization: 'Read a book (morning)' -> 'reading_activity'
+canonicalization: 'Read a book (afternoon)' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Give journal'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Give journal' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Document medication allergy or adverse reaction'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Document medication allergy or adverse reaction' -> 'unknown'
+canonicalization: 'Notify nurse about medication skip and allergy concern' -> 'speak_with_nurse'
+canonicalization: 'Provide warm blanket' -> 'emotional_support'
+canonicalization: 'Offer afternoon snack' -> 'eat_meal'
+canonicalization: 'Provide white chocolate snack' -> 'eat_meal'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Remind patient of medication schedule'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Remind patient of medication schedule' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Remind patient to have breakfast'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Remind patient to have breakfast' -> 'unknown'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+Activity 'Discuss with doctor' not executable: unknown or missing canonical action
+Activity 'Discuss with doctor' not executable: outside time window (09:00)
+Activity 'Postpone physical exercises to tomorrow' not executable: unknown or missing canonical action
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+Activity 'Prepare shopping list' not executable: unknown or missing canonical action
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Stay with patient during doctor visit' not executable: precondition 'patient_sad' not satisfied
+Activity 'Read a book (morning)' not executable: outside time window (10:00)
+Activity 'Read a book (afternoon)' not executable: outside time window (15:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+Activity 'Give journal' not executable: unknown or missing canonical action
+Activity 'Give journal' not executable: outside time window (15:00)
+Activity 'Document medication allergy or adverse reaction' not executable: unknown or missing canonical action
+Activity 'Provide warm blanket' not executable: precondition 'patient_sad' not satisfied
+Activity 'Provide warm blanket' not executable: outside time window (09:45)
+Activity 'Offer afternoon snack' not executable: outside time window (15:30)
+Activity 'Provide white chocolate snack' not executable: outside time window (12:00)
+Activity 'Remind patient of medication schedule' not executable: unknown or missing canonical action
+Activity 'Listen to music' not executable: outside time window (10:00)
+Activity 'Remind patient to have breakfast' not executable: unknown or missing canonical action
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+- Discuss with doctor - executable: False - status: BLOCKED_NON_CRITICAL
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare shopping list - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Stay with patient during doctor visit - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book (morning) - executable: False - status: DEFERRED
+- Read a book (afternoon) - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Give journal - executable: False - status: BLOCKED_NON_CRITICAL
+- Document medication allergy or adverse reaction - executable: False - status: BLOCKED_NON_CRITICAL
+- Notify nurse about medication skip and allergy concern - executable: True - status: EXECUTABLE
+- Provide warm blanket - executable: False - status: BLOCKED_NON_CRITICAL
+- Offer afternoon snack - executable: False - status: DEFERRED
+- Provide white chocolate snack - executable: False - status: DEFERRED
+- Remind patient of medication schedule - executable: False - status: BLOCKED_NON_CRITICAL
+- Listen to music - executable: False - status: DEFERRED
+- Remind patient to have breakfast - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, the activity "Discuss with doctor" cannot be started right now for two reasons: 1) the system does not have a defined (canonical) action for this request, and 2) the scheduled time window for the discussion begins at 09:00, and it is currently 07:15, which is before that window. Because of these constraints I cannot initiate the discussion at this moment. I will remind you when the 09:00 window opens, or I can let the nurse know that you would like to speak with the doctor as soon as the time is appropriate.
+[32m
+ROBOT - Execute robot action: [0m WAIT_FOR_PATIENT
+[32m[position: ROBOT PERCEPTION NODE][0m
+  -> transcript_exhausted in 451.06s, 76 canonicalizzazioni, 2 override
+
+=== SUMMARY ===
+{
+  "tokens_by_node": {
+    "graph": {
+      "calls": 5,
+      "input": 4371,
+      "output": 2692
+    },
+    "task_progress": {
+      "calls": 4,
+      "input": 12337,
+      "output": 11331
+    },
+    "action_canonicalizer": {
+      "calls": 4,
+      "input": 2418,
+      "output": 1432
+    },
+    "next_steps": {
+      "calls": 4,
+      "input": 19623,
+      "output": 2170
+    }
+  },
+  "tokens_total": {
+    "calls": 17,
+    "input_tokens": 38749,
+    "output_tokens": 17625
+  },
+  "transcripts": 1,
+  "completed": 1,
+  "errors": 0,
+  "budget_exceeded": 0,
+  "token_budget_exceeded": 0,
+  "stalled": 0,
+  "turns_replayed": 3,
+  "wall_seconds": 451.06,
+  "canonicalizer_calls": 76,
+  "canonicalizer_unknown": 39,
+  "canonicalizer_remapped_same_activity": 13,
+  "canonicalizer_seconds": 35.68,
+  "validator_seconds": 0.08,
+  "goal_planner_calls": 0,
+  "hard_enforcement_candidates": 2,
+  "arbitrated_status_counts": {
+    "BLOCKED_NON_CRITICAL": 53,
+    "DEFERRED": 20,
+    "EXECUTABLE": 3
+  }
+}
+
+risultati: evaluation/final_P08.json
+righe da rivedere a mano: evaluation/final_P08.csv

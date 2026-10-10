@@ -1,0 +1,163 @@
+{
+  "summary": {
+    "total_scenarios": 2,
+    "scenarios_passed": 2,
+    "scenario_pass_rate": 1.0,
+    "total_activities": 3,
+    "activities_correctly_classified": 3,
+    "activity_accuracy": 1.0,
+    "avg_latency_seconds": 6.09,
+    "total_latency_seconds": 12.181,
+    "total_prompt_tokens": 2965,
+    "total_completion_tokens": 351,
+    "total_tokens": 3316,
+    "model": "openai/gpt-oss-120b",
+    "provider": "openrouter",
+    "temperature": 0.0,
+    "structured_output": true,
+    "reasoning_effort": "low",
+    "parse_errors": 0
+  },
+  "scenarios": [
+    {
+      "id": "S12",
+      "description": "Chain with fatigue: exercise executable, rest allowed although not tired yet",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 6.168,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Legs Exercise",
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Legs Exercise",
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Legs Exercise",
+            "Rest"
+          ],
+          "observed": [
+            "Legs Exercise",
+            "Rest"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1508,
+        "completion_tokens": 222,
+        "total_tokens": 1730
+      },
+      "generation_id": "gen-1790237385-RFggPISPQO5sgXSIKQ1K",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Legs Exercise\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": [\n        \"All preconditions (patient_awake, patient_available, patient_not_tired) are satisfied\",\n        \"No scheduled time constraint\"\n      ]\n    },\n    {\n      \"activity_name\": \"Rest\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": [\n        \"All preconditions (patient_available) are satisfied\",\n        \"No scheduled time constraint\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "CoreWeave",
+      "reasoning_tokens": 114
+    },
+    {
+      "id": "S28",
+      "description": "Real: patient wants to rest although not tired, and may (User 14, rest-all-day)",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 6.013,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Rest"
+          ],
+          "observed": [
+            "Rest"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1457,
+        "completion_tokens": 129,
+        "total_tokens": 1586
+      },
+      "generation_id": "gen-1790237392-645CY8uxgPzM8VAy8PNV",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Rest\",\n      \"status\": \"EXECUTABLE\",\n      \"reasons\": [\n        \"Canonical action 'rest' found.\",\n        \"All preconditions satisfied (patient_available is true).\",\n        \"No scheduled time constraint.\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "DeepInfra",
+      "reasoning_tokens": 59
+    }
+  ]
+}

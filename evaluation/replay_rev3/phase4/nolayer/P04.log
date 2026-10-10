@@ -1,0 +1,913 @@
+1 sessioni selezionate da C:\Users\Gargioni\Il mio Drive\Academic\_Unibs\PhD\Hybrid Architecture\User Study\Users (>= 3 turni, 14 turni totali)
+
+===== [1/1] P04/16072025_135841 (14 turni) =====
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK SYNTHESIZER NODE][0m
+[replay] input #1 -> '789'
+[replay] input #2 -> ''
+[replay] input #3 -> '07:00'
+model defined correctly
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+[33m[ARBITRATION] Critical activity 'Take Ibuprofen after breakfast' is blocked. Recovery actions available: ['eat_meal', 'have_lunch'][0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Good morning, Anna. It's time for breakfast. Let's have your breakfast now before your medication.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #4 -> '07:10'
+[replay] input #5 -> "i don't remember how often i have to take this medicine"
+[replay] input #6 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+[33m[ARBITRATION] Critical activity 'Take Ibuprofen after breakfast' is blocked. Recovery actions available: ['eat_meal', 'have_lunch'][0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, you take the ibuprofen once after breakfast, at about 7:30 in the morning. It's only needed that one time each day after you eat breakfast.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #7 -> '07:10'
+[replay] input #8 -> "ok,thanks, i'll take my first ibuprofen of the day"
+[replay] input #9 -> 'Anna took Ibuprofen'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['medication_taken', 'patient_stabilized'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Great, Anna. I see you have taken your ibuprofen after breakfast. The staff will confirm it, and you are all set for that medication.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #10 -> '07:15'
+[replay] input #11 -> "i would like to have breakfast but i'm not sure about my diet, do you have any suggestion?"
+[replay] input #12 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Sure, Anna. For a lactose‑free breakfast you could try oatmeal made with almond or oat milk, topped with fresh berries or sliced banana. A slice of whole‑grain toast with avocado or a little peanut butter works well, too. You might also enjoy a boiled egg or a small handful of nuts. Since it’s 07:15 and breakfast is scheduled now, would you like to start your breakfast?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #13 -> '07:15'
+[replay] input #14 -> 'ok, can you prepare a list of ingredients that i should buy or even order from a shop?'
+[replay] input #15 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+new activity detected from perception! Routing to GOAL PLANNER
+[32m[position: GOAL PLANNER NODE][0m
+goal decomposed into:
+Prepare shopping list of ingredients at 07:20
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Sure, Anna. I’ll start the activity to prepare a shopping list of lactose‑free ingredients for your breakfast and lunch. This will include things like oat milk, almond milk, fresh fruit, oats, whole‑grain bread, eggs, avocado, nuts, and any other items you like. I’ll also look at options for ordering them online if you prefer.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #16 -> '08:45'
+[replay] input #17 -> "i want to have a walk but i'm not sure if it's too hot outside, what temperature i should avoid? and what is the recomended time for an healty walk?"
+[replay] input #18 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Have breakfast' not executable: outside time window (07:15)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+Activity 'Prepare shopping list of ingredients' not executable: outside time window (07:20)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, a comfortable walking temperature is usually between 60°F and 75°F (15‑24°C). If it gets above about 80°F (27°C) it can feel too warm, especially if you’re out in direct sun, so it’s best to wait for a cooler time or find a shaded area. For a healthy walk, aim for about 30 minutes at a gentle to moderate pace. You can split it into two 15‑minute walks if that feels easier. If it’s hotter than 80°F right now, you might want to wait until it cools down a bit or choose an indoor hallway for your walk.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #19 -> '10:00'
+[replay] input #20 -> ''
+[replay] input #21 -> 'Anna is back from the walk'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['patient_relaxed', 'patient_tired', 'patient_not_tired', 'mobility_improved'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Have breakfast' not executable: outside time window (07:15)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+Activity 'Prepare shopping list of ingredients' not executable: outside time window (07:20)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Welcome back, Anna! I hope the walk felt good. It’s now time for your reading activity. You can pick a book you like and enjoy a calm 30‑minute reading session. Let me know if you’d like any help choosing something to read.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #22 -> '10:00'
+[replay] input #23 -> "i'm quite tired, i prefer to relax and listen some music instead of reading a book now, can i post pone this activity to this afternoon?"
+[replay] input #24 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+new activity detected from perception! Routing to GOAL PLANNER
+[32m[position: GOAL PLANNER NODE][0m
+goal decomposed into:
+Listen to music at 10:05
+Read a book at 15:00
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+Activity: Listen to music, Done: False
+Activity: Read a book, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+canonicalization: 'Read a book' -> 'reading_activity'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Have breakfast' not executable: outside time window (07:15)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+Activity 'Prepare shopping list of ingredients' not executable: outside time window (07:20)
+Activity 'Read a book' not executable: outside time window (15:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+- Listen to music - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Sure, Anna. Let’s skip the reading for now and enjoy some relaxing music. We’ll move the reading to the afternoon session at 3 p.m. as planned. I’ll start the music for you right away.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #25 -> '11:30'
+[replay] input #26 -> ''
+[replay] input #27 -> 'Anna is preparing her lunch'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+Activity: Listen to music, Done: False
+Activity: Read a book, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+canonicalization: 'Read a book' -> 'reading_activity'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Have breakfast' not executable: outside time window (07:15)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+Activity 'Prepare shopping list of ingredients' not executable: outside time window (07:20)
+Activity 'Listen to music' not executable: outside time window (10:05)
+Activity 'Read a book' not executable: outside time window (15:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+- Listen to music - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m You’re doing great, Anna. Your lunch is scheduled for 11:45, so you have a little time to finish preparing it. When you’re ready, enjoy your meal and then we’ll plan the next steps, like your midday vitamin D later.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #28 -> '12:00'
+[replay] input #29 -> 'is better to take the vitamine D before or after lunch?'
+[replay] input #30 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+Activity: Listen to music, Done: False
+Activity: Read a book, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+canonicalization: 'Read a book' -> 'reading_activity'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['patient_tired'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Have breakfast' not executable: outside time window (07:15)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+Activity 'Prepare shopping list of ingredients' not executable: outside time window (07:20)
+Activity 'Listen to music' not executable: outside time window (10:05)
+Activity 'Read a book' not executable: outside time window (15:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+- Listen to music - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m It’s best to take the vitamin D right after you finish lunch, just like we have it scheduled for about 12:15. Taking it after the meal helps your body absorb it better. So once you’re done eating, you can go ahead and take your soft‑gel capsule.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #31 -> '12:15'
+[replay] input #32 -> ''
+[replay] input #33 -> 'Anna finished the lunch and took vitamin D'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: True
+Activity: Take Vitamin D after lunch, Done: True
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+Activity: Listen to music, Done: False
+Activity: Read a book, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+canonicalization: 'Read a book' -> 'reading_activity'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['patient_fed', 'lunch_completed', 'after_meal', 'medication_taken', 'patient_stabilized'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Have breakfast' not executable: outside time window (07:15)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+Activity 'Prepare shopping list of ingredients' not executable: outside time window (07:20)
+Activity 'Listen to music' not executable: outside time window (10:05)
+Activity 'Read a book' not executable: outside time window (15:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+- Listen to music - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Great job finishing lunch and taking your vitamin D, Anna! You’ve taken care of that on schedule. Next up we have your shoulder‑rehabilitation exercises whenever you feel ready, and later at 3 p.m. we’ll have the reading session you postponed. Let me know if you’d like to start the exercises now or need anything else.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #34 -> '15:00'
+[replay] input #35 -> ''
+[replay] input #36 -> 'Anna is watching tv'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: True
+Activity: Take Vitamin D after lunch, Done: True
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+Activity: Listen to music, Done: False
+Activity: Read a book, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+canonicalization: 'Read a book' -> 'reading_activity'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['after_meal'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Have breakfast' not executable: outside time window (07:15)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+Activity 'Prepare shopping list of ingredients' not executable: outside time window (07:20)
+Activity 'Listen to music' not executable: outside time window (10:05)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+- Listen to music - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, it’s 3 p.m. right now – the reading session we planned for this afternoon is ready for you. Would you like to start reading a book together?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #37 -> '15:10'
+[replay] input #38 -> "i'm enjoying this tv series and i want to continue to whatch it, maybe i'll read my book later or tomorrow"
+[replay] input #39 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+new activity detected from perception! Routing to GOAL PLANNER
+[32m[position: GOAL PLANNER NODE][0m
+goal decomposed into:
+Continue watching TV series at 15:15
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: True
+Activity: Take Vitamin D after lunch, Done: True
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+Activity: Listen to music, Done: False
+Activity: Read a book, Done: False
+Activity: Continue watching TV series, Done: True
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+canonicalization: 'Read a book' -> 'reading_activity'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Continue watching TV series'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Continue watching TV series' -> 'unknown'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Have breakfast' not executable: outside time window (07:15)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+Activity 'Prepare shopping list of ingredients' not executable: outside time window (07:20)
+Activity 'Listen to music' not executable: outside time window (10:05)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+- Listen to music - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Continue watching TV series - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Sure thing, Anna – let’s keep the show going. I’ll turn on the next episode for you right now.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #40 -> '15:10'
+[replay] input #41 -> 'can i stay here on the couch all the afternoon or i have something else to do'
+[replay] input #42 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: True
+Activity: Take Vitamin D after lunch, Done: True
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+Activity: Listen to music, Done: False
+Activity: Read a book, Done: False
+Activity: Continue watching TV series, Done: True
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+canonicalization: 'Read a book' -> 'reading_activity'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Continue watching TV series'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Continue watching TV series' -> 'unknown'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Have breakfast' not executable: outside time window (07:15)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+Activity 'Prepare shopping list of ingredients' not executable: outside time window (07:20)
+Activity 'Listen to music' not executable: outside time window (10:05)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+- Listen to music - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Continue watching TV series - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m You can relax on the couch for a little while, Anna, but we do have a couple of things on the schedule. The reading session that was set for 3 p.m. is still waiting for you, and we also need to do your shoulder‑rehabilitation exercises today. Let me know if you’d like to start the exercises now, read a bit later, or just enjoy some more TV for a short break before we move on.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #43 -> '16:00'
+[replay] input #44 -> "i decide to do my excercise but i'm still a little bit tired, so can you suggest some light excercise"
+[replay] input #45 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: True
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: True
+Activity: Take Vitamin D after lunch, Done: True
+Activity: Physical exercises, Done: False
+Activity: Prepare shopping list of ingredients, Done: False
+Activity: Listen to music, Done: False
+Activity: Read a book, Done: False
+Activity: Continue watching TV series, Done: True
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list of ingredients'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list of ingredients' -> 'unknown'
+canonicalization: 'Listen to music' -> 'play_music'
+canonicalization: 'Read a book' -> 'reading_activity'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Continue watching TV series'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Continue watching TV series' -> 'unknown'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['patient_tired', 'patient_not_tired'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Have breakfast' not executable: outside time window (07:15)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+Activity 'Prepare shopping list of ingredients' not executable: unknown or missing canonical action
+Activity 'Prepare shopping list of ingredients' not executable: outside time window (07:20)
+Activity 'Listen to music' not executable: outside time window (10:05)
+Activity 'Read a book' not executable: outside time window (15:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: True - status: EXECUTABLE
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Prepare shopping list of ingredients - executable: True - status: EXECUTABLE
+- Listen to music - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Continue watching TV series - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Sure, Anna. Let’s keep it gentle. How about we start with a few seated shoulder rolls, then some arm lifts while you’re sitting, and finish with a short neck stretch? It’ll be light enough not to tire you out, but still good for your shoulder rehab. Let me know when you’re ready and I’ll guide you through each step.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+  -> transcript_exhausted in 417.94s, 135 canonicalizzazioni, 0 override
+
+=== SUMMARY ===
+{
+  "tokens_by_node": {
+    "knowledge_manager": {
+      "calls": 4,
+      "input": 13880,
+      "output": 1300
+    },
+    "graph": {
+      "calls": 15,
+      "input": 6219,
+      "output": 1976
+    },
+    "task_progress": {
+      "calls": 15,
+      "input": 27063,
+      "output": 15534
+    },
+    "action_canonicalizer": {
+      "calls": 15,
+      "input": 8020,
+      "output": 3387
+    },
+    "next_steps": {
+      "calls": 15,
+      "input": 41784,
+      "output": 2998
+    },
+    "goal_planner": {
+      "calls": 3,
+      "input": 6401,
+      "output": 673
+    }
+  },
+  "tokens_total": {
+    "calls": 67,
+    "input_tokens": 103367,
+    "output_tokens": 25868
+  },
+  "transcripts": 1,
+  "completed": 1,
+  "errors": 0,
+  "budget_exceeded": 0,
+  "token_budget_exceeded": 0,
+  "stalled": 0,
+  "task_completed": 0,
+  "turns_replayed": 14,
+  "wall_seconds": 417.94,
+  "canonicalizer_calls": 135,
+  "canonicalizer_unknown": 14,
+  "canonicalizer_remapped_same_activity": 0,
+  "canonicalizer_seconds": 66.59,
+  "validator_seconds": 0.23,
+  "goal_planner_calls": 3,
+  "hard_enforcement_candidates": 0,
+  "arbitrated_status_counts": {
+    "EXECUTABLE": 135
+  }
+}
+
+risultati: evaluation/replay_rev3/phase4/nolayer/P04.json
+righe da rivedere a mano: evaluation/replay_rev3/phase4/nolayer/P04.csv

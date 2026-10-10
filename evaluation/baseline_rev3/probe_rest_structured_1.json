@@ -1,0 +1,167 @@
+{
+  "summary": {
+    "total_scenarios": 2,
+    "scenarios_passed": 1,
+    "scenario_pass_rate": 0.5,
+    "total_activities": 3,
+    "activities_correctly_classified": 2,
+    "activity_accuracy": 0.6667,
+    "avg_latency_seconds": 2.53,
+    "total_latency_seconds": 5.061,
+    "total_prompt_tokens": 3190,
+    "total_completion_tokens": 327,
+    "total_tokens": 3517,
+    "model": "openai/gpt-oss-120b",
+    "provider": "openrouter",
+    "temperature": 0.0,
+    "structured_output": true,
+    "reasoning_effort": "low",
+    "parse_errors": 0
+  },
+  "scenarios": [
+    {
+      "id": "S12",
+      "description": "Chain with fatigue: exercise executable, rest allowed although not tired yet",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 0.798,
+      "parse_error": false,
+      "observed": {
+        "executable": [
+          "Legs Exercise",
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Legs Exercise",
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Legs Exercise",
+            "Rest"
+          ],
+          "observed": [
+            "Legs Exercise",
+            "Rest"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1720,
+        "completion_tokens": 177,
+        "total_tokens": 1897
+      },
+      "generation_id": "gen-1790237376-WP4kwcodHw16MkwORYEV",
+      "raw_llm_output": "{\"activities\": [{\"activity_name\": \"Legs Exercise\", \"status\": \"EXECUTABLE\", \"reasons\": [\"All preconditions satisfied\", \"No scheduled time constraint\"]}, {\"activity_name\": \"Rest\", \"status\": \"EXECUTABLE\", \"reasons\": [\"All preconditions satisfied\", \"No scheduled time constraint\"]}]}",
+      "provider_name": "Cerebras",
+      "reasoning_tokens": 97
+    },
+    {
+      "id": "S28",
+      "description": "Real: patient wants to rest although not tired, and may (User 14, rest-all-day)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 4.263,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Rest"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Rest"
+          ],
+          "observed": [],
+          "missing": [
+            "Rest"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Rest"
+          ],
+          "missing": [],
+          "extra": [
+            "Rest"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1470,
+        "completion_tokens": 150,
+        "total_tokens": 1620
+      },
+      "generation_id": "gen-1790237376-oODwOwbabIOGJ3BMNWAS",
+      "raw_llm_output": "{\n  \"activities\": [\n    {\n      \"activity_name\": \"Rest\",\n      \"status\": \"BLOCKED_NON_CRITICAL\",\n      \"reasons\": [\n        \"precondition patient_available is not satisfied\"\n      ]\n    }\n  ]\n}",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 113
+    }
+  ]
+}

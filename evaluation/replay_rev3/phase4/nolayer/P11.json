@@ -1,0 +1,5129 @@
+{
+  "generated_at": "2026-09-28T11:09:11.784238",
+  "provider": "openrouter",
+  "model": "openai/gpt-oss-120b",
+  "summary": {
+    "tokens_by_node": {
+      "knowledge_manager": {
+        "calls": 2,
+        "input": 4602,
+        "output": 369
+      },
+      "graph": {
+        "calls": 34,
+        "input": 12453,
+        "output": 3358
+      },
+      "task_progress": {
+        "calls": 34,
+        "input": 57609,
+        "output": 29442
+      },
+      "action_canonicalizer": {
+        "calls": 34,
+        "input": 17834,
+        "output": 10055
+      },
+      "next_steps": {
+        "calls": 34,
+        "input": 88333,
+        "output": 5236
+      },
+      "goal_planner": {
+        "calls": 1,
+        "input": 2020,
+        "output": 157
+      }
+    },
+    "tokens_total": {
+      "calls": 139,
+      "input_tokens": 182851,
+      "output_tokens": 48617
+    },
+    "transcripts": 1,
+    "completed": 1,
+    "errors": 0,
+    "budget_exceeded": 0,
+    "token_budget_exceeded": 0,
+    "stalled": 0,
+    "task_completed": 0,
+    "turns_replayed": 33,
+    "wall_seconds": 855.22,
+    "canonicalizer_calls": 258,
+    "canonicalizer_unknown": 0,
+    "canonicalizer_remapped_same_activity": 0,
+    "canonicalizer_seconds": 191.48,
+    "validator_seconds": 0.54,
+    "goal_planner_calls": 1,
+    "hard_enforcement_candidates": 0,
+    "arbitrated_status_counts": {
+      "EXECUTABLE": 258
+    }
+  },
+  "transcripts": [
+    {
+      "transcript": "P11/18082025_152512",
+      "patient_id": "789",
+      "turns_in_transcript": 33,
+      "inputs_consumed": 102,
+      "turns_replayed": 33,
+      "outcome": "transcript_exhausted",
+      "error": null,
+      "wall_seconds": 855.22,
+      "structured_log": "log/structured/28092026_105532_structured.jsonl",
+      "node_calls": {
+        "knowledge_manager": 2,
+        "task_progress": 34,
+        "action_canonicalizer": 34,
+        "world_state_updater": 34,
+        "plan_validator": 34,
+        "next_steps": 34,
+        "progress_checking": 34,
+        "goal_planner": 1
+      },
+      "node_seconds": {
+        "knowledge_manager": 11.71,
+        "task_progress": 488.68,
+        "action_canonicalizer": 191.48,
+        "world_state_updater": 0.03,
+        "plan_validator": 0.54,
+        "next_steps": 92.95,
+        "progress_checking": 0.02,
+        "goal_planner": 4.28
+      },
+      "tokens_by_node": {
+        "knowledge_manager": {
+          "calls": 2,
+          "input": 4602,
+          "output": 369
+        },
+        "graph": {
+          "calls": 34,
+          "input": 12453,
+          "output": 3358
+        },
+        "task_progress": {
+          "calls": 34,
+          "input": 57609,
+          "output": 29442
+        },
+        "action_canonicalizer": {
+          "calls": 34,
+          "input": 17834,
+          "output": 10055
+        },
+        "next_steps": {
+          "calls": 34,
+          "input": 88333,
+          "output": 5236
+        },
+        "goal_planner": {
+          "calls": 1,
+          "input": 2020,
+          "output": 157
+        }
+      },
+      "tokens_total": {
+        "calls": 139,
+        "input_tokens": 182851,
+        "output_tokens": 48617
+      },
+      "llm_calls": [
+        {
+          "seq": 1,
+          "turn": 0,
+          "node": "knowledge_manager",
+          "input": 198,
+          "output": 79,
+          "reasoning": 18
+        },
+        {
+          "seq": 2,
+          "turn": 0,
+          "node": "graph",
+          "input": 1342,
+          "output": 780,
+          "reasoning": 17
+        },
+        {
+          "seq": 3,
+          "turn": 0,
+          "node": "task_progress",
+          "input": 1341,
+          "output": 799,
+          "reasoning": 37
+        },
+        {
+          "seq": 4,
+          "turn": 0,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 266,
+          "reasoning": 225
+        },
+        {
+          "seq": 5,
+          "turn": 0,
+          "node": "next_steps",
+          "input": 1588,
+          "output": 361,
+          "reasoning": 330
+        },
+        {
+          "seq": 6,
+          "turn": 1,
+          "node": "graph",
+          "input": 323,
+          "output": 59,
+          "reasoning": 18
+        },
+        {
+          "seq": 7,
+          "turn": 1,
+          "node": "task_progress",
+          "input": 1634,
+          "output": 783,
+          "reasoning": 16
+        },
+        {
+          "seq": 8,
+          "turn": 1,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 296,
+          "reasoning": 257
+        },
+        {
+          "seq": 9,
+          "turn": 1,
+          "node": "next_steps",
+          "input": 2371,
+          "output": 69,
+          "reasoning": 25
+        },
+        {
+          "seq": 10,
+          "turn": 2,
+          "node": "graph",
+          "input": 309,
+          "output": 77,
+          "reasoning": 35
+        },
+        {
+          "seq": 11,
+          "turn": 2,
+          "node": "task_progress",
+          "input": 1633,
+          "output": 802,
+          "reasoning": 40
+        },
+        {
+          "seq": 12,
+          "turn": 2,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 272,
+          "reasoning": 233
+        },
+        {
+          "seq": 13,
+          "turn": 2,
+          "node": "next_steps",
+          "input": 3165,
+          "output": 124,
+          "reasoning": 70
+        },
+        {
+          "seq": 14,
+          "turn": 3,
+          "node": "graph",
+          "input": 317,
+          "output": 61,
+          "reasoning": 15
+        },
+        {
+          "seq": 15,
+          "turn": 3,
+          "node": "task_progress",
+          "input": 1632,
+          "output": 802,
+          "reasoning": 40
+        },
+        {
+          "seq": 16,
+          "turn": 3,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 274,
+          "reasoning": 233
+        },
+        {
+          "seq": 17,
+          "turn": 3,
+          "node": "next_steps",
+          "input": 2411,
+          "output": 95,
+          "reasoning": 23
+        },
+        {
+          "seq": 18,
+          "turn": 4,
+          "node": "graph",
+          "input": 308,
+          "output": 90,
+          "reasoning": 55
+        },
+        {
+          "seq": 19,
+          "turn": 4,
+          "node": "task_progress",
+          "input": 1632,
+          "output": 813,
+          "reasoning": 63
+        },
+        {
+          "seq": 20,
+          "turn": 4,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 267,
+          "reasoning": 225
+        },
+        {
+          "seq": 21,
+          "turn": 4,
+          "node": "next_steps",
+          "input": 2405,
+          "output": 89,
+          "reasoning": 18
+        },
+        {
+          "seq": 22,
+          "turn": 5,
+          "node": "graph",
+          "input": 313,
+          "output": 165,
+          "reasoning": 127
+        },
+        {
+          "seq": 23,
+          "turn": 5,
+          "node": "task_progress",
+          "input": 1625,
+          "output": 839,
+          "reasoning": 95
+        },
+        {
+          "seq": 24,
+          "turn": 5,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 272,
+          "reasoning": 236
+        },
+        {
+          "seq": 25,
+          "turn": 5,
+          "node": "next_steps",
+          "input": 2410,
+          "output": 109,
+          "reasoning": 18
+        },
+        {
+          "seq": 26,
+          "turn": 6,
+          "node": "graph",
+          "input": 328,
+          "output": 92,
+          "reasoning": 39
+        },
+        {
+          "seq": 27,
+          "turn": 6,
+          "node": "task_progress",
+          "input": 1635,
+          "output": 824,
+          "reasoning": 67
+        },
+        {
+          "seq": 28,
+          "turn": 6,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 295,
+          "reasoning": 255
+        },
+        {
+          "seq": 29,
+          "turn": 6,
+          "node": "next_steps",
+          "input": 2440,
+          "output": 254,
+          "reasoning": 163
+        },
+        {
+          "seq": 30,
+          "turn": 7,
+          "node": "graph",
+          "input": 356,
+          "output": 60,
+          "reasoning": 19
+        },
+        {
+          "seq": 31,
+          "turn": 7,
+          "node": "task_progress",
+          "input": 1663,
+          "output": 801,
+          "reasoning": 40
+        },
+        {
+          "seq": 32,
+          "turn": 7,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 291,
+          "reasoning": 247
+        },
+        {
+          "seq": 33,
+          "turn": 7,
+          "node": "next_steps",
+          "input": 2502,
+          "output": 345,
+          "reasoning": 189
+        },
+        {
+          "seq": 34,
+          "turn": 8,
+          "node": "graph",
+          "input": 335,
+          "output": 116,
+          "reasoning": 87
+        },
+        {
+          "seq": 35,
+          "turn": 8,
+          "node": "task_progress",
+          "input": 1642,
+          "output": 824,
+          "reasoning": 70
+        },
+        {
+          "seq": 36,
+          "turn": 8,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 266,
+          "reasoning": 222
+        },
+        {
+          "seq": 37,
+          "turn": 8,
+          "node": "next_steps",
+          "input": 2589,
+          "output": 108,
+          "reasoning": 15
+        },
+        {
+          "seq": 38,
+          "turn": 9,
+          "node": "graph",
+          "input": 327,
+          "output": 54,
+          "reasoning": 13
+        },
+        {
+          "seq": 39,
+          "turn": 9,
+          "node": "task_progress",
+          "input": 1645,
+          "output": 856,
+          "reasoning": 108
+        },
+        {
+          "seq": 40,
+          "turn": 9,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 297,
+          "reasoning": 261
+        },
+        {
+          "seq": 41,
+          "turn": 9,
+          "node": "next_steps",
+          "input": 2589,
+          "output": 154,
+          "reasoning": 75
+        },
+        {
+          "seq": 42,
+          "turn": 10,
+          "node": "graph",
+          "input": 336,
+          "output": 55,
+          "reasoning": 0
+        },
+        {
+          "seq": 43,
+          "turn": 10,
+          "node": "task_progress",
+          "input": 1639,
+          "output": 813,
+          "reasoning": 54
+        },
+        {
+          "seq": 44,
+          "turn": 10,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 321,
+          "reasoning": 279
+        },
+        {
+          "seq": 45,
+          "turn": 10,
+          "node": "next_steps",
+          "input": 2575,
+          "output": 228,
+          "reasoning": 0
+        },
+        {
+          "seq": 46,
+          "turn": 11,
+          "node": "graph",
+          "input": 330,
+          "output": 139,
+          "reasoning": 92
+        },
+        {
+          "seq": 47,
+          "turn": 11,
+          "node": "task_progress",
+          "input": 1639,
+          "output": 801,
+          "reasoning": 35
+        },
+        {
+          "seq": 48,
+          "turn": 11,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 320,
+          "reasoning": 286
+        },
+        {
+          "seq": 49,
+          "turn": 11,
+          "node": "next_steps",
+          "input": 2638,
+          "output": 168,
+          "reasoning": 29
+        },
+        {
+          "seq": 50,
+          "turn": 12,
+          "node": "graph",
+          "input": 333,
+          "output": 173,
+          "reasoning": 147
+        },
+        {
+          "seq": 51,
+          "turn": 12,
+          "node": "task_progress",
+          "input": 1640,
+          "output": 808,
+          "reasoning": 47
+        },
+        {
+          "seq": 52,
+          "turn": 12,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 265,
+          "reasoning": 224
+        },
+        {
+          "seq": 53,
+          "turn": 12,
+          "node": "next_steps",
+          "input": 2698,
+          "output": 146,
+          "reasoning": 24
+        },
+        {
+          "seq": 54,
+          "turn": 13,
+          "node": "graph",
+          "input": 337,
+          "output": 54,
+          "reasoning": 15
+        },
+        {
+          "seq": 55,
+          "turn": 13,
+          "node": "task_progress",
+          "input": 1644,
+          "output": 833,
+          "reasoning": 73
+        },
+        {
+          "seq": 56,
+          "turn": 13,
+          "node": "action_canonicalizer",
+          "input": 521,
+          "output": 227,
+          "reasoning": 182
+        },
+        {
+          "seq": 57,
+          "turn": 13,
+          "node": "next_steps",
+          "input": 2750,
+          "output": 130,
+          "reasoning": 0
+        },
+        {
+          "seq": 58,
+          "turn": 14,
+          "node": "graph",
+          "input": 351,
+          "output": 67,
+          "reasoning": 0
+        },
+        {
+          "seq": 59,
+          "turn": 14,
+          "node": "goal_planner",
+          "input": 2020,
+          "output": 157,
+          "reasoning": 30
+        },
+        {
+          "seq": 60,
+          "turn": 14,
+          "node": "knowledge_manager",
+          "input": 4404,
+          "output": 290,
+          "reasoning": 68
+        },
+        {
+          "seq": 61,
+          "turn": 14,
+          "node": "task_progress",
+          "input": 1729,
+          "output": 923,
+          "reasoning": 68
+        },
+        {
+          "seq": 62,
+          "turn": 14,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 251,
+          "reasoning": 204
+        },
+        {
+          "seq": 63,
+          "turn": 14,
+          "node": "next_steps",
+          "input": 2689,
+          "output": 278,
+          "reasoning": 175
+        },
+        {
+          "seq": 64,
+          "turn": 15,
+          "node": "graph",
+          "input": 329,
+          "output": 68,
+          "reasoning": 23
+        },
+        {
+          "seq": 65,
+          "turn": 15,
+          "node": "task_progress",
+          "input": 1744,
+          "output": 907,
+          "reasoning": 55
+        },
+        {
+          "seq": 66,
+          "turn": 15,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 233,
+          "reasoning": 184
+        },
+        {
+          "seq": 67,
+          "turn": 15,
+          "node": "next_steps",
+          "input": 2667,
+          "output": 115,
+          "reasoning": 40
+        },
+        {
+          "seq": 68,
+          "turn": 16,
+          "node": "graph",
+          "input": 329,
+          "output": 55,
+          "reasoning": 15
+        },
+        {
+          "seq": 69,
+          "turn": 16,
+          "node": "task_progress",
+          "input": 1744,
+          "output": 901,
+          "reasoning": 43
+        },
+        {
+          "seq": 70,
+          "turn": 16,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 327,
+          "reasoning": 285
+        },
+        {
+          "seq": 71,
+          "turn": 16,
+          "node": "next_steps",
+          "input": 2629,
+          "output": 112,
+          "reasoning": 26
+        },
+        {
+          "seq": 72,
+          "turn": 17,
+          "node": "graph",
+          "input": 341,
+          "output": 68,
+          "reasoning": 27
+        },
+        {
+          "seq": 73,
+          "turn": 17,
+          "node": "task_progress",
+          "input": 1754,
+          "output": 934,
+          "reasoning": 88
+        },
+        {
+          "seq": 74,
+          "turn": 17,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 364,
+          "reasoning": 317
+        },
+        {
+          "seq": 75,
+          "turn": 17,
+          "node": "next_steps",
+          "input": 2566,
+          "output": 167,
+          "reasoning": 43
+        },
+        {
+          "seq": 76,
+          "turn": 18,
+          "node": "graph",
+          "input": 344,
+          "output": 58,
+          "reasoning": 17
+        },
+        {
+          "seq": 77,
+          "turn": 18,
+          "node": "task_progress",
+          "input": 1757,
+          "output": 923,
+          "reasoning": 75
+        },
+        {
+          "seq": 78,
+          "turn": 18,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 219,
+          "reasoning": 169
+        },
+        {
+          "seq": 79,
+          "turn": 18,
+          "node": "next_steps",
+          "input": 2578,
+          "output": 119,
+          "reasoning": 15
+        },
+        {
+          "seq": 80,
+          "turn": 19,
+          "node": "graph",
+          "input": 348,
+          "output": 60,
+          "reasoning": 20
+        },
+        {
+          "seq": 81,
+          "turn": 19,
+          "node": "task_progress",
+          "input": 1761,
+          "output": 927,
+          "reasoning": 83
+        },
+        {
+          "seq": 82,
+          "turn": 19,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 304,
+          "reasoning": 264
+        },
+        {
+          "seq": 83,
+          "turn": 19,
+          "node": "next_steps",
+          "input": 2644,
+          "output": 126,
+          "reasoning": 18
+        },
+        {
+          "seq": 84,
+          "turn": 20,
+          "node": "graph",
+          "input": 339,
+          "output": 78,
+          "reasoning": 0
+        },
+        {
+          "seq": 85,
+          "turn": 20,
+          "node": "task_progress",
+          "input": 1748,
+          "output": 905,
+          "reasoning": 64
+        },
+        {
+          "seq": 86,
+          "turn": 20,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 342,
+          "reasoning": 299
+        },
+        {
+          "seq": 87,
+          "turn": 20,
+          "node": "next_steps",
+          "input": 2652,
+          "output": 107,
+          "reasoning": 20
+        },
+        {
+          "seq": 88,
+          "turn": 21,
+          "node": "graph",
+          "input": 340,
+          "output": 100,
+          "reasoning": 62
+        },
+        {
+          "seq": 89,
+          "turn": 21,
+          "node": "task_progress",
+          "input": 1742,
+          "output": 894,
+          "reasoning": 49
+        },
+        {
+          "seq": 90,
+          "turn": 21,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 322,
+          "reasoning": 277
+        },
+        {
+          "seq": 91,
+          "turn": 21,
+          "node": "next_steps",
+          "input": 2630,
+          "output": 152,
+          "reasoning": 44
+        },
+        {
+          "seq": 92,
+          "turn": 22,
+          "node": "graph",
+          "input": 362,
+          "output": 78,
+          "reasoning": 37
+        },
+        {
+          "seq": 93,
+          "turn": 22,
+          "node": "task_progress",
+          "input": 1764,
+          "output": 908,
+          "reasoning": 68
+        },
+        {
+          "seq": 94,
+          "turn": 22,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 322,
+          "reasoning": 276
+        },
+        {
+          "seq": 95,
+          "turn": 22,
+          "node": "next_steps",
+          "input": 2627,
+          "output": 144,
+          "reasoning": 30
+        },
+        {
+          "seq": 96,
+          "turn": 23,
+          "node": "graph",
+          "input": 334,
+          "output": 51,
+          "reasoning": 13
+        },
+        {
+          "seq": 97,
+          "turn": 23,
+          "node": "task_progress",
+          "input": 1749,
+          "output": 885,
+          "reasoning": 35
+        },
+        {
+          "seq": 98,
+          "turn": 23,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 316,
+          "reasoning": 277
+        },
+        {
+          "seq": 99,
+          "turn": 23,
+          "node": "next_steps",
+          "input": 2667,
+          "output": 110,
+          "reasoning": 14
+        },
+        {
+          "seq": 100,
+          "turn": 24,
+          "node": "graph",
+          "input": 335,
+          "output": 102,
+          "reasoning": 75
+        },
+        {
+          "seq": 101,
+          "turn": 24,
+          "node": "task_progress",
+          "input": 1739,
+          "output": 886,
+          "reasoning": 37
+        },
+        {
+          "seq": 102,
+          "turn": 24,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 383,
+          "reasoning": 348
+        },
+        {
+          "seq": 103,
+          "turn": 24,
+          "node": "next_steps",
+          "input": 2676,
+          "output": 164,
+          "reasoning": 61
+        },
+        {
+          "seq": 104,
+          "turn": 25,
+          "node": "graph",
+          "input": 350,
+          "output": 59,
+          "reasoning": 18
+        },
+        {
+          "seq": 105,
+          "turn": 25,
+          "node": "task_progress",
+          "input": 1752,
+          "output": 887,
+          "reasoning": 39
+        },
+        {
+          "seq": 106,
+          "turn": 25,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 362,
+          "reasoning": 323
+        },
+        {
+          "seq": 107,
+          "turn": 25,
+          "node": "next_steps",
+          "input": 2663,
+          "output": 154,
+          "reasoning": 50
+        },
+        {
+          "seq": 108,
+          "turn": 26,
+          "node": "graph",
+          "input": 346,
+          "output": 77,
+          "reasoning": 32
+        },
+        {
+          "seq": 109,
+          "turn": 26,
+          "node": "task_progress",
+          "input": 1748,
+          "output": 875,
+          "reasoning": 25
+        },
+        {
+          "seq": 110,
+          "turn": 26,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 267,
+          "reasoning": 217
+        },
+        {
+          "seq": 111,
+          "turn": 26,
+          "node": "next_steps",
+          "input": 2662,
+          "output": 97,
+          "reasoning": 15
+        },
+        {
+          "seq": 112,
+          "turn": 27,
+          "node": "graph",
+          "input": 357,
+          "output": 51,
+          "reasoning": 0
+        },
+        {
+          "seq": 113,
+          "turn": 27,
+          "node": "task_progress",
+          "input": 1755,
+          "output": 891,
+          "reasoning": 45
+        },
+        {
+          "seq": 114,
+          "turn": 27,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 246,
+          "reasoning": 198
+        },
+        {
+          "seq": 115,
+          "turn": 27,
+          "node": "next_steps",
+          "input": 2676,
+          "output": 136,
+          "reasoning": 22
+        },
+        {
+          "seq": 116,
+          "turn": 28,
+          "node": "graph",
+          "input": 347,
+          "output": 60,
+          "reasoning": 21
+        },
+        {
+          "seq": 117,
+          "turn": 28,
+          "node": "task_progress",
+          "input": 1749,
+          "output": 888,
+          "reasoning": 40
+        },
+        {
+          "seq": 118,
+          "turn": 28,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 372,
+          "reasoning": 333
+        },
+        {
+          "seq": 119,
+          "turn": 28,
+          "node": "next_steps",
+          "input": 2671,
+          "output": 129,
+          "reasoning": 17
+        },
+        {
+          "seq": 120,
+          "turn": 29,
+          "node": "graph",
+          "input": 342,
+          "output": 69,
+          "reasoning": 19
+        },
+        {
+          "seq": 121,
+          "turn": 29,
+          "node": "task_progress",
+          "input": 1744,
+          "output": 907,
+          "reasoning": 60
+        },
+        {
+          "seq": 122,
+          "turn": 29,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 355,
+          "reasoning": 308
+        },
+        {
+          "seq": 123,
+          "turn": 29,
+          "node": "next_steps",
+          "input": 2680,
+          "output": 122,
+          "reasoning": 54
+        },
+        {
+          "seq": 124,
+          "turn": 30,
+          "node": "graph",
+          "input": 331,
+          "output": 64,
+          "reasoning": 24
+        },
+        {
+          "seq": 125,
+          "turn": 30,
+          "node": "task_progress",
+          "input": 1746,
+          "output": 886,
+          "reasoning": 39
+        },
+        {
+          "seq": 126,
+          "turn": 30,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 325,
+          "reasoning": 286
+        },
+        {
+          "seq": 127,
+          "turn": 30,
+          "node": "next_steps",
+          "input": 2649,
+          "output": 221,
+          "reasoning": 74
+        },
+        {
+          "seq": 128,
+          "turn": 31,
+          "node": "graph",
+          "input": 344,
+          "output": 78,
+          "reasoning": 45
+        },
+        {
+          "seq": 129,
+          "turn": 31,
+          "node": "task_progress",
+          "input": 1746,
+          "output": 931,
+          "reasoning": 105
+        },
+        {
+          "seq": 130,
+          "turn": 31,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 266,
+          "reasoning": 216
+        },
+        {
+          "seq": 131,
+          "turn": 31,
+          "node": "next_steps",
+          "input": 2691,
+          "output": 143,
+          "reasoning": 33
+        },
+        {
+          "seq": 132,
+          "turn": 32,
+          "node": "graph",
+          "input": 345,
+          "output": 76,
+          "reasoning": 37
+        },
+        {
+          "seq": 133,
+          "turn": 32,
+          "node": "task_progress",
+          "input": 1747,
+          "output": 894,
+          "reasoning": 46
+        },
+        {
+          "seq": 134,
+          "turn": 32,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 229,
+          "reasoning": 179
+        },
+        {
+          "seq": 135,
+          "turn": 32,
+          "node": "next_steps",
+          "input": 2727,
+          "output": 146,
+          "reasoning": 56
+        },
+        {
+          "seq": 136,
+          "turn": 33,
+          "node": "graph",
+          "input": 345,
+          "output": 64,
+          "reasoning": 36
+        },
+        {
+          "seq": 137,
+          "turn": 33,
+          "node": "task_progress",
+          "input": 1747,
+          "output": 892,
+          "reasoning": 60
+        },
+        {
+          "seq": 138,
+          "turn": 33,
+          "node": "action_canonicalizer",
+          "input": 527,
+          "output": 321,
+          "reasoning": 282
+        },
+        {
+          "seq": 139,
+          "turn": 33,
+          "node": "next_steps",
+          "input": 2758,
+          "output": 114,
+          "reasoning": 25
+        }
+      ],
+      "goal_planner_calls": 1,
+      "canonicalization_count": 258,
+      "canonicalization_unknown": 0,
+      "canonicalization_remapped": 0,
+      "canonicalizations": [
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.689,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.689,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.689,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.689,
+          "done": false
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.689,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.689,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.689,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.992,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.992,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.992,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.992,
+          "done": false
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.992,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.992,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.992,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.073,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.073,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.073,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.073,
+          "done": false
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.073,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.073,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.073,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.941,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.941,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.941,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.941,
+          "done": false
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.941,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.941,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.941,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.112,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.112,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.112,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.112,
+          "done": false
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.112,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.112,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.112,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.037,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.037,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.037,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.037,
+          "done": false
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.037,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.037,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.037,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.276,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.276,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.276,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.276,
+          "done": false
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.276,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.276,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.276,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.082,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.082,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.082,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.082,
+          "done": false
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.082,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.082,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.082,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.489,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.489,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.489,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.489,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.489,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.489,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.489,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.714,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.714,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.714,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.714,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.714,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.714,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.714,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.566,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.566,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.566,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.566,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.566,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.566,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.566,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.701,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.701,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.701,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.701,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.701,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.701,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.701,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.232,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.232,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.232,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.232,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.232,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.232,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.232,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.585,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.585,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.585,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.585,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.585,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.585,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.585,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.682,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.682,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.682,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.682,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.682,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.682,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.682,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.682,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.671,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.671,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.671,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.671,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.671,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.671,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.671,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.671,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.017,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.017,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.017,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.017,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.017,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.017,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.017,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.017,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.881,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.881,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.881,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.881,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.881,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.881,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.881,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.881,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.678,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.678,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.678,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.678,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.678,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.678,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.678,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.678,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.376,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.376,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.376,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.376,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.376,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.376,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.376,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.376,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.027,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.027,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.027,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.027,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.027,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.027,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.027,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.027,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.316,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.316,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.316,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.316,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.316,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.316,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.316,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.316,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.121,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.121,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.121,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.121,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.121,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.121,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.121,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.121,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.917,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.917,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.917,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.917,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.917,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.917,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.917,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.917,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 9.249,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 9.249,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 9.249,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 9.249,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 9.249,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 9.249,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 9.249,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 9.249,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.11,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.11,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.11,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.11,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.11,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.11,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.11,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.11,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.207,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.207,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.207,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.207,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.207,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.207,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.207,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.207,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.995,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.995,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.995,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.995,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.995,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.995,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.995,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.995,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.233,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.233,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.233,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.233,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.233,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.233,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.233,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 7.233,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.345,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.345,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.345,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.345,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.345,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.345,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.345,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 6.345,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.867,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.867,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.867,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.867,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.867,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.867,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.867,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.867,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.217,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.217,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.217,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.217,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.217,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.217,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.217,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 5.217,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.122,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.122,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.122,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.122,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.122,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.122,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.122,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.122,
+          "done": false
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.957,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.957,
+          "done": true
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.957,
+          "done": true
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.957,
+          "done": true
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.957,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.957,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.957,
+          "done": true
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.957,
+          "done": false
+        }
+      ],
+      "validations": [
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have breakfast",
+          "canonical_action": "eat_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen after breakfast",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Have lunch",
+          "canonical_action": "have_lunch",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D after lunch",
+          "canonical_action": "take_medication_after_meal",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        }
+      ],
+      "hard_enforcements": [],
+      "mock_data_restored": [],
+      "care_plan_variant": "mock_data_variants/789_meal_dependencies.txt",
+      "repetition": 1
+    }
+  ]
+}

@@ -1,0 +1,2088 @@
+{
+  "generated_at": "2026-09-25T15:07:40.833054",
+  "provider": "openrouter",
+  "model": "openai/gpt-oss-120b",
+  "summary": {
+    "tokens_by_node": {
+      "knowledge_manager": {
+        "calls": 3,
+        "input": 7524,
+        "output": 580
+      },
+      "graph": {
+        "calls": 18,
+        "input": 6369,
+        "output": 1817
+      },
+      "task_progress": {
+        "calls": 18,
+        "input": 24525,
+        "output": 14916
+      },
+      "action_canonicalizer": {
+        "calls": 1,
+        "input": 490,
+        "output": 186
+      },
+      "next_steps": {
+        "calls": 18,
+        "input": 44402,
+        "output": 2270
+      },
+      "goal_planner": {
+        "calls": 2,
+        "input": 3477,
+        "output": 213
+      }
+    },
+    "tokens_total": {
+      "calls": 60,
+      "input_tokens": 86787,
+      "output_tokens": 19982
+    },
+    "transcripts": 1,
+    "completed": 1,
+    "errors": 0,
+    "budget_exceeded": 0,
+    "token_budget_exceeded": 0,
+    "stalled": 0,
+    "task_completed": 0,
+    "turns_replayed": 17,
+    "wall_seconds": 378.83,
+    "canonicalizer_calls": 90,
+    "canonicalizer_unknown": 0,
+    "canonicalizer_remapped_same_activity": 0,
+    "canonicalizer_seconds": 4.57,
+    "validator_seconds": 0.25,
+    "goal_planner_calls": 2,
+    "hard_enforcement_candidates": 0,
+    "arbitrated_status_counts": {
+      "EXECUTABLE": 37,
+      "DEFERRED": 18,
+      "BLOCKED_NON_CRITICAL": 34,
+      "BLOCKED_CRITICAL": 1
+    }
+  },
+  "transcripts": [
+    {
+      "transcript": "P10/01082025_111705",
+      "patient_id": "789",
+      "turns_in_transcript": 17,
+      "inputs_consumed": 54,
+      "turns_replayed": 17,
+      "outcome": "transcript_exhausted",
+      "error": null,
+      "wall_seconds": 378.83,
+      "structured_log": "log/structured/25092026_150155_structured.jsonl",
+      "node_calls": {
+        "knowledge_manager": 3,
+        "task_progress": 18,
+        "action_canonicalizer": 18,
+        "world_state_updater": 18,
+        "plan_validator": 18,
+        "next_steps": 18,
+        "progress_checking": 18,
+        "goal_planner": 2
+      },
+      "node_seconds": {
+        "knowledge_manager": 25.95,
+        "task_progress": 211.37,
+        "action_canonicalizer": 4.57,
+        "world_state_updater": 0.02,
+        "plan_validator": 0.25,
+        "next_steps": 67.65,
+        "progress_checking": 0.01,
+        "goal_planner": 3.73
+      },
+      "tokens_by_node": {
+        "knowledge_manager": {
+          "calls": 3,
+          "input": 7524,
+          "output": 580
+        },
+        "graph": {
+          "calls": 18,
+          "input": 6369,
+          "output": 1817
+        },
+        "task_progress": {
+          "calls": 18,
+          "input": 24525,
+          "output": 14916
+        },
+        "action_canonicalizer": {
+          "calls": 1,
+          "input": 490,
+          "output": 186
+        },
+        "next_steps": {
+          "calls": 18,
+          "input": 44402,
+          "output": 2270
+        },
+        "goal_planner": {
+          "calls": 2,
+          "input": 3477,
+          "output": 213
+        }
+      },
+      "tokens_total": {
+        "calls": 60,
+        "input_tokens": 86787,
+        "output_tokens": 19982
+      },
+      "llm_calls": [
+        {
+          "seq": 1,
+          "turn": 0,
+          "node": "knowledge_manager",
+          "input": 198,
+          "output": 99,
+          "reasoning": 18
+        },
+        {
+          "seq": 2,
+          "turn": 0,
+          "node": "graph",
+          "input": 1226,
+          "output": 536,
+          "reasoning": 16
+        },
+        {
+          "seq": 3,
+          "turn": 0,
+          "node": "task_progress",
+          "input": 1125,
+          "output": 549,
+          "reasoning": 28
+        },
+        {
+          "seq": 4,
+          "turn": 0,
+          "node": "action_canonicalizer",
+          "input": 490,
+          "output": 186,
+          "reasoning": 161
+        },
+        {
+          "seq": 5,
+          "turn": 0,
+          "node": "next_steps",
+          "input": 1597,
+          "output": 145,
+          "reasoning": 85
+        },
+        {
+          "seq": 6,
+          "turn": 1,
+          "node": "graph",
+          "input": 301,
+          "output": 70,
+          "reasoning": 33
+        },
+        {
+          "seq": 7,
+          "turn": 1,
+          "node": "task_progress",
+          "input": 1358,
+          "output": 823,
+          "reasoning": 40
+        },
+        {
+          "seq": 8,
+          "turn": 1,
+          "node": "next_steps",
+          "input": 2385,
+          "output": 129,
+          "reasoning": 33
+        },
+        {
+          "seq": 9,
+          "turn": 2,
+          "node": "graph",
+          "input": 303,
+          "output": 85,
+          "reasoning": 39
+        },
+        {
+          "seq": 10,
+          "turn": 2,
+          "node": "task_progress",
+          "input": 1360,
+          "output": 843,
+          "reasoning": 68
+        },
+        {
+          "seq": 11,
+          "turn": 2,
+          "node": "next_steps",
+          "input": 3267,
+          "output": 115,
+          "reasoning": 53
+        },
+        {
+          "seq": 12,
+          "turn": 3,
+          "node": "graph",
+          "input": 303,
+          "output": 71,
+          "reasoning": 31
+        },
+        {
+          "seq": 13,
+          "turn": 3,
+          "node": "task_progress",
+          "input": 1372,
+          "output": 850,
+          "reasoning": 59
+        },
+        {
+          "seq": 14,
+          "turn": 3,
+          "node": "next_steps",
+          "input": 2574,
+          "output": 167,
+          "reasoning": 22
+        },
+        {
+          "seq": 15,
+          "turn": 4,
+          "node": "graph",
+          "input": 304,
+          "output": 61,
+          "reasoning": 18
+        },
+        {
+          "seq": 16,
+          "turn": 4,
+          "node": "task_progress",
+          "input": 1373,
+          "output": 858,
+          "reasoning": 64
+        },
+        {
+          "seq": 17,
+          "turn": 4,
+          "node": "next_steps",
+          "input": 2717,
+          "output": 92,
+          "reasoning": 14
+        },
+        {
+          "seq": 18,
+          "turn": 5,
+          "node": "graph",
+          "input": 292,
+          "output": 48,
+          "reasoning": 12
+        },
+        {
+          "seq": 19,
+          "turn": 5,
+          "node": "task_progress",
+          "input": 1386,
+          "output": 862,
+          "reasoning": 34
+        },
+        {
+          "seq": 20,
+          "turn": 5,
+          "node": "next_steps",
+          "input": 2658,
+          "output": 73,
+          "reasoning": 0
+        },
+        {
+          "seq": 21,
+          "turn": 6,
+          "node": "graph",
+          "input": 304,
+          "output": 99,
+          "reasoning": 53
+        },
+        {
+          "seq": 22,
+          "turn": 6,
+          "node": "task_progress",
+          "input": 1402,
+          "output": 911,
+          "reasoning": 77
+        },
+        {
+          "seq": 23,
+          "turn": 6,
+          "node": "next_steps",
+          "input": 2542,
+          "output": 144,
+          "reasoning": 64
+        },
+        {
+          "seq": 24,
+          "turn": 7,
+          "node": "graph",
+          "input": 300,
+          "output": 64,
+          "reasoning": 23
+        },
+        {
+          "seq": 25,
+          "turn": 7,
+          "node": "task_progress",
+          "input": 1353,
+          "output": 886,
+          "reasoning": 118
+        },
+        {
+          "seq": 26,
+          "turn": 7,
+          "node": "next_steps",
+          "input": 2412,
+          "output": 115,
+          "reasoning": 29
+        },
+        {
+          "seq": 27,
+          "turn": 8,
+          "node": "graph",
+          "input": 307,
+          "output": 56,
+          "reasoning": 16
+        },
+        {
+          "seq": 28,
+          "turn": 8,
+          "node": "task_progress",
+          "input": 1387,
+          "output": 896,
+          "reasoning": 95
+        },
+        {
+          "seq": 29,
+          "turn": 8,
+          "node": "next_steps",
+          "input": 2440,
+          "output": 102,
+          "reasoning": 0
+        },
+        {
+          "seq": 30,
+          "turn": 9,
+          "node": "graph",
+          "input": 298,
+          "output": 73,
+          "reasoning": 32
+        },
+        {
+          "seq": 31,
+          "turn": 9,
+          "node": "task_progress",
+          "input": 1378,
+          "output": 882,
+          "reasoning": 66
+        },
+        {
+          "seq": 32,
+          "turn": 9,
+          "node": "next_steps",
+          "input": 2508,
+          "output": 118,
+          "reasoning": 32
+        },
+        {
+          "seq": 33,
+          "turn": 10,
+          "node": "graph",
+          "input": 314,
+          "output": 62,
+          "reasoning": 17
+        },
+        {
+          "seq": 34,
+          "turn": 10,
+          "node": "task_progress",
+          "input": 1387,
+          "output": 853,
+          "reasoning": 53
+        },
+        {
+          "seq": 35,
+          "turn": 10,
+          "node": "next_steps",
+          "input": 2461,
+          "output": 131,
+          "reasoning": 22
+        },
+        {
+          "seq": 36,
+          "turn": 11,
+          "node": "graph",
+          "input": 284,
+          "output": 68,
+          "reasoning": 22
+        },
+        {
+          "seq": 37,
+          "turn": 11,
+          "node": "task_progress",
+          "input": 1362,
+          "output": 814,
+          "reasoning": 23
+        },
+        {
+          "seq": 38,
+          "turn": 11,
+          "node": "next_steps",
+          "input": 2417,
+          "output": 112,
+          "reasoning": 33
+        },
+        {
+          "seq": 39,
+          "turn": 12,
+          "node": "graph",
+          "input": 304,
+          "output": 134,
+          "reasoning": 89
+        },
+        {
+          "seq": 40,
+          "turn": 12,
+          "node": "goal_planner",
+          "input": 1724,
+          "output": 148,
+          "reasoning": 136
+        },
+        {
+          "seq": 41,
+          "turn": 12,
+          "node": "knowledge_manager",
+          "input": 3647,
+          "output": 231,
+          "reasoning": 14
+        },
+        {
+          "seq": 42,
+          "turn": 12,
+          "node": "task_progress",
+          "input": 1369,
+          "output": 871,
+          "reasoning": 78
+        },
+        {
+          "seq": 43,
+          "turn": 12,
+          "node": "next_steps",
+          "input": 2391,
+          "output": 136,
+          "reasoning": 37
+        },
+        {
+          "seq": 44,
+          "turn": 13,
+          "node": "graph",
+          "input": 309,
+          "output": 68,
+          "reasoning": 28
+        },
+        {
+          "seq": 45,
+          "turn": 13,
+          "node": "task_progress",
+          "input": 1383,
+          "output": 824,
+          "reasoning": 21
+        },
+        {
+          "seq": 46,
+          "turn": 13,
+          "node": "next_steps",
+          "input": 2378,
+          "output": 164,
+          "reasoning": 20
+        },
+        {
+          "seq": 47,
+          "turn": 14,
+          "node": "graph",
+          "input": 305,
+          "output": 93,
+          "reasoning": 0
+        },
+        {
+          "seq": 48,
+          "turn": 14,
+          "node": "task_progress",
+          "input": 1379,
+          "output": 866,
+          "reasoning": 67
+        },
+        {
+          "seq": 49,
+          "turn": 14,
+          "node": "next_steps",
+          "input": 2429,
+          "output": 106,
+          "reasoning": 23
+        },
+        {
+          "seq": 50,
+          "turn": 15,
+          "node": "graph",
+          "input": 305,
+          "output": 81,
+          "reasoning": 0
+        },
+        {
+          "seq": 51,
+          "turn": 15,
+          "node": "task_progress",
+          "input": 1383,
+          "output": 854,
+          "reasoning": 52
+        },
+        {
+          "seq": 52,
+          "turn": 15,
+          "node": "next_steps",
+          "input": 2429,
+          "output": 131,
+          "reasoning": 42
+        },
+        {
+          "seq": 53,
+          "turn": 16,
+          "node": "graph",
+          "input": 305,
+          "output": 64,
+          "reasoning": 19
+        },
+        {
+          "seq": 54,
+          "turn": 16,
+          "node": "task_progress",
+          "input": 1383,
+          "output": 578,
+          "reasoning": 25
+        },
+        {
+          "seq": 55,
+          "turn": 16,
+          "node": "next_steps",
+          "input": 2408,
+          "output": 162,
+          "reasoning": 41
+        },
+        {
+          "seq": 56,
+          "turn": 17,
+          "node": "graph",
+          "input": 305,
+          "output": 84,
+          "reasoning": 44
+        },
+        {
+          "seq": 57,
+          "turn": 17,
+          "node": "goal_planner",
+          "input": 1753,
+          "output": 65,
+          "reasoning": 41
+        },
+        {
+          "seq": 58,
+          "turn": 17,
+          "node": "knowledge_manager",
+          "input": 3679,
+          "output": 250,
+          "reasoning": 12
+        },
+        {
+          "seq": 59,
+          "turn": 17,
+          "node": "task_progress",
+          "input": 1385,
+          "output": 896,
+          "reasoning": 106
+        },
+        {
+          "seq": 60,
+          "turn": 17,
+          "node": "next_steps",
+          "input": 2389,
+          "output": 128,
+          "reasoning": 25
+        }
+      ],
+      "goal_planner_calls": 2,
+      "canonicalization_count": 90,
+      "canonicalization_unknown": 0,
+      "canonicalization_remapped": 0,
+      "canonicalizations": [
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.485,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.485,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.485,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.485,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 4.485,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.004,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.004,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.004,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.004,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.004,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.045,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.045,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.045,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.045,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.045,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.002,
+          "done": true
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.002,
+          "done": true
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.002,
+          "done": true
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.003,
+          "done": true
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.003,
+          "done": true
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.003,
+          "done": true
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.003,
+          "done": true
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 0.002,
+          "done": true
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 0.002,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 0.002,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 0.003,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 0.003,
+          "done": true
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 0.003,
+          "done": true
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "is_known": true,
+          "previous_mapping": "exercise",
+          "node_seconds": 0.003,
+          "done": false
+        }
+      ],
+      "validations": [
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_not_tired",
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_not_tired"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_awake",
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_awake"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_awake"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_awake",
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_awake"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:07:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "outside_time_window_expired:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Physical exercises",
+          "canonical_action": "exercise",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        }
+      ],
+      "hard_enforcements": [],
+      "mock_data_restored": [],
+      "repetition": 1
+    }
+  ]
+}

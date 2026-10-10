@@ -1,0 +1,2102 @@
+{
+  "summary": {
+    "total_scenarios": 28,
+    "scenarios_passed": 6,
+    "scenario_pass_rate": 0.2143,
+    "total_activities": 35,
+    "activities_correctly_classified": 8,
+    "activity_accuracy": 0.2286,
+    "avg_latency_seconds": 8.069,
+    "total_latency_seconds": 225.943,
+    "total_prompt_tokens": 39944,
+    "total_completion_tokens": 8431,
+    "total_tokens": 48375,
+    "model": "meta-llama/llama-3.3-70b-instruct",
+    "provider": "openrouter",
+    "temperature": 0.0,
+    "structured_output": false,
+    "reasoning_effort": "low",
+    "parse_errors": 27
+  },
+  "scenarios": [
+    {
+      "id": "S01",
+      "description": "All preconditions satisfied for critical medication",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 4.945,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Paracetamol"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Take Paracetamol"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Take Paracetamol"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Paracetamol"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Take Paracetamol"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Paracetamol"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1416,
+        "completion_tokens": 210,
+        "total_tokens": 1626
+      },
+      "generation_id": "gen-1790253232-csXEL9IcFDdj9oJhW8oK",
+      "raw_llm_output": "To validate the activity \"Take Paracetamol\", we need to follow the rules provided.\n\n1. The activity is not done, so we proceed with validation.\n2. The canonical action \"take_medication\" is known and in the dictionary.\n3. Checking preconditions for \"take_medication\":\n   - patient_awake: True\n   - medication_available: True\n   - correct_time: True\n   All preconditions are satisfied.\n4. The activity has a scheduled time \"08:00\" and the current time is \"08:00\", which is within the time window.\n\nSinc",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S02",
+      "description": "Critical full rehabilitation blocked by missing patient_fed, recovery available",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 4.99,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Full Rehab Session"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab Session"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab Session": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab Session"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab Session"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Full Rehab Session"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab Session"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1420,
+        "completion_tokens": 235,
+        "total_tokens": 1655
+      },
+      "generation_id": "gen-1790253236-POar1I7QG2d0hX5efGvs",
+      "raw_llm_output": "To determine the executability status of the given activity \"Full Rehab Session\", we need to follow the rules provided.\n\n1. The activity is not done, so we proceed with validation.\n2. The canonical action \"full_rehabilitation_session\" is known and in the dictionary, so we continue.\n3. We check the preconditions for \"full_rehabilitation_session\":\n   - stretching_completed: True\n   - patient_fed: True (after_meal implies a meal has been eaten, and patient_fed is an effect of eating a meal)\n   \n   ",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S03",
+      "description": "Non-critical stretching blocked by missing patient_fed",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 8.241,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Stretching Session"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Stretching Session"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Stretching Session"
+          ],
+          "observed": [
+            "Stretching Session"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1430,
+        "completion_tokens": 244,
+        "total_tokens": 1674
+      },
+      "generation_id": "gen-1790253241-F3I1VA1qMnitr4XEn2Uu",
+      "raw_llm_output": "To determine the executability status of the \"Stretching Session\" activity, we need to follow the rules provided.\n\n1. The activity is not done=True, so we proceed with validation.\n2. The canonical action \"stretching_session\" is in the dictionary, so we proceed.\n3. We check the preconditions for \"stretching_session\":\n   - patient_awake: True\n   - patient_available: True\n   - patient_fed: True (since breakfast_completed and meal_completed are True, we can infer patient_fed is True)\n   - patient_no",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S04",
+      "description": "Unknown canonical action triggers fail-closed",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 1.921,
+      "parse_error": false,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Do some yoga"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Do some yoga"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Do some yoga"
+          ],
+          "observed": [
+            "Do some yoga"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1428,
+        "completion_tokens": 48,
+        "total_tokens": 1476
+      },
+      "generation_id": "gen-1790253250-YLCQv8oL6X7X3SpcFloc",
+      "raw_llm_output": "```json\n{\n  \"activities\": [\n    {\n      \"activity_name\": \"Do some yoga\",\n      \"status\": \"BLOCKED_NON_CRITICAL\",\n      \"reasons\": [\"Unknown canonical action\"]\n    }\n  ]\n}\n```",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S05",
+      "description": "Critical full rehab blocked by multiple missing preconditions, partial recovery",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 6.438,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Full Rehab Session"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab Session"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab Session": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab Session"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab Session"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Full Rehab Session"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab Session"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1432,
+        "completion_tokens": 229,
+        "total_tokens": 1661
+      },
+      "generation_id": "gen-1790253252-1hvQCtPKtkqM8Quhp0Qx",
+      "raw_llm_output": "To determine the executability status of the \"Full Rehab Session\" activity, we need to follow the rules provided.\n\n1. The activity is not done=True, so we proceed with validation.\n2. The canonical action \"full_rehabilitation_session\" is in the dictionary, so we check its preconditions.\n3. The preconditions for \"full_rehabilitation_session\" are:\n   - stretching_completed\n   - patient_fed\n\nFrom the world state, we can see that:\n- stretching_completed is not mentioned as True, which means it is not",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S06",
+      "description": "Activity within time window -> EXECUTABLE",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 9.517,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Paracetamol"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Take Paracetamol"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Take Paracetamol"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Paracetamol"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Take Paracetamol"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Paracetamol"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1416,
+        "completion_tokens": 450,
+        "total_tokens": 1866
+      },
+      "generation_id": "gen-1790253258-r8LWKpP1B9RrXz3QeyVs",
+      "raw_llm_output": "To determine the executability status of the activity \"Take Paracetamol\", we need to follow the rules provided.\n\n1. **Activity is not done**: The activity \"Take Paracetamol\" has a \"done\" flag set to `false`, so we proceed with the validation.\n\n2. **Canonical action is known**: The canonical action for \"Take Paracetamol\" is \"take_medication\", which is present in the canonical action dictionary.\n\n3. **Preconditions check**: The preconditions for \"take_medication\" are `patient_awake`, `medication_a",
+      "provider_name": "Novita",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S07",
+      "description": "Activity too early -> DEFERRED",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 12.162,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Antibiotic"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [
+          "Take Antibiotic"
+        ],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Take Antibiotic"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Antibiotic"
+          ]
+        },
+        "deferred": {
+          "match": false,
+          "expected": [
+            "Take Antibiotic"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Antibiotic"
+          ],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1434,
+        "completion_tokens": 303,
+        "total_tokens": 1737
+      },
+      "generation_id": "gen-1790253268-vWGEoWXkxxySLxxpDJex",
+      "raw_llm_output": "To determine the executability status of the activity \"Take Antibiotic\", we need to follow the rules provided.\n\n1. **Activity is not done**: The activity \"Take Antibiotic\" has `done=False`, so we proceed with validation.\n\n2. **Canonical action is known**: The canonical action for \"Take Antibiotic\" is \"take_antibiotic\", which is present in the canonical action dictionary.\n\n3. **Preconditions check**: The preconditions for \"take_antibiotic\" are `patient_awake`, `medication_available`, and `after_m",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S08",
+      "description": "Activity expired (past time window + tolerance) -> BLOCKED_NON_CRITICAL",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 2.916,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Vitamin D"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Vitamin D"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Take Vitamin D"
+          ],
+          "observed": [
+            "Take Vitamin D"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1414,
+        "completion_tokens": 203,
+        "total_tokens": 1617
+      },
+      "generation_id": "gen-1790253280-GHdPtx1QMG7HI5ZFgPCZ",
+      "raw_llm_output": "To validate the activity \"Take Vitamin D\", we need to follow the rules provided.\n\n1. The activity is not done, so we proceed with validation.\n2. The canonical action \"take_medication\" is known and in the dictionary.\n3. The preconditions for \"take_medication\" are:\n   - patient_awake: True\n   - medication_available: True\n   - correct_time: True\n\n   All preconditions are satisfied.\n\n4. The activity has a scheduled time of \"07:30\" and the current time is \"12:00\", which is after the scheduled time. A",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S09",
+      "description": "Activity without_time -> EXECUTABLE if preconditions OK",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 9.52,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a book"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Read a book"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Read a book"
+          ],
+          "observed": [],
+          "missing": [
+            "Read a book"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Read a book"
+          ],
+          "missing": [],
+          "extra": [
+            "Read a book"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1429,
+        "completion_tokens": 270,
+        "total_tokens": 1699
+      },
+      "generation_id": "gen-1790253283-IYFIbCl3HLpPZIaIJqMZ",
+      "raw_llm_output": "To determine the executability status of the activity \"Read a book\", we follow the given rules:\n\n1. **Done Flag**: The activity is not done (`done=False`), so we proceed with validation.\n\n2. **Canonical Action**: The canonical action for \"Read a book\" is \"reading_activity\", which is known and present in the canonical action dictionary. Therefore, it is not blocked due to an unknown or missing canonical action.\n\n3. **Preconditions**: The preconditions for \"reading_activity\" are `patient_awake` an",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S10",
+      "description": "Chain: have_lunch (done) -> stretching (done) -> full_rehab (executable)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 9.676,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Full Rehab Session"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Full Rehab Session"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Full Rehab Session"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab Session"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Full Rehab Session"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab Session"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1447,
+        "completion_tokens": 209,
+        "total_tokens": 1656
+      },
+      "generation_id": "gen-1790253292-8sJWJocc6WMwY8kNz3nw",
+      "raw_llm_output": "To determine the executability status of the \"Full Rehab Session\" activity, we need to follow the given rules and check the preconditions of the corresponding canonical action.\n\nThe canonical action for \"Full Rehab Session\" is \"full_rehabilitation_session\", which has the following preconditions:\n- stretching_completed: True\n- patient_fed: True\n\nBoth preconditions are satisfied in the given world state.\n\nSince the activity has no scheduled time (activity_time: null) and the \"without_time\" flag is",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S11",
+      "description": "Chain: full_rehab requested but patient_fed=False -> recovery suggests have_lunch",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 8.516,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Full Rehab Session",
+          "Have Lunch"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Have Lunch"
+        ],
+        "blocked_critical": [
+          "Full Rehab Session"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab Session": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Have Lunch"
+          ],
+          "observed": [],
+          "missing": [
+            "Have Lunch"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab Session"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab Session"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Full Rehab Session",
+            "Have Lunch"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab Session",
+            "Have Lunch"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1478,
+        "completion_tokens": 316,
+        "total_tokens": 1794
+      },
+      "generation_id": "gen-1790253302-bDonZVwJ3qAyc8s1E2qj",
+      "raw_llm_output": "To determine the executability status of each activity, we need to follow the rules provided.\n\n### Activity 1: Full Rehab Session\n\n- **Canonical Action:** full_rehabilitation_session\n- **Preconditions:** stretching_completed, patient_fed\n- **Critical:** True\n- **Scheduled Time:** None\n- **Done:** False\n\nGiven the world state:\n- stretching_completed: True\n- patient_fed: True (inferred from after_meal and meal_completed)\n\nAll preconditions are satisfied. Since there is no scheduled time and all pr",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S12",
+      "description": "Chain with fatigue: exercise executable, rest allowed although not tired yet",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 8.165,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Legs Exercise",
+          "Rest"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Legs Exercise",
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Legs Exercise",
+            "Rest"
+          ],
+          "observed": [],
+          "missing": [
+            "Legs Exercise",
+            "Rest"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Legs Exercise",
+            "Rest"
+          ],
+          "missing": [],
+          "extra": [
+            "Legs Exercise",
+            "Rest"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1464,
+        "completion_tokens": 347,
+        "total_tokens": 1811
+      },
+      "generation_id": "gen-1790253310-Ny1k1ibqlkKp1FkIbkdn",
+      "raw_llm_output": "To determine the executability status of each activity, we will follow the rules provided.\n\n### Activity 1: Legs Exercise\n- **Canonical Action:** exercise\n- **Preconditions:** patient_awake, patient_available, patient_not_tired\n- **Critical:** True\n- **Scheduled Time:** None\n- **Done:** False\n\nGiven the world state:\n- patient_awake: True\n- patient_available: True\n- patient_not_tired: True\n\nAll preconditions are satisfied, and since there is no scheduled time, we only need to check if the precond",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S13",
+      "description": "Goal decomposition: backward chaining for rehabilitation_completed",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 6.235,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Full Rehab Session"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab Session"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab Session": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab Session"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab Session"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Full Rehab Session"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab Session"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1432,
+        "completion_tokens": 221,
+        "total_tokens": 1653
+      },
+      "generation_id": "gen-1790253319-KYLKcMWmnuXbAR47FqrA",
+      "raw_llm_output": "To determine the executability status of the \"Full Rehab Session\" activity, we need to follow the rules provided.\n\n1. The activity is not done=True, so we proceed with validation.\n2. The canonical action \"full_rehabilitation_session\" is in the dictionary, so we proceed.\n3. We check the preconditions for \"full_rehabilitation_session\":\n   - stretching_completed: This fact is not in the world state, which means it is False.\n   - patient_fed: This fact is True because \"after_meal\" and \"meal_complete",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S14",
+      "description": "Critical activity blocked with recovery available",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 19.76,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Full Rehab"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Full Rehab"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1418,
+        "completion_tokens": 228,
+        "total_tokens": 1646
+      },
+      "generation_id": "gen-1790253325-O9n1iVetH6cwIN4OzO21",
+      "raw_llm_output": "To determine the executability status of the activity \"Full Rehab\", we need to follow the rules provided.\n\n1. The activity is not done=True, so we proceed with validation.\n2. The canonical action \"full_rehabilitation_session\" is in the dictionary, so we proceed.\n3. The preconditions for \"full_rehabilitation_session\" are:\n   - stretching_completed: True\n   - patient_fed: True (after_meal is True, which implies patient_fed)\n   All preconditions are satisfied.\n\n4. Since the activity has no schedule",
+      "provider_name": "DeepInfra",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S15",
+      "description": "Critical activity blocked with NO recovery (patient asleep)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 5.721,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Full Rehab"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Full Rehab"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1419,
+        "completion_tokens": 259,
+        "total_tokens": 1678
+      },
+      "generation_id": "gen-1790253345-YhWecf8aBnu4DXzHdyii",
+      "raw_llm_output": "To determine the executability status of the activity \"Full Rehab\", we need to follow the rules provided.\n\n1. The activity is not done, so we proceed with the validation.\n2. The canonical action \"full_rehabilitation_session\" is in the dictionary, so we check its preconditions.\n3. The preconditions for \"full_rehabilitation_session\" are:\n   - stretching_completed: True\n   - patient_fed: True (after_meal implies the patient has been fed)\n   All preconditions are satisfied.\n\n4. Since the activity ha",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S16",
+      "description": "Critical vs non-critical both blocked, different statuses",
+      "pass": false,
+      "accuracy": 0.5,
+      "latency_seconds": 10.026,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Full Rehab",
+          "Stretching"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [
+          "Stretching"
+        ],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Full Rehab"
+          ],
+          "observed": [],
+          "missing": [
+            "Full Rehab"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [
+            "Stretching"
+          ],
+          "observed": [
+            "Full Rehab",
+            "Stretching"
+          ],
+          "missing": [],
+          "extra": [
+            "Full Rehab"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1451,
+        "completion_tokens": 384,
+        "total_tokens": 1835
+      },
+      "generation_id": "gen-1790253350-RfTCsPgflRmK5eD378gc",
+      "raw_llm_output": "To determine the executability status of each activity, we need to follow the rules provided.\n\n### Activity 1: Full Rehab\n\n- **Canonical Action:** full_rehabilitation_session\n- **Preconditions:** stretching_completed, patient_fed\n- **Critical:** True\n- **Scheduled Time:** None\n- **Done:** False\n\nGiven the world state, we can see that:\n- `stretching_completed` is not explicitly mentioned as True.\n- `patient_fed` is implied to be True because `after_meal` and `meal_completed` are True.\n\nSince `str",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S17",
+      "description": "Empty world state -> all activities with preconditions fail",
+      "pass": false,
+      "accuracy": 0.5,
+      "latency_seconds": 6.173,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Meds",
+          "Drink Water"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [
+          "Drink Water"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Meds"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [
+            "Drink Water"
+          ],
+          "observed": [
+            "Drink Water",
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Meds"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1238,
+        "completion_tokens": 472,
+        "total_tokens": 1710
+      },
+      "generation_id": "gen-1790253360-Sf3qjLZPlwcZZgAZJTK2",
+      "raw_llm_output": "To determine the executability status of each activity, we need to follow the rules provided.\n\n### Activity 1: Take Meds\n- **Canonical Action**: take_medication\n- **Critical**: True\n- **Scheduled Time**: None\n- **Done**: False\n\n1. **Done Flag**: Since the activity is not done, we proceed with validation.\n2. **Canonical Action**: The canonical action \"take_medication\" is known.\n3. **Preconditions**: The preconditions for \"take_medication\" are [patient_awake, medication_available, correct_time]. S",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S18",
+      "description": "Activity already done -> world_state_updater applies effects, validator skips it",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 5.403,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Paracetamol",
+          "Check Vitals"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Take Paracetamol",
+          "Check Vitals"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Check Vitals",
+            "Take Paracetamol"
+          ],
+          "observed": [],
+          "missing": [
+            "Check Vitals",
+            "Take Paracetamol"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Check Vitals",
+            "Take Paracetamol"
+          ],
+          "missing": [],
+          "extra": [
+            "Check Vitals",
+            "Take Paracetamol"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1453,
+        "completion_tokens": 351,
+        "total_tokens": 1804
+      },
+      "generation_id": "gen-1790253366-r3nq4jPnl4cfmMOj4JQw",
+      "raw_llm_output": "To determine the executability status of each activity, we will follow the given rules and the provided world state, canonical action dictionary, and activities to validate.\n\n### Activity 1: Take Paracetamol\n- **Activity Name:** Take Paracetamol\n- **Canonical Action:** take_medication\n- **Critical:** True\n- **Activity Time:** Null\n- **Without Time:** True\n- **Done:** True\n\nGiven that the activity is done (`done=True`), according to Rule 1, it is **EXECUTABLE** regardless of other conditions.\n\n##",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S19",
+      "description": "Malformed activity_time -> invalid_activity_time",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 12.536,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Meds"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Meds"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1433,
+        "completion_tokens": 593,
+        "total_tokens": 2026
+      },
+      "generation_id": "gen-1790253372-SEPknQ7NT441KdSWuaJ5",
+      "raw_llm_output": "To validate the activity \"Take Meds\", we need to follow the rules provided.\n\n1. **Done Flag**: The activity is not done (`done=False`), so we proceed with validation.\n\n2. **Canonical Action**: The canonical action is \"take_medication\", which is known and present in the dictionary. Its preconditions are `patient_awake`, `medication_available`, and `correct_time`.\n\n3. **Preconditions**:\n   - `patient_awake`: True\n   - `medication_available`: True\n   - `correct_time`: True\n\n   All preconditions are",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S20",
+      "description": "All activities executable -> no blocks, no overrides",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 10.576,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Drink Water",
+          "Read a Book",
+          "Speak with Nurse"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Drink Water",
+          "Read a Book",
+          "Speak with Nurse"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Drink Water",
+            "Read a Book",
+            "Speak with Nurse"
+          ],
+          "observed": [],
+          "missing": [
+            "Drink Water",
+            "Read a Book",
+            "Speak with Nurse"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Drink Water",
+            "Read a Book",
+            "Speak with Nurse"
+          ],
+          "missing": [],
+          "extra": [
+            "Drink Water",
+            "Read a Book",
+            "Speak with Nurse"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1509,
+        "completion_tokens": 434,
+        "total_tokens": 1943
+      },
+      "generation_id": "gen-1790253384-k0JvQXyt3XoPGezT7Cwm",
+      "raw_llm_output": "To determine the executability status of each activity, we will follow the given rules and analyze each activity based on its preconditions, criticality, and scheduled time.\n\n### Activity 1: Drink Water\n- **Canonical Action:** drink_water\n- **Preconditions:** patient_awake, water_available\n- **Criticality:** False\n- **Scheduled Time:** None\n- **Done:** False\n\nGiven the world state, both preconditions (patient_awake and water_available) are True. Since there is no scheduled time and all precondit",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S21",
+      "description": "Real: patient sleeping at medication time (User 2, 07:38)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 3.715,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Ibuprofen"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Ibuprofen"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Take Ibuprofen": [
+            "wake_patient"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Take Ibuprofen"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Ibuprofen"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Take Ibuprofen"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Ibuprofen"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1415,
+        "completion_tokens": 212,
+        "total_tokens": 1627
+      },
+      "generation_id": "gen-1790253395-BSKgjdI4GgRe4sLZKbOp",
+      "raw_llm_output": "To validate the activity \"Take Ibuprofen\", we need to follow the rules provided.\n\n1. The activity is not done, so we proceed with validation.\n2. The canonical action \"take_medication\" is known and in the dictionary.\n3. We check the preconditions for \"take_medication\":\n   - patient_awake: False (patient_sleeping is True, but patient_awake is not explicitly True)\n   - medication_available: True\n   - correct_time: True\n\nSince one of the preconditions (patient_awake) is not satisfied, the activity i",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S22",
+      "description": "Real: medication taken late, window expired (User 9, 08:05 vs 07:30)",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 8.162,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Ibuprofen"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Ibuprofen"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Take Ibuprofen"
+          ],
+          "observed": [
+            "Take Ibuprofen"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1415,
+        "completion_tokens": 505,
+        "total_tokens": 1920
+      },
+      "generation_id": "gen-1790253399-UYWzgKvOtPnQMxLaIvmp",
+      "raw_llm_output": "To determine the executability status of the activity \"Take Ibuprofen\", we need to follow the rules provided.\n\n1. **Activity is not done**: The activity \"Take Ibuprofen\" has a \"done\" flag set to `false`, so we need to validate it.\n\n2. **Canonical action is known**: The canonical action for \"Take Ibuprofen\" is \"take_medication\", which is present in the canonical action dictionary.\n\n3. **Preconditions check**: The preconditions for \"take_medication\" are `patient_awake`, `medication_available`, and",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S23",
+      "description": "Real: skipped breakfast, antibiotic blocked (User 1, no colazione)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 10.278,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Antibiotic"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Antibiotic"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Take Antibiotic": [
+            "eat_meal"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Take Antibiotic"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Antibiotic"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Take Antibiotic"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Antibiotic"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1419,
+        "completion_tokens": 275,
+        "total_tokens": 1694
+      },
+      "generation_id": "gen-1790253407-29xcNv4sxyVxSNohOeJE",
+      "raw_llm_output": "To determine the executability status of the activity \"Take Antibiotic\", we need to follow the rules provided.\n\n1. The activity is not done, so we proceed with validation.\n2. The canonical action \"take_antibiotic\" is known and in the dictionary, so we proceed.\n3. The preconditions for \"take_antibiotic\" are:\n   - patient_awake: True\n   - medication_available: True\n   - after_meal: Not explicitly mentioned in the world state, but since \"meal_completed\" is True, we can infer that \"after_meal\" is al",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S24",
+      "description": "Real: patient wants walk before scheduled time (User 2, 09:00 vs 10:00)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 13.199,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Walk in Park"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [
+          "Walk in Park"
+        ],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Walk in Park"
+          ],
+          "missing": [],
+          "extra": [
+            "Walk in Park"
+          ]
+        },
+        "deferred": {
+          "match": false,
+          "expected": [
+            "Walk in Park"
+          ],
+          "observed": [],
+          "missing": [
+            "Walk in Park"
+          ],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1415,
+        "completion_tokens": 339,
+        "total_tokens": 1754
+      },
+      "generation_id": "gen-1790253417-cWtGjTfnMKbRzqXgJjLi",
+      "raw_llm_output": "To determine the executability status of the \"Walk in Park\" activity, we need to follow the given rules and consider the current time, world state, and canonical action dictionary.\n\n1. **Activity is not done**: The activity \"Walk in Park\" has `done=False`, so we proceed with validation.\n\n2. **Canonical action is known**: The canonical action for \"Walk in Park\" is `walk_in_park`, which is present in the canonical action dictionary.\n\n3. **Check preconditions**:\n   - `patient_awake`: True\n   - `goo",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S25",
+      "description": "Real: tired after walk, rehab blocked (User 5, post-passeggiata)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 4.159,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Physical Rehabilitation"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Physical Rehabilitation"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Physical Rehabilitation": [
+            "rest"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": false,
+          "expected": [
+            "Physical Rehabilitation"
+          ],
+          "observed": [],
+          "missing": [
+            "Physical Rehabilitation"
+          ],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Physical Rehabilitation"
+          ],
+          "missing": [],
+          "extra": [
+            "Physical Rehabilitation"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1429,
+        "completion_tokens": 285,
+        "total_tokens": 1714
+      },
+      "generation_id": "gen-1790253430-uZ0PNxbxnIgDf0t1o5cL",
+      "raw_llm_output": "To determine the executability status of the given activity \"Physical Rehabilitation\", we need to follow the rules provided.\n\n1. **Activity is not done**: The activity is not marked as done, so we proceed with the validation.\n\n2. **Canonical action is known**: The canonical action \"physical_rehabilitation\" is present in the dictionary, so we can proceed.\n\n3. **Check preconditions**:\n   - **patient_awake**: True\n   - **patient_available**: True\n   - **patient_not_tired**: False (because **patient",
+      "provider_name": "Parasail",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S26",
+      "description": "Real: correct breakfast-then-antibiotic sequence (User 11, 07:50)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 8.157,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Antibiotic"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Take Antibiotic"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Take Antibiotic"
+          ],
+          "observed": [],
+          "missing": [
+            "Take Antibiotic"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Take Antibiotic"
+          ],
+          "missing": [],
+          "extra": [
+            "Take Antibiotic"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1442,
+        "completion_tokens": 284,
+        "total_tokens": 1726
+      },
+      "generation_id": "gen-1790253434-crhwCm4U6MjwZpBLMTev",
+      "raw_llm_output": "To determine the executability status of the activity \"Take Antibiotic\", we need to follow the rules provided.\n\n1. **Activity is not done**: The activity \"Take Antibiotic\" has `done=False`, so we proceed with validation.\n\n2. **Canonical action is known**: The canonical action for \"Take Antibiotic\" is \"take_antibiotic\", which is present in the canonical action dictionary. So, it's not blocked due to an unknown action.\n\n3. **Check preconditions**: The preconditions for \"take_antibiotic\" are:\n   - ",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S27",
+      "description": "Real: patient wants to read but no book available (User 11+14)",
+      "pass": true,
+      "accuracy": 1.0,
+      "latency_seconds": 6.084,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a Book"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a Book"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Read a Book"
+          ],
+          "observed": [
+            "Read a Book"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1422,
+        "completion_tokens": 271,
+        "total_tokens": 1693
+      },
+      "generation_id": "gen-1790253443-vU0VbRvql8IUHbGTRZrl",
+      "raw_llm_output": "To validate the activity \"Read a Book\", we need to follow the rules provided.\n\n1. **Activity is not done**: The activity \"Read a Book\" has \"done\" set to False, so we need to validate it.\n\n2. **Canonical action is known**: The canonical action for \"Read a Book\" is \"reading_activity\", which is in the canonical action dictionary.\n\n3. **Check preconditions**: The preconditions for \"reading_activity\" are:\n   - patient_awake: True\n   - book_available: Not specified in the world state (assumed False be",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    },
+    {
+      "id": "S28",
+      "description": "Real: patient wants to rest although not tired, and may (User 14, rest-all-day)",
+      "pass": false,
+      "accuracy": 0.0,
+      "latency_seconds": 8.752,
+      "parse_error": true,
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Rest"
+        ],
+        "deferred": []
+      },
+      "expected": {
+        "executable": [
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": false,
+          "expected": [
+            "Rest"
+          ],
+          "observed": [],
+          "missing": [
+            "Rest"
+          ],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": false,
+          "expected": [],
+          "observed": [
+            "Rest"
+          ],
+          "missing": [],
+          "extra": [
+            "Rest"
+          ]
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "token_usage": {
+        "prompt_tokens": 1426,
+        "completion_tokens": 254,
+        "total_tokens": 1680
+      },
+      "generation_id": "gen-1790253449-LWLDESfnbgnzKPB9EdSS",
+      "raw_llm_output": "To validate the given activity \"Rest\", we need to follow the rules provided.\n\n1. **Check if the activity is done**: The activity \"Rest\" has `done=False`, so we need to proceed with validation.\n\n2. **Check the canonical action**: The canonical action for \"Rest\" is \"rest\", which is present in the canonical action dictionary. So, it's not \"unknown\" or missing.\n\n3. **Check preconditions**: The preconditions for the \"rest\" action are `[patient_available]`. According to the world state, `patient_avail",
+      "provider_name": "AkashML",
+      "reasoning_tokens": 0
+    }
+  ]
+}

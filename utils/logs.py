@@ -1,6 +1,9 @@
 from datetime import datetime
 import json
-from utils.interfaces import GraphState
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from utils.interfaces import GraphState
 
 
 LOG_FILENAME = f"log/{datetime.now().strftime('%d%m%Y_%H%M%S')}.txt"
@@ -10,11 +13,11 @@ CONVERSATION_FILENAME = (
 
 
 def create_log_file() -> None:
-    with open(LOG_FILENAME, "w") as file:
+    with open(LOG_FILENAME, "w", encoding="utf-8") as file:
         file.write("")
 
 
-def log_graph_state(state: GraphState, node: str) -> None:
+def log_graph_state(state: "GraphState", node: str) -> None:
     state_without_vector_store = {
         "task": state["task"],
         "progress_checking_output": state["progress_checking_output"],
@@ -38,7 +41,7 @@ def log_graph_state(state: GraphState, node: str) -> None:
 
     formatted_datetime = datetime.now().strftime("%d/%m/%Y, %H:%M:%S")
     separator = "-" * 30
-    with open(LOG_FILENAME, "a") as file:
+    with open(LOG_FILENAME, "a", encoding="utf-8") as file:
         file.write(
             f"Datetime: {formatted_datetime}\nNode: {node}\n\n{json.dumps(state_without_vector_store, indent=4)}\n\n{separator}\n\n"
         )
@@ -46,14 +49,14 @@ def log_graph_state(state: GraphState, node: str) -> None:
 
 def log_message(message: str) -> None:
     separator = "-" * 30
-    with open(LOG_FILENAME, "a") as file:
+    with open(LOG_FILENAME, "a", encoding="utf-8") as file:
         file.write(f"{message}\n\n{separator}\n\n")
 
 
 def conversation_header(
     message: str,
 ) -> None:
-    with open(CONVERSATION_FILENAME, "a") as file:
+    with open(CONVERSATION_FILENAME, "a", encoding="utf-8") as file:
         file.write(message)
 
 
@@ -62,5 +65,5 @@ def conversation_message(
     actor: str,
     message: str | None = None,
 ) -> None:
-    with open(CONVERSATION_FILENAME, "a") as file:
+    with open(CONVERSATION_FILENAME, "a", encoding="utf-8") as file:
         file.write(f"{datetime} - {actor}: {message}\n\n")

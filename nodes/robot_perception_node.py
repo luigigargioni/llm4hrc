@@ -6,11 +6,15 @@ from utils.logs import conversation_message, log_graph_state
 
 
 def robot_perception_node(state: GraphState) -> GraphState:
+    print(Fore.GREEN + "[position: ROBOT PERCEPTION NODE]" + Style.RESET_ALL)
+    
     log_graph_state(state, "robot_perception_node")
 
     # TODO: Add information about task and domain (or pre-defined knowledge)
 
     # TODO: Datetime set by the user to simulate a specific time
+
+    #richiedi tempo
     while True:
         if state["fake_datetime"] is not None:
             fake_datetime = input(
@@ -51,6 +55,8 @@ def robot_perception_node(state: GraphState) -> GraphState:
             continue
 
     # TODO: Record the human request from the robot's microphone
+
+    #prendi richiesta del paziente da input
     patient_request = input(
         Fore.CYAN + "\nEnter the request of the patient: " + Style.RESET_ALL
     ).strip()
@@ -58,6 +64,8 @@ def robot_perception_node(state: GraphState) -> GraphState:
         patient_request = None
 
     # TODO: Record the situation perception from the robot's camera and interpret it using a VLM
+
+    #input situation perception
     while True:
         situation_perception = input(
             Fore.MAGENTA
@@ -75,6 +83,7 @@ def robot_perception_node(state: GraphState) -> GraphState:
             #     + Style.RESET_ALL
             # )
 
+    #logga
     conversation_message(
         fake_datetime.strftime("%H:%M"),
         "Patient",
@@ -86,6 +95,7 @@ def robot_perception_node(state: GraphState) -> GraphState:
         situation_perception,
     )
 
+    #ritorna dati siffatti
     return {
         **state,
         "patient_request": patient_request,

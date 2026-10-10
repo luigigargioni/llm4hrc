@@ -1,0 +1,26 @@
+sessions 14
+all decisions 1356
+  EXEC                        665 49.0%
+  early                       319 23.5%
+  expired                     200 14.7%
+  pre                          82 6.0%
+  expired+unknown              36 2.7%
+  expired+pre                  25 1.8%
+  early+pre                    21 1.5%
+  unknown                       7 0.5%
+  early+unknown                 1 0.1%
+care-plan decisions 1263 93.1%
+  EXEC                        636 50.4%
+  early                       319 25.3%
+  expired                     200 15.8%
+  pre                          74 5.9%
+  early+pre                    20 1.6%
+  expired+pre                  14 1.1%
+Counter({'EXECUTABLE': 636, 'DEFERRED': 319, 'BLOCKED_NON_CRITICAL': 306, 'BLOCKED_CRITICAL': 2})
+missing preconditions on care-plan activities:
+   ('exercise', 'patient_not_tired') 56
+   ('walk_in_park', 'patient_not_tired') 21
+   ('exercise', 'patient_awake') 10
+   ('take_medication', 'patient_awake') 9
+   ('walk_in_park', 'patient_awake') 7
+   ('reading_activity', 'patient_awake') 5

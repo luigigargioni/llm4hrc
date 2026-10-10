@@ -1,0 +1,925 @@
+{
+  "generated_at": "2026-09-16T18:44:03.111993",
+  "provider": "openrouter",
+  "model": "deepseek/deepseek-v4-flash-0731",
+  "summary": {
+    "tokens_by_node": {
+      "graph": {
+        "calls": 5,
+        "input": 7775,
+        "output": 9660
+      },
+      "task_progress": {
+        "calls": 4,
+        "input": 10125,
+        "output": 7738
+      },
+      "action_canonicalizer": {
+        "calls": 4,
+        "input": 2220,
+        "output": 1728
+      },
+      "next_steps": {
+        "calls": 4,
+        "input": 45961,
+        "output": 6940
+      }
+    },
+    "tokens_total": {
+      "calls": 17,
+      "input_tokens": 66081,
+      "output_tokens": 26066
+    },
+    "transcripts": 1,
+    "completed": 0,
+    "errors": 1,
+    "budget_exceeded": 0,
+    "token_budget_exceeded": 0,
+    "stalled": 0,
+    "turns_replayed": 3,
+    "wall_seconds": 591.85,
+    "canonicalizer_calls": 40,
+    "canonicalizer_unknown": 12,
+    "canonicalizer_remapped_same_activity": 0,
+    "canonicalizer_seconds": 41.53,
+    "validator_seconds": 0.05,
+    "goal_planner_calls": 0,
+    "hard_enforcement_firings": 0,
+    "arbitrated_status_counts": {
+      "BLOCKED_NON_CRITICAL": 20,
+      "EXECUTABLE": 4,
+      "DEFERRED": 16
+    }
+  },
+  "transcripts": [
+    {
+      "transcript": "P08/30072025_141138",
+      "patient_id": "789",
+      "turns_in_transcript": 3,
+      "inputs_consumed": 12,
+      "turns_replayed": 3,
+      "outcome": "error",
+      "error": "ValueError: Could not parse model response.",
+      "wall_seconds": 591.85,
+      "structured_log": "log/structured/16092026_183652_structured.jsonl",
+      "node_calls": {
+        "task_progress": 4,
+        "action_canonicalizer": 4,
+        "world_state_updater": 4,
+        "plan_validator": 4,
+        "next_steps": 3,
+        "progress_checking": 3
+      },
+      "node_seconds": {
+        "task_progress": 197.81,
+        "action_canonicalizer": 41.53,
+        "world_state_updater": 0.0,
+        "plan_validator": 0.05,
+        "next_steps": 192.87,
+        "progress_checking": 0.0
+      },
+      "tokens_by_node": {
+        "graph": {
+          "calls": 5,
+          "input": 7775,
+          "output": 9660
+        },
+        "task_progress": {
+          "calls": 4,
+          "input": 10125,
+          "output": 7738
+        },
+        "action_canonicalizer": {
+          "calls": 4,
+          "input": 2220,
+          "output": 1728
+        },
+        "next_steps": {
+          "calls": 4,
+          "input": 45961,
+          "output": 6940
+        }
+      },
+      "tokens_total": {
+        "calls": 17,
+        "input_tokens": 66081,
+        "output_tokens": 26066
+      },
+      "llm_calls": [
+        {
+          "seq": 1,
+          "turn": 0,
+          "node": "graph",
+          "input": 209,
+          "output": 163
+        },
+        {
+          "seq": 2,
+          "turn": 0,
+          "node": "graph",
+          "input": 2099,
+          "output": 8629
+        },
+        {
+          "seq": 3,
+          "turn": 0,
+          "node": "task_progress",
+          "input": 2064,
+          "output": 1190
+        },
+        {
+          "seq": 4,
+          "turn": 0,
+          "node": "action_canonicalizer",
+          "input": 555,
+          "output": 456
+        },
+        {
+          "seq": 5,
+          "turn": 0,
+          "node": "next_steps",
+          "input": 5341,
+          "output": 1751
+        },
+        {
+          "seq": 6,
+          "turn": 1,
+          "node": "graph",
+          "input": 1828,
+          "output": 289
+        },
+        {
+          "seq": 7,
+          "turn": 1,
+          "node": "task_progress",
+          "input": 2693,
+          "output": 2584
+        },
+        {
+          "seq": 8,
+          "turn": 1,
+          "node": "action_canonicalizer",
+          "input": 555,
+          "output": 490
+        },
+        {
+          "seq": 9,
+          "turn": 1,
+          "node": "next_steps",
+          "input": 10227,
+          "output": 1066
+        },
+        {
+          "seq": 10,
+          "turn": 2,
+          "node": "graph",
+          "input": 1832,
+          "output": 395
+        },
+        {
+          "seq": 11,
+          "turn": 2,
+          "node": "task_progress",
+          "input": 2696,
+          "output": 1967
+        },
+        {
+          "seq": 12,
+          "turn": 2,
+          "node": "action_canonicalizer",
+          "input": 555,
+          "output": 449
+        },
+        {
+          "seq": 13,
+          "turn": 2,
+          "node": "next_steps",
+          "input": 15333,
+          "output": 3473
+        },
+        {
+          "seq": 14,
+          "turn": 3,
+          "node": "graph",
+          "input": 1807,
+          "output": 184
+        },
+        {
+          "seq": 15,
+          "turn": 3,
+          "node": "task_progress",
+          "input": 2672,
+          "output": 1997
+        },
+        {
+          "seq": 16,
+          "turn": 3,
+          "node": "action_canonicalizer",
+          "input": 555,
+          "output": 333
+        },
+        {
+          "seq": 17,
+          "turn": 3,
+          "node": "next_steps",
+          "input": 15060,
+          "output": 650
+        }
+      ],
+      "goal_planner_calls": 0,
+      "canonicalization_count": 40,
+      "canonicalization_unknown": 12,
+      "canonicalization_remapped": 0,
+      "canonicalizations": [
+        {
+          "activity_name": "Prepare shopping list",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": null,
+          "node_seconds": 3.469,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.469,
+          "done": false
+        },
+        {
+          "activity_name": "Discuss with doctor",
+          "canonical_action": "social_interaction",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.469,
+          "done": false
+        },
+        {
+          "activity_name": "Postpone physical exercises to tomorrow",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": null,
+          "node_seconds": 3.469,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.469,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.469,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.469,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.469,
+          "done": false
+        },
+        {
+          "activity_name": "Give journal",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": null,
+          "node_seconds": 3.469,
+          "done": false
+        },
+        {
+          "activity_name": "Prepare patient for sleep",
+          "canonical_action": "prepare_for_sleep",
+          "is_known": true,
+          "previous_mapping": null,
+          "node_seconds": 3.469,
+          "done": false
+        },
+        {
+          "activity_name": "Prepare shopping list",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": "unknown",
+          "node_seconds": 9.762,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 9.762,
+          "done": false
+        },
+        {
+          "activity_name": "Discuss with doctor",
+          "canonical_action": "social_interaction",
+          "is_known": true,
+          "previous_mapping": "social_interaction",
+          "node_seconds": 9.762,
+          "done": false
+        },
+        {
+          "activity_name": "Postpone physical exercises to tomorrow",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": "unknown",
+          "node_seconds": 9.762,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 9.762,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 9.762,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": "wake_patient",
+          "node_seconds": 9.762,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 9.762,
+          "done": false
+        },
+        {
+          "activity_name": "Give journal",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": "unknown",
+          "node_seconds": 9.762,
+          "done": false
+        },
+        {
+          "activity_name": "Prepare patient for sleep",
+          "canonical_action": "prepare_for_sleep",
+          "is_known": true,
+          "previous_mapping": "prepare_for_sleep",
+          "node_seconds": 9.762,
+          "done": false
+        },
+        {
+          "activity_name": "Prepare shopping list",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": "unknown",
+          "node_seconds": 14.722,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 14.722,
+          "done": false
+        },
+        {
+          "activity_name": "Discuss with doctor",
+          "canonical_action": "social_interaction",
+          "is_known": true,
+          "previous_mapping": "social_interaction",
+          "node_seconds": 14.722,
+          "done": false
+        },
+        {
+          "activity_name": "Postpone physical exercises to tomorrow",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": "unknown",
+          "node_seconds": 14.722,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 14.722,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 14.722,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": "wake_patient",
+          "node_seconds": 14.722,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 14.722,
+          "done": false
+        },
+        {
+          "activity_name": "Give journal",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": "unknown",
+          "node_seconds": 14.722,
+          "done": false
+        },
+        {
+          "activity_name": "Prepare patient for sleep",
+          "canonical_action": "prepare_for_sleep",
+          "is_known": true,
+          "previous_mapping": "prepare_for_sleep",
+          "node_seconds": 14.722,
+          "done": false
+        },
+        {
+          "activity_name": "Prepare shopping list",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": "unknown",
+          "node_seconds": 13.578,
+          "done": false
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 13.578,
+          "done": false
+        },
+        {
+          "activity_name": "Discuss with doctor",
+          "canonical_action": "social_interaction",
+          "is_known": true,
+          "previous_mapping": "social_interaction",
+          "node_seconds": 13.578,
+          "done": false
+        },
+        {
+          "activity_name": "Postpone physical exercises to tomorrow",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": "unknown",
+          "node_seconds": 13.578,
+          "done": false
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "is_known": true,
+          "previous_mapping": "walk_in_park",
+          "node_seconds": 13.578,
+          "done": false
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "is_known": true,
+          "previous_mapping": "reading_activity",
+          "node_seconds": 13.578,
+          "done": false
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "is_known": true,
+          "previous_mapping": "wake_patient",
+          "node_seconds": 13.578,
+          "done": false
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "is_known": true,
+          "previous_mapping": "take_medication",
+          "node_seconds": 13.578,
+          "done": false
+        },
+        {
+          "activity_name": "Give journal",
+          "canonical_action": "unknown",
+          "is_known": false,
+          "previous_mapping": "unknown",
+          "node_seconds": 13.578,
+          "done": false
+        },
+        {
+          "activity_name": "Prepare patient for sleep",
+          "canonical_action": "prepare_for_sleep",
+          "is_known": true,
+          "previous_mapping": "prepare_for_sleep",
+          "node_seconds": 13.578,
+          "done": false
+        }
+      ],
+      "validations": [
+        {
+          "activity_name": "Prepare shopping list",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Discuss with doctor",
+          "canonical_action": "social_interaction",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:09:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Postpone physical exercises to tomorrow",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action",
+            "outside_time_window_early:09:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_sleeping",
+            "outside_time_window_early:11:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Give journal",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action",
+            "outside_time_window_early:15:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Prepare patient for sleep",
+          "canonical_action": "prepare_for_sleep",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_tired"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Prepare shopping list",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Discuss with doctor",
+          "canonical_action": "social_interaction",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:09:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Postpone physical exercises to tomorrow",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action",
+            "outside_time_window_early:09:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_sleeping",
+            "outside_time_window_early:11:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Give journal",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action",
+            "outside_time_window_early:15:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Prepare patient for sleep",
+          "canonical_action": "prepare_for_sleep",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_tired"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Prepare shopping list",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Discuss with doctor",
+          "canonical_action": "social_interaction",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:09:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Postpone physical exercises to tomorrow",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action",
+            "outside_time_window_early:09:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_sleeping",
+            "outside_time_window_early:11:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Give journal",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action",
+            "outside_time_window_early:15:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Prepare patient for sleep",
+          "canonical_action": "prepare_for_sleep",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_tired"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Prepare shopping list",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Ibuprofen",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "EXECUTABLE",
+          "reasons": [],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Discuss with doctor",
+          "canonical_action": "social_interaction",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:09:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Postpone physical exercises to tomorrow",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action",
+            "outside_time_window_early:09:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Walk in the park",
+          "canonical_action": "walk_in_park",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Read a book",
+          "canonical_action": "reading_activity",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:10:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Wake patient up",
+          "canonical_action": "wake_patient",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_sleeping",
+            "outside_time_window_early:11:30"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Take Vitamin D",
+          "canonical_action": "take_medication",
+          "arbitrated_status": "DEFERRED",
+          "reasons": [
+            "outside_time_window_early:12:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Give journal",
+          "canonical_action": "unknown",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "unknown_canonical_action",
+            "outside_time_window_early:15:00"
+          ],
+          "recovery_actions": []
+        },
+        {
+          "activity_name": "Prepare patient for sleep",
+          "canonical_action": "prepare_for_sleep",
+          "arbitrated_status": "BLOCKED_NON_CRITICAL",
+          "reasons": [
+            "missing_precondition: patient_tired"
+          ],
+          "recovery_actions": []
+        }
+      ],
+      "hard_enforcements": [],
+      "repetition": 1
+    }
+  ]
+}

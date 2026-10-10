@@ -1,0 +1,956 @@
+1 sessioni selezionate da C:\Users\Gargioni\Il mio Drive\Academic\_Unibs\PhD\Hybrid Architecture\User Study\Users (>= 3 turni, 17 turni totali)
+
+===== [1/1] P10/01082025_111705 (17 turni) =====
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK SYNTHESIZER NODE][0m
+[replay] input #1 -> '789'
+[replay] input #2 -> ''
+[replay] input #3 -> '07:00'
+model defined correctly
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+[33m[ARBITRATION] Critical activity 'Take Ibuprofen after breakfast' is blocked. Recovery actions available: ['eat_meal', 'have_lunch'][0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Have lunch - executable: False - status: DEFERRED
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Good morning, Anna. We have a few things we can do now: breakfast at 07:15 or some gentle shoulder exercises that can be done anytime. Which would you like to start with?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #4 -> '07:10'
+[replay] input #5 -> 'good morning, what I can eat for breakfast?'
+[replay] input #6 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: False
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+[33m[ARBITRATION] Critical activity 'Take Ibuprofen after breakfast' is blocked. Recovery actions available: ['eat_meal', 'have_lunch'][0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Have lunch - executable: False - status: DEFERRED
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Good morning, Anna. For breakfast you can have something like lactose‑free yogurt with fruit, a slice of toast with jam, or a small bowl of oatmeal with honey—all gentle and easy on your stomach. We can start your breakfast now, which is scheduled for 07:15. Would you like to begin?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #7 -> '08:05'
+[replay] input #8 -> 'I finish breakfast now, I can take the ibuprofen?'
+[replay] input #9 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['patient_fed', 'after_meal'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Have lunch - executable: False - status: DEFERRED
+- Take Vitamin D after lunch - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m I understand you’d like to take the ibuprofen, Anna, but the scheduled time for that was 07:30 and that time has already passed, so we can’t take it now. Let’s focus on the next activity, which is the shoulder exercises.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #10 -> '08:06'
+[replay] input #11 -> 'ok. there is other medicines I have to take today?'
+[replay] input #12 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Have lunch - executable: False - status: DEFERRED
+- Take Vitamin D after lunch - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Yes, Anna, after you finish breakfast the next medicine on your list is the vitamin D soft‑gel capsule, which is scheduled for after lunch at 12:15. The ibuprofen that was supposed to be taken after breakfast can’t be given now because its planned time (07:30) has already passed. If you have any other medicines you’re thinking of, let the staff know and they’ll check the schedule for you.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #13 -> '08:08'
+[replay] input #14 -> "ok thanks. I'm tired, I go to sleep a little"
+[replay] input #15 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['patient_tired', 'patient_not_tired'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Walk in the park' not executable: precondition 'patient_not_tired' not satisfied
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book - executable: False - status: DEFERRED
+- Have lunch - executable: False - status: DEFERRED
+- Take Vitamin D after lunch - executable: False - status: DEFERRED
+- Physical exercises - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Alright, Anna, take a short rest and try to relax. When you feel rested, the staff will check in with you and we can continue with the rest of your day.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #16 -> '10:25'
+[replay] input #17 -> ''
+[replay] input #18 -> 'The patient is sleeping'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['patient_tired', 'after_meal', 'patient_sleeping', 'patient_awake'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'patient_awake' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Walk in the park' not executable: precondition 'patient_awake' not satisfied
+Activity 'Read a book' not executable: precondition 'patient_awake' not satisfied
+Activity 'Have lunch' not executable: precondition 'patient_awake' not satisfied
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'patient_awake' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Physical exercises' not executable: precondition 'patient_awake' not satisfied
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book - executable: False - status: BLOCKED_NON_CRITICAL
+- Have lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m ...
+[32m
+ROBOT - Execute robot action: [0m IDLE
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #19 -> '10:27'
+[replay] input #20 -> "mmh ok I'm awake... I go to the park now"
+[replay] input #21 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['patient_relaxed', 'patient_tired', 'patient_not_tired', 'mobility_improved', 'patient_awake', 'patient_sleeping'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: False - status: DEFERRED
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, the walk in the park was already completed at 10 o’clock, so there isn’t another walk scheduled for right now. You could relax a bit, maybe read a book, or wait until it’s time for lunch at 11:45.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #22 -> '11:00'
+[replay] input #23 -> "I'm back, it was a nice walk"
+[replay] input #24 -> 'Anna is not walking in the park'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: False - status: BLOCKED_NON_CRITICAL
+- Have lunch - executable: False - status: DEFERRED
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Welcome back, Anna! I’m glad you enjoyed the walk. The next thing on the schedule is lunch at 11:45, so we’ll wait a little while until then. In the meantime you could relax or just rest until it’s time for lunch.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #25 -> '11:01'
+[replay] input #26 -> 'no, I did the walk, I come back from the park just now'
+[replay] input #27 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: False
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: False - status: BLOCKED_NON_CRITICAL
+- Have lunch - executable: False - status: DEFERRED
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Welcome back, Anna! I’m glad you enjoyed the walk. Lunch is scheduled for 11:45, so it’s not time for that just yet. You can relax for a little while until it’s time to eat.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #28 -> '11:03'
+[replay] input #29 -> 'ok I read a little now'
+[replay] input #30 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: True
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['cognitive_training_completed', 'patient_relaxed'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: False - status: DEFERRED
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Great, Anna! Keep enjoying your reading. Lunch is coming up at 11:45, so we’ll have a short wait before the next meal.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #31 -> '11:40'
+[replay] input #32 -> 'I finish to read. can you pass me the phone please? I want to call my son'
+[replay] input #33 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: True
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Vitamin D after lunch' not executable: outside time window (12:15)
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Great job finishing your reading, Anna! I’m not able to hand you the phone, but I’ll let the staff know you’d like to call your son and they’ll bring it to you shortly. Lunch is at 11:45, so we’ll have a short wait before then.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #34 -> '12:00'
+[replay] input #35 -> ''
+[replay] input #36 -> 'Patient is talking on the phone'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: True
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Enjoy your conversation, Anna! I’ll let you know that lunch is scheduled for 12:15, so we’ll be ready to eat soon after you finish your call.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #37 -> '12:02'
+[replay] input #38 -> "I'm on the phone now, I take it later ok?"
+[replay] input #39 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+new activity detected from perception! Routing to GOAL PLANNER
+[32m[position: GOAL PLANNER NODE][0m
+goal decomposed into:
+Take Ibuprofen at 14:00
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: True
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+Activity: Take Ibuprofen, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Physical exercises' not executable: precondition 'patient_not_tired' not satisfied
+Activity 'Take Ibuprofen' not executable: outside time window (14:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: True - status: EXECUTABLE
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Ibuprofen - executable: False - status: DEFERRED
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m I understand, Anna. The ibuprofen you need to take after breakfast can only be taken after you have eaten, and the scheduled time of 07:30 has already passed. Once you have had your lunch, the staff will check that you’ve eaten and then you can take it. So after you finish your meal, they’ll confirm and give you the tablet.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #40 -> '12:30'
+[replay] input #41 -> "I finish the call. I'm hungry, what I can eat for lunch?"
+[replay] input #42 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: True
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: False
+Activity: Physical exercises, Done: False
+Activity: Take Ibuprofen, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['patient_tired', 'patient_fed'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Vitamin D after lunch' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen' not executable: outside time window (14:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D after lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Physical exercises - executable: True - status: EXECUTABLE
+- Take Ibuprofen - executable: False - status: DEFERRED
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Welcome back, Anna! For lunch you can have something like a grilled chicken salad, a turkey sandwich on gluten‑free bread, or a bowl of vegetable soup— all without any dairy. The staff will bring your lunch shortly, and once they confirm you’ve eaten, the other medicines will become possible.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #43 -> '13:10'
+[replay] input #44 -> 'I eat, now I take the vitamin D'
+[replay] input #45 -> 'Anna took Vitamin D'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: True
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: True
+Activity: Physical exercises, Done: False
+Activity: Take Ibuprofen, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: ['medication_taken', 'patient_stabilized'][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Ibuprofen' not executable: outside time window (14:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Take Ibuprofen - executable: False - status: DEFERRED
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Great, Anna. Your vitamin D was scheduled for after lunch and it has already been taken. The staff will confirm that everything is all set.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #46 -> '13:15'
+[replay] input #47 -> 'the doctor answer for the ibuprofen?'
+[replay] input #48 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: True
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: True
+Activity: Physical exercises, Done: False
+Activity: Take Ibuprofen, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Ibuprofen' not executable: outside time window (14:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Take Ibuprofen - executable: False - status: DEFERRED
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m The next ibuprofen tablet is scheduled for 14:00. It’s not time for it yet, so we’ll wait until that time and then you can take it after you’ve had a meal.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #49 -> '13:20'
+[replay] input #50 -> 'ok. what I can do now?'
+[replay] input #51 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: True
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: True
+Activity: Physical exercises, Done: False
+Activity: Take Ibuprofen, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Ibuprofen' not executable: outside time window (14:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Take Ibuprofen - executable: False - status: DEFERRED
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Right now you can do the shoulder physical exercises that are still waiting for you. They don’t need a meal first, so you can start them whenever you’re ready. The staff will be nearby if you need any help.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #52 -> '13:25'
+[replay] input #53 -> 'maybe later, now I rest on the sofa'
+[replay] input #54 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+new activity detected from perception! Routing to GOAL PLANNER
+[32m[position: GOAL PLANNER NODE][0m
+no new action to generate!
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Have breakfast, Done: True
+Activity: Take Ibuprofen after breakfast, Done: False
+Activity: Walk in the park, Done: True
+Activity: Read a book, Done: True
+Activity: Have lunch, Done: False
+Activity: Take Vitamin D after lunch, Done: True
+Activity: Physical exercises, Done: False
+Activity: Take Ibuprofen, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Have breakfast' -> 'eat_meal'
+canonicalization: 'Take Ibuprofen after breakfast' -> 'take_medication_after_meal'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Have lunch' -> 'have_lunch'
+canonicalization: 'Take Vitamin D after lunch' -> 'take_medication_after_meal'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Take Ibuprofen after breakfast' not executable: precondition 'after_meal' not satisfied
+Activity 'Take Ibuprofen after breakfast' not executable: outside time window (07:30)
+Activity 'Have lunch' not executable: outside time window (11:45)
+Activity 'Take Ibuprofen' not executable: outside time window (14:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Have breakfast - executable: True - status: EXECUTABLE
+- Take Ibuprofen after breakfast - executable: False - status: BLOCKED_CRITICAL
+- Walk in the park - executable: True - status: EXECUTABLE
+- Read a book - executable: True - status: EXECUTABLE
+- Have lunch - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D after lunch - executable: True - status: EXECUTABLE
+- Physical exercises - executable: True - status: EXECUTABLE
+- Take Ibuprofen - executable: False - status: DEFERRED
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m That sounds nice, Anna. Enjoy your rest on the sofa. When you feel ready, you can do the shoulder exercises later, and the ibuprofen will be ready at its scheduled time.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+  -> transcript_exhausted in 449.24s, 132 canonicalizzazioni, 0 override
+
+=== SUMMARY ===
+{
+  "tokens_by_node": {
+    "knowledge_manager": {
+      "calls": 3,
+      "input": 9435,
+      "output": 791
+    },
+    "graph": {
+      "calls": 18,
+      "input": 6904,
+      "output": 2132
+    },
+    "task_progress": {
+      "calls": 18,
+      "input": 31108,
+      "output": 15978
+    },
+    "action_canonicalizer": {
+      "calls": 18,
+      "input": 9415,
+      "output": 4341
+    },
+    "next_steps": {
+      "calls": 18,
+      "input": 52789,
+      "output": 2875
+    },
+    "goal_planner": {
+      "calls": 2,
+      "input": 4260,
+      "output": 320
+    }
+  },
+  "tokens_total": {
+    "calls": 77,
+    "input_tokens": 113911,
+    "output_tokens": 26437
+  },
+  "transcripts": 1,
+  "completed": 1,
+  "errors": 0,
+  "budget_exceeded": 0,
+  "token_budget_exceeded": 0,
+  "stalled": 0,
+  "task_completed": 0,
+  "turns_replayed": 17,
+  "wall_seconds": 449.24,
+  "canonicalizer_calls": 132,
+  "canonicalizer_unknown": 0,
+  "canonicalizer_remapped_same_activity": 0,
+  "canonicalizer_seconds": 87.66,
+  "validator_seconds": 0.14,
+  "goal_planner_calls": 2,
+  "hard_enforcement_candidates": 0,
+  "arbitrated_status_counts": {
+    "EXECUTABLE": 56,
+    "BLOCKED_CRITICAL": 15,
+    "DEFERRED": 27,
+    "BLOCKED_NON_CRITICAL": 34
+  }
+}
+
+risultati: evaluation/replay_rev3/phase4/layer/P10.json
+righe da rivedere a mano: evaluation/replay_rev3/phase4/layer/P10.csv

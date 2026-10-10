@@ -13,13 +13,15 @@ def robot_effector_conditional_edges(
     if state["task"] is None:
         raise ValueError("robot_effector_conditional_edges - task is None")
 
-    # If all activities are completed, we need to go to the Knowledge Manager node to save the conversation history and end the task
+    # Se tutte le activities del task sono state completate o saltate, vai alla Knowledge Manager dire che è tutto finito.
+    # altrimenti torna alla Robot Perception per continuare a monitorare la situazione e ricevere eventuali nuove richieste del paziente.
+
     all_activities_completed = all(
-        activity["done"] is True or activity["skipped"] is True
+        activity.get("done") is True or activity.get("skipped") is True
         for activity in state["task"]["activities"]
     )
     if all_activities_completed:
         log_message("\nROBOT_EFFECTOR_CONDITIONAL_EDGES - KNOWLEDGE_MANAGER")
         return GraphNodes.KNOWLEDGE_MANAGER.value
-
+    #(else)
     return GraphNodes.ROBOT_PERCEPTION.value

@@ -1,3 +1,4 @@
+#agisce: stampa la vocal_answer e robot_action, e se env.AUDIO_ENABLED è true, riproduce vocal_answer in audio.
 import os
 from colorama import Fore, Style
 from graph.graph_init import GraphState
@@ -22,6 +23,8 @@ async def speak_openai(text: str) -> None:
 
 
 def robot_effector_node(state: GraphState) -> GraphState:
+    print(Fore.GREEN + "[position: ROBOT EFFECTOR NODE]" + Style.RESET_ALL)
+    
     log_graph_state(state, "robot_effector_node")
 
     if state["fake_datetime"] is None:
@@ -58,6 +61,10 @@ def robot_effector_node(state: GraphState) -> GraphState:
         state["robot_action"],
     )
 
+    # LA UPDATED TASK DIVENTA IL TASK UFFICIALE (se non None), altrimenti rimane quello.
+    #  POI RESETTA TUTTE LE INFORMAZIONI CHE NON SERVONO PIU' (ROBOT ACTION, VOCAL ANSWER, 
+    # SITUATION PERCEPTION, PATIENT REQUEST, PROGRESS CHECKING OUTPUT) PER PREPARARE IL PROSSIMO CICLO DI 
+    # ASSESSMENT-PROGRESS CHECKING-SYNTHESIZER-EFFECTOR
     return {
         **state,
         "task": (

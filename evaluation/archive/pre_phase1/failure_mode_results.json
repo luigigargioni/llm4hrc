@@ -1,0 +1,3416 @@
+{
+  "summary": {
+    "total_scenarios": 45,
+    "detected": 45,
+    "undetected": 0,
+    "detection_rate": 1.0,
+    "fault_type_breakdown": {
+      "wrong_canonicalization": {
+        "total": 8,
+        "detected": 8,
+        "undetected": 0,
+        "test_pass": 8,
+        "detection_rate": 1.0
+      },
+      "corrupted_world_state": {
+        "total": 7,
+        "detected": 7,
+        "undetected": 0,
+        "test_pass": 7,
+        "detection_rate": 1.0
+      },
+      "conflicting_effects": {
+        "total": 6,
+        "detected": 6,
+        "undetected": 0,
+        "test_pass": 6,
+        "detection_rate": 1.0
+      },
+      "missing_canonical_action": {
+        "total": 6,
+        "detected": 6,
+        "undetected": 0,
+        "test_pass": 6,
+        "detection_rate": 1.0
+      },
+      "stale_world_state": {
+        "total": 6,
+        "detected": 6,
+        "undetected": 0,
+        "test_pass": 6,
+        "detection_rate": 1.0
+      },
+      "wrong_temporal_window": {
+        "total": 6,
+        "detected": 6,
+        "undetected": 0,
+        "test_pass": 6,
+        "detection_rate": 1.0
+      },
+      "orphan_precondition": {
+        "total": 6,
+        "detected": 6,
+        "undetected": 0,
+        "test_pass": 6,
+        "detection_rate": 1.0
+      }
+    }
+  },
+  "scenarios": [
+    {
+      "id": "F01",
+      "description": "Wrong canonicalization: 'Take Antibiotic' mapped to take_medication instead of take_antibiotic",
+      "fault_type": "wrong_canonicalization",
+      "injected_error": "canonical_action='take_medication' instead of 'take_antibiotic'",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Take Antibiotic"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Take Antibiotic"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Take Antibiotic"
+          ],
+          "observed": [
+            "Take Antibiotic"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "take_medication preconditions are met, so the wrong mapping is NOT caught by precondition check. BUT the consistency check detects no keyword overlap between 'Take Antibiotic' and 'take_medication', flagging it as suspicious_mapping."
+    },
+    {
+      "id": "F02",
+      "description": "Wrong canonicalization detected: 'Take Antibiotic' mapped to take_medication, but medication_available=False blocks it",
+      "fault_type": "wrong_canonicalization",
+      "injected_error": "canonical_action='take_medication' instead of 'take_antibiotic'",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Antibiotic"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Antibiotic"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Take Antibiotic"
+          ],
+          "observed": [
+            "Take Antibiotic"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "take_medication requires medication_available which is False, so the activity is blocked. The wrong mapping is accidentally caught because the wrong action also fails."
+    },
+    {
+      "id": "F03",
+      "description": "Wrong canonicalization: 'Read a book' mapped to exercise instead of reading_activity",
+      "fault_type": "wrong_canonicalization",
+      "injected_error": "canonical_action='exercise' instead of 'reading_activity'",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a book"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a book"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Read a book"
+          ],
+          "observed": [
+            "Read a book"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "exercise requires patient_not_tired which is False, so the wrong mapping is accidentally caught."
+    },
+    {
+      "id": "F04",
+      "description": "Wrong canonicalization NOT detected: 'Call relative' mapped to social_interaction (both have similar preconditions met)",
+      "fault_type": "wrong_canonicalization",
+      "injected_error": "canonical_action='social_interaction' instead of 'call_relative'",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Call my daughter"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Call my daughter"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Call my daughter"
+          ],
+          "observed": [
+            "Call my daughter"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "social_interaction preconditions are met, so the wrong mapping is NOT caught by precondition check. BUT the consistency check detects no keyword overlap between 'Call my daughter' and 'social_interaction', flagging it as suspicious_mapping."
+    },
+    {
+      "id": "F05",
+      "description": "Wrong canonicalization: 'Walk in park' mapped to exercise (loses good_weather check)",
+      "fault_type": "wrong_canonicalization",
+      "injected_error": "canonical_action='exercise' instead of 'walk_in_park'",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Walk in the park"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Walk in the park"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Walk in the park"
+          ],
+          "observed": [
+            "Walk in the park"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "exercise does not check good_weather, so the wrong mapping is NOT caught by precondition check. BUT the consistency check detects no keyword overlap between 'Walk in the park' and 'exercise', flagging it as suspicious_mapping."
+    },
+    {
+      "id": "F06",
+      "description": "Corrupted world state: patient_awake=False AND patient_sleeping=False (impossible state)",
+      "fault_type": "corrupted_world_state",
+      "injected_error": "patient_awake=False, patient_sleeping=False (both false is inconsistent)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "take_medication requires patient_awake which is False, so the activity is blocked. The corruption is partially detected (activity blocked) but the inconsistency itself is not flagged."
+    },
+    {
+      "id": "F07",
+      "description": "Corrupted world state: patient_tired=True AND patient_not_tired=True (contradictory)",
+      "fault_type": "corrupted_world_state",
+      "injected_error": "patient_tired=True, patient_not_tired=True (both true is contradictory)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 1,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Exercise",
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Exercise",
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Exercise",
+            "Rest"
+          ],
+          "observed": [
+            "Exercise",
+            "Rest"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "The world state invariant validator detects that both patient_tired and patient_not_tired are True (contradictory) and logs an invariant_violation."
+    },
+    {
+      "id": "F08",
+      "description": "Corrupted world state: patient_fed=True but lunch_completed=False and after_meal=False (inconsistent)",
+      "fault_type": "corrupted_world_state",
+      "injected_error": "patient_fed=True but lunch_completed=False, after_meal=False (should be consistent)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Antibiotic"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Take Antibiotic": [
+            "eat_meal"
+          ]
+        }
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Antibiotic"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Take Antibiotic": [
+            "eat_meal"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Take Antibiotic"
+          ],
+          "observed": [
+            "Take Antibiotic"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "recovery_Take Antibiotic": {
+          "match": true,
+          "expected": [
+            "eat_meal"
+          ],
+          "observed": [
+            "eat_meal"
+          ]
+        }
+      },
+      "expected_reason": "take_antibiotic requires after_meal which is False, so the activity is blocked despite patient_fed being True. The inconsistency is partially exposed."
+    },
+    {
+      "id": "F09",
+      "description": "Corrupted world state: all facts False (total corruption)",
+      "fault_type": "corrupted_world_state",
+      "injected_error": "All world state facts set to False",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Drink Water"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Drink Water"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Drink Water"
+          ],
+          "observed": [
+            "Drink Water"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "All preconditions fail, activity is blocked. The total corruption is detected as blocked activity."
+    },
+    {
+      "id": "F10",
+      "description": "Conflicting effects: done activity sets patient_tired=True but world_state has patient_not_tired=True",
+      "fault_type": "conflicting_effects",
+      "injected_error": "exercise done=True applies patient_tired=True, but world_state still has patient_not_tired=True (not updated)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 1,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Exercise",
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Exercise",
+          "Rest"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Exercise",
+            "Rest"
+          ],
+          "observed": [
+            "Exercise",
+            "Rest"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "world_state_updater applies exercise effects (patient_tired=True) and auto-sets patient_not_tired=False via mutual exclusivity. The mutual_exclusivity_correction log entry now makes this auto-correction auditable, so the fault is detected + corrected."
+    },
+    {
+      "id": "F11",
+      "description": "Conflicting effects: done stretching sets stretching_completed=True, but full_rehab still blocked by patient_fed",
+      "fault_type": "conflicting_effects",
+      "injected_error": "stretching done=True but patient_fed still False (inconsistent: stretching requires patient_fed)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Stretching"
+        ],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "observed": {
+        "executable": [
+          "Stretching"
+        ],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Stretching"
+          ],
+          "observed": [
+            "Stretching"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Full Rehab"
+          ],
+          "observed": [
+            "Full Rehab"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "recovery_Full Rehab": {
+          "match": true,
+          "expected": [
+            "eat_meal",
+            "have_lunch"
+          ],
+          "observed": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "expected_reason": "world_state_updater applies stretching effects (stretching_completed=True). But full_rehab still needs patient_fed=False -> blocked. The inconsistency (stretching done without patient_fed) is NOT detected, but full_rehab is still correctly blocked."
+    },
+    {
+      "id": "F12",
+      "description": "Conflicting effects: done activity sets medication_taken=True but world_state already had it True (idempotent, no conflict)",
+      "fault_type": "conflicting_effects",
+      "injected_error": "take_medication done=True but medication_taken already True (double application)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 1,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Take Meds",
+          "Check Vitals"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Take Meds",
+          "Check Vitals"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Check Vitals",
+            "Take Meds"
+          ],
+          "observed": [
+            "Check Vitals",
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "Idempotent application: effects already True. The idempotent_reapplication log entry now flags this, making the double application auditable."
+    },
+    {
+      "id": "F13",
+      "description": "Missing canonical_action: activity has no canonical_action field",
+      "fault_type": "missing_canonical_action",
+      "injected_error": "canonical_action field is missing from activity dict",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Do something"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Do something"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Do something"
+          ],
+          "observed": [
+            "Do something"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "canonical_action is None, not in CANONICAL_ACTIONS, not 'unknown'. The validator falls through to the precondition check but canonical_action is None so it's not 'unknown' and not in CANONICAL_ACTIONS. Activity should be blocked."
+    },
+    {
+      "id": "F14",
+      "description": "Missing canonical_action on non-critical activity",
+      "fault_type": "missing_canonical_action",
+      "injected_error": "canonical_action field is missing from activity dict",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Relax a bit"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Relax a bit"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Relax a bit"
+          ],
+          "observed": [
+            "Relax a bit"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "Same as F13 but non-critical. Should be blocked."
+    },
+    {
+      "id": "F15",
+      "description": "Missing canonical_action among valid activities (mixed)",
+      "fault_type": "missing_canonical_action",
+      "injected_error": "One activity has no canonical_action, one has valid one",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Read a book"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Mystery activity"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Read a book"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Mystery activity"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Read a book"
+          ],
+          "observed": [
+            "Read a book"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Mystery activity"
+          ],
+          "observed": [
+            "Mystery activity"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "Mystery activity should be blocked, Read a book should be executable."
+    },
+    {
+      "id": "F16",
+      "description": "Stale world state: have_lunch done=True but patient_fed still False (effects not applied)",
+      "fault_type": "stale_world_state",
+      "injected_error": "have_lunch done=True but patient_fed=False (world_state_updater should fix this)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Have Lunch"
+        ],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab": [
+            "stretching_exercises",
+            "stretching_session"
+          ]
+        }
+      },
+      "observed": {
+        "executable": [
+          "Have Lunch"
+        ],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab": [
+            "stretching_exercises",
+            "stretching_session"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Have Lunch"
+          ],
+          "observed": [
+            "Have Lunch"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Full Rehab"
+          ],
+          "observed": [
+            "Full Rehab"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "recovery_Full Rehab": {
+          "match": true,
+          "expected": [
+            "stretching_exercises",
+            "stretching_session"
+          ],
+          "observed": [
+            "stretching_exercises",
+            "stretching_session"
+          ]
+        }
+      },
+      "expected_reason": "world_state_updater applies have_lunch effects (patient_fed=True, lunch_completed=True). Then plan_validator sees patient_fed=True and stretching_completed=False -> full_rehab blocked by stretching. The stale state is AUTO-CORRECTED by the updater."
+    },
+    {
+      "id": "F17",
+      "description": "Stale world state: stretching done=True but stretching_completed still False (updater corrects it)",
+      "fault_type": "stale_world_state",
+      "injected_error": "stretching done=True but stretching_completed=False (world_state_updater should fix this)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Stretching",
+          "Full Rehab"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Stretching",
+          "Full Rehab"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Full Rehab",
+            "Stretching"
+          ],
+          "observed": [
+            "Full Rehab",
+            "Stretching"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "world_state_updater applies stretching effects (stretching_completed=True). Then plan_validator sees both preconditions met -> full_rehab executable. The stale state is AUTO-CORRECTED."
+    },
+    {
+      "id": "F18",
+      "description": "Stale world state NOT corrected: activity done=True but canonical_action is wrong (effects don't match)",
+      "fault_type": "stale_world_state",
+      "injected_error": "have_lunch done=True but canonical_action='exercise' (wrong mapping, wrong effects applied)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 1,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Have Lunch"
+        ],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "observed": {
+        "executable": [
+          "Have Lunch"
+        ],
+        "blocked_critical": [
+          "Full Rehab"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {
+          "Full Rehab": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Have Lunch"
+          ],
+          "observed": [
+            "Have Lunch"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Full Rehab"
+          ],
+          "observed": [
+            "Full Rehab"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "recovery_Full Rehab": {
+          "match": true,
+          "expected": [
+            "eat_meal",
+            "have_lunch"
+          ],
+          "observed": [
+            "eat_meal",
+            "have_lunch"
+          ]
+        }
+      },
+      "expected_reason": "world_state_updater applies exercise effects (patient_tired=True) instead of have_lunch effects (patient_fed=True). patient_fed stays False -> full_rehab blocked. The wrong effects are applied, but the validator still catches the missing patient_fed."
+    },
+    {
+      "id": "F19",
+      "description": "Wrong canonicalization: 'Memory game' mapped to reading_activity instead of memory_training",
+      "fault_type": "wrong_canonicalization",
+      "injected_error": "canonical_action='reading_activity' instead of 'memory_training'",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Memory game"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Memory game"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Memory game"
+          ],
+          "observed": [
+            "Memory game"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "reading_activity requires book_available (True) and patient_awake (True), so preconditions are met. BUT consistency check flags no keyword overlap between 'Memory game' and 'reading_activity' -> suspicious_mapping."
+    },
+    {
+      "id": "F20",
+      "description": "Wrong canonicalization: 'Play some music' mapped to emotional_support (preconditions differ)",
+      "fault_type": "wrong_canonicalization",
+      "injected_error": "canonical_action='emotional_support' instead of 'play_music'",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Play some music"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Play some music"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Play some music"
+          ],
+          "observed": [
+            "Play some music"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "emotional_support requires patient_sad which is False, so the activity is blocked by precondition check. The wrong mapping is accidentally caught."
+    },
+    {
+      "id": "F21",
+      "description": "Wrong canonicalization: 'Drink water' mapped to take_medication (lexically similar 'take')",
+      "fault_type": "wrong_canonicalization",
+      "injected_error": "canonical_action='take_medication' instead of 'drink_water'",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Drink water"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Drink water"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Drink water"
+          ],
+          "observed": [
+            "Drink water"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "take_medication preconditions are met (medication_available, correct_time, patient_awake), so the wrong mapping is NOT caught by precondition check. BUT consistency check flags no keyword overlap between 'Drink water' and 'take_medication' (after stopword removal 'take' is removed) -> suspicious_mapping."
+    },
+    {
+      "id": "F22",
+      "description": "Corrupted world state: patient_sad=True AND patient_emotionally_stable=True (contradictory)",
+      "fault_type": "corrupted_world_state",
+      "injected_error": "patient_sad=True, patient_emotionally_stable=True (both true is contradictory)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 1,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Emotional support"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Emotional support"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Emotional support"
+          ],
+          "observed": [
+            "Emotional support"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "The world state invariant validator detects that both patient_sad and patient_emotionally_stable are True (contradictory) and logs an invariant_violation."
+    },
+    {
+      "id": "F23",
+      "description": "Corrupted world state: patient_awake=True AND patient_sleeping=True (contradictory)",
+      "fault_type": "corrupted_world_state",
+      "injected_error": "patient_awake=True, patient_sleeping=True (both true is contradictory)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 1,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Take Meds"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Take Meds"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "The world state invariant validator detects that both patient_awake and patient_sleeping are True (contradictory) and logs an invariant_violation. take_medication preconditions are met so it is executable, but the corruption is flagged."
+    },
+    {
+      "id": "F24",
+      "description": "Corrupted world state: medication_taken=True but medication_available=False (inconsistent)",
+      "fault_type": "corrupted_world_state",
+      "injected_error": "medication_taken=True but medication_available=False (should not be possible)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "take_medication requires medication_available which is False, so the activity is blocked despite medication_taken already being True. The inconsistency is partially exposed via the block."
+    },
+    {
+      "id": "F25",
+      "description": "Conflicting effects: done emotional_support sets patient_emotionally_stable=True but world_state has patient_sad=True",
+      "fault_type": "conflicting_effects",
+      "injected_error": "emotional_support done=True applies patient_emotionally_stable=True, but world_state has patient_sad=True (not updated)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 1,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Emotional support",
+          "Call relative"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Emotional support",
+          "Call relative"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Call relative",
+            "Emotional support"
+          ],
+          "observed": [
+            "Call relative",
+            "Emotional support"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "world_state_updater applies emotional_support effects (patient_emotionally_stable=True) and auto-sets patient_sad=False via mutual exclusivity. The mutual_exclusivity_correction log makes this auditable."
+    },
+    {
+      "id": "F26",
+      "description": "Conflicting effects: done wake_patient sets patient_awake=True but world_state has patient_sleeping=True",
+      "fault_type": "conflicting_effects",
+      "injected_error": "wake_patient done=True applies patient_awake=True, but world_state has patient_sleeping=True (not updated)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 1,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Wake patient",
+          "Take Meds"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Wake patient",
+          "Take Meds"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Take Meds",
+            "Wake patient"
+          ],
+          "observed": [
+            "Take Meds",
+            "Wake patient"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "world_state_updater applies wake_patient effects (patient_awake=True) and auto-sets patient_sleeping=False via mutual exclusivity. The mutual_exclusivity_correction log makes this auditable."
+    },
+    {
+      "id": "F27",
+      "description": "Conflicting effects: done rest sets patient_not_tired=True but world_state has patient_tired=True (idempotent + correction)",
+      "fault_type": "conflicting_effects",
+      "injected_error": "rest done=True applies patient_not_tired=True, but world_state has patient_tired=True (not updated)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 1,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Rest",
+          "Exercise"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Rest",
+          "Exercise"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Exercise",
+            "Rest"
+          ],
+          "observed": [
+            "Exercise",
+            "Rest"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "world_state_updater applies rest effects (patient_not_tired=True, patient_rested=True) and auto-sets patient_tired=False via mutual exclusivity. The mutual_exclusivity_correction log makes this auditable."
+    },
+    {
+      "id": "F28",
+      "description": "Missing canonical_action: activity has canonical_action='unknown' (canonicalizer fail-closed)",
+      "fault_type": "missing_canonical_action",
+      "injected_error": "canonical_action='unknown' (canonicalizer returned unrecognized name)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Do something weird"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Do something weird"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Do something weird"
+          ],
+          "observed": [
+            "Do something weird"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "canonical_action is 'unknown', which the validator treats as non-executable (fail-closed). Activity is blocked."
+    },
+    {
+      "id": "F29",
+      "description": "Missing canonical_action: activity has canonical_action='nonexistent_action' (not in dictionary)",
+      "fault_type": "missing_canonical_action",
+      "injected_error": "canonical_action='nonexistent_action' (not in CANONICAL_ACTIONS)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Mystery task"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Mystery task"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Mystery task"
+          ],
+          "observed": [
+            "Mystery task"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "canonical_action is 'nonexistent_action', not in CANONICAL_ACTIONS and not 'unknown'. The validator falls through and treats it as non-executable."
+    },
+    {
+      "id": "F30",
+      "description": "Missing canonical_action: multiple activities, one missing, rest valid",
+      "fault_type": "missing_canonical_action",
+      "injected_error": "One of three activities has canonical_action='unknown'",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Take Meds",
+          "Read a book"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Unknown task"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Take Meds",
+          "Read a book"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Unknown task"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Read a book",
+            "Take Meds"
+          ],
+          "observed": [
+            "Read a book",
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Unknown task"
+          ],
+          "observed": [
+            "Unknown task"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "Take Meds and Read a book are executable; Unknown task is blocked (fail-closed). The missing canonical action is detected."
+    },
+    {
+      "id": "F31",
+      "description": "Stale world state: take_medication done=True but medication_taken still False (updater corrects)",
+      "fault_type": "stale_world_state",
+      "injected_error": "take_medication done=True but medication_taken=False (world_state_updater should fix this)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Take Meds",
+          "Check Vitals"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Take Meds",
+          "Check Vitals"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Check Vitals",
+            "Take Meds"
+          ],
+          "observed": [
+            "Check Vitals",
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "world_state_updater applies take_medication effects (medication_taken=True, patient_stabilized=True). The stale state is AUTO-CORRECTED by the updater."
+    },
+    {
+      "id": "F32",
+      "description": "Stale world state: drink_water done=True but patient_hydrated still False (updater corrects)",
+      "fault_type": "stale_world_state",
+      "injected_error": "drink_water done=True but patient_hydrated=False (world_state_updater should fix this)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Drink Water"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Drink Water"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Drink Water"
+          ],
+          "observed": [
+            "Drink Water"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "world_state_updater applies drink_water effects (patient_hydrated=True). The stale state is AUTO-CORRECTED."
+    },
+    {
+      "id": "F33",
+      "description": "Stale world state: eat_meal done=True but patient_fed and after_meal still False (updater corrects)",
+      "fault_type": "stale_world_state",
+      "injected_error": "eat_meal done=True but patient_fed=False, after_meal=False (world_state_updater should fix this)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": false,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [
+          "Eat Meal",
+          "Take Antibiotic"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [
+          "Eat Meal",
+          "Take Antibiotic"
+        ],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [
+            "Eat Meal",
+            "Take Antibiotic"
+          ],
+          "observed": [
+            "Eat Meal",
+            "Take Antibiotic"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "world_state_updater applies eat_meal effects (patient_fed=True, after_meal=True). Then take_antibiotic preconditions are met -> executable. The stale state is AUTO-CORRECTED."
+    },
+    {
+      "id": "F34",
+      "description": "Wrong temporal window: activity_time='25:99' (impossible hour/minute)",
+      "fault_type": "wrong_temporal_window",
+      "injected_error": "activity_time='25:99' is not a valid HH:MM time",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "The validator tries to parse '25:99' with strptime, raises ValueError, and marks the activity non-executable with reason 'invalid_activity_time'. Since the activity is critical, arbitration assigns BLOCKED_CRITICAL."
+    },
+    {
+      "id": "F35",
+      "description": "Wrong temporal window: activity_time='not-a-time' (non-numeric)",
+      "fault_type": "wrong_temporal_window",
+      "injected_error": "activity_time='not-a-time' is not a valid time format",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Exercise"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Exercise"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Exercise"
+          ],
+          "observed": [
+            "Exercise"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "The validator tries to parse 'not-a-time', raises ValueError, marks non-executable with 'invalid_activity_time'."
+    },
+    {
+      "id": "F36",
+      "description": "Wrong temporal window: activity_time='' (empty string)",
+      "fault_type": "wrong_temporal_window",
+      "injected_error": "activity_time='' (empty string, not None)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 1
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a book"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a book"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Read a book"
+          ],
+          "observed": [
+            "Read a book"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "The validator now explicitly checks for an empty-string activity_time and blocks the activity with a malformed_activity_time:empty_string reason, logging a malformed_temporal_input entry. The malformed time IS caught."
+    },
+    {
+      "id": "F37",
+      "description": "Wrong temporal window: activity_time='12:00' but without_time=True (contradictory flags)",
+      "fault_type": "wrong_temporal_window",
+      "injected_error": "activity_time='12:00' but without_time=True (contradictory: time set but flagged as no-time)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 1
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "The validator now explicitly checks for contradictory temporal flags (activity_time set while without_time=True) and blocks the activity with a contradictory_time_flags reason, logging a malformed_temporal_input entry. The contradiction IS caught."
+    },
+    {
+      "id": "F38",
+      "description": "Wrong temporal window: activity_time='12:00' with current time far outside window",
+      "fault_type": "wrong_temporal_window",
+      "injected_error": "activity scheduled at 12:00 but current time is 03:00 (far outside ±30min window)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [
+          "Take Meds"
+        ],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [],
+        "deferred": [
+          "Take Meds"
+        ],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "Current time 03:00 is before the earliest window (11:30), so the activity is marked DEFERRED (early, not expired). The temporal fault is detected."
+    },
+    {
+      "id": "F39",
+      "description": "Wrong temporal window: activity_time='08:00' with current time far past window",
+      "fault_type": "wrong_temporal_window",
+      "injected_error": "activity scheduled at 08:00 but current time is 23:00 (far past ±30min window)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Meds"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Take Meds"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "Current time 23:00 is past the latest window (08:30), so the activity is marked BLOCKED_NON_CRITICAL (expired). The temporal fault is detected."
+    },
+    {
+      "id": "F40",
+      "description": "Orphan precondition: take_medication requires 'correct_time' (not an effect of any action)",
+      "fault_type": "orphan_precondition",
+      "injected_error": "correct_time=False (orphan: no action sets correct_time=True, so it is permanently unachievable)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 1,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [
+          "Take Meds"
+        ],
+        "blocked_non_critical": [],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [
+            "Take Meds"
+          ],
+          "observed": [
+            "Take Meds"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "take_medication requires correct_time which is False. No canonical action has correct_time in its effects, so no recovery action is available. The activity is BLOCKED_CRITICAL with no recovery — the orphan precondition is indirectly detected via the missing precondition + empty recovery."
+    },
+    {
+      "id": "F41",
+      "description": "Orphan precondition: call_relative requires 'phone_available' (not an effect of any action)",
+      "fault_type": "orphan_precondition",
+      "injected_error": "phone_available=False (orphan: no action sets phone_available=True)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Call relative"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Call relative"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Call relative"
+          ],
+          "observed": [
+            "Call relative"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "call_relative requires phone_available which is False. No canonical action has phone_available in its effects, so no recovery action is available. The activity is BLOCKED_NON_CRITICAL — the orphan precondition is indirectly detected via the missing precondition."
+    },
+    {
+      "id": "F42",
+      "description": "Orphan precondition: walk_in_park requires 'good_weather' (not an effect of any action)",
+      "fault_type": "orphan_precondition",
+      "injected_error": "good_weather=False (orphan: no action sets good_weather=True)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Walk in park"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Walk in park"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Walk in park"
+          ],
+          "observed": [
+            "Walk in park"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "walk_in_park requires good_weather which is False. No canonical action has good_weather in its effects. The activity is BLOCKED_NON_CRITICAL — the orphan precondition is indirectly detected."
+    },
+    {
+      "id": "F43",
+      "description": "Orphan precondition: reading_activity requires 'book_available' (not an effect of any action)",
+      "fault_type": "orphan_precondition",
+      "injected_error": "book_available=False (orphan: no action sets book_available=True)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a book"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Read a book"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Read a book"
+          ],
+          "observed": [
+            "Read a book"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "reading_activity requires book_available which is False. No canonical action has book_available in its effects. The activity is BLOCKED_NON_CRITICAL."
+    },
+    {
+      "id": "F44",
+      "description": "Orphan precondition: speak_with_nurse requires 'nurse_available' (not an effect of any action)",
+      "fault_type": "orphan_precondition",
+      "injected_error": "nurse_available=False (orphan: no action sets nurse_available=True)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Speak with nurse"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Speak with nurse"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Speak with nurse"
+          ],
+          "observed": [
+            "Speak with nurse"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "speak_with_nurse requires nurse_available which is False. No canonical action has nurse_available in its effects. The activity is BLOCKED_NON_CRITICAL."
+    },
+    {
+      "id": "F45",
+      "description": "Orphan precondition: video_call_relative requires 'internet_available' (not an effect of any action)",
+      "fault_type": "orphan_precondition",
+      "injected_error": "internet_available=False (orphan: no action sets internet_available=True)",
+      "expected_detection": true,
+      "actual_detection": true,
+      "detection_correct": true,
+      "detection_details": {
+        "any_blocked": true,
+        "invariant_violations_logged": 0,
+        "suspicious_mappings_logged": 0,
+        "mutual_exclusivity_corrections_logged": 0,
+        "idempotent_reapplications_logged": 0,
+        "malformed_temporal_inputs_logged": 0
+      },
+      "test_pass": true,
+      "expected": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Video call relative"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "observed": {
+        "executable": [],
+        "blocked_critical": [],
+        "blocked_non_critical": [
+          "Video call relative"
+        ],
+        "deferred": [],
+        "recovery_actions": {}
+      },
+      "comparison": {
+        "executable": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_critical": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        },
+        "blocked_non_critical": {
+          "match": true,
+          "expected": [
+            "Video call relative"
+          ],
+          "observed": [
+            "Video call relative"
+          ],
+          "missing": [],
+          "extra": []
+        },
+        "deferred": {
+          "match": true,
+          "expected": [],
+          "observed": [],
+          "missing": [],
+          "extra": []
+        }
+      },
+      "expected_reason": "video_call_relative requires internet_available which is False. No canonical action has internet_available in its effects. The activity is BLOCKED_NON_CRITICAL."
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+1 sessioni selezionate da C:\Users\Gargioni\Il mio Drive\Academic\_Unibs\PhD\Hybrid Architecture\User Study\Users (>= 3 turni, 3 turni totali)
+
+===== [1/1] P08/30072025_141138 (3 turni) =====
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK SYNTHESIZER NODE][0m
+[replay] input #1 -> '789'
+[replay] input #2 -> ''
+[replay] input #3 -> '07:00'
+model defined correctly
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Wake patient up, Done: False
+Activity: Walk in the park (tomorrow), Done: False
+Activity: Discuss with doctor, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Read a book, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Take Ibuprofen, Done: False
+Activity: Walk in the park (morning), Done: False
+Activity: Read a book (medication list), Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park (tomorrow)' -> 'walk_in_park'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Discuss with doctor'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Discuss with doctor' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Postpone physical exercises to tomorrow'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list' -> 'unknown'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Physical exercises' -> 'physical_rehabilitation'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Give journal'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Give journal' -> 'unknown'
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Walk in the park (morning)' -> 'walk_in_park'
+canonicalization: 'Read a book (medication list)' -> 'reading_activity'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park (tomorrow)'
+Activity 'Discuss with doctor' not executable: unknown or missing canonical action
+Activity 'Discuss with doctor' not executable: outside time window (09:00)
+Activity 'Postpone physical exercises to tomorrow' not executable: unknown or missing canonical action
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+Activity 'Prepare shopping list' not executable: unknown or missing canonical action
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+Activity 'Give journal' not executable: unknown or missing canonical action
+Activity 'Give journal' not executable: outside time window (15:00)
+Activity 'Walk in the park (morning)' not executable: outside time window (10:00)
+Activity 'Read a book (medication list)' not executable: outside time window (10:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park (tomorrow) - executable: False - status: BLOCKED_NON_CRITICAL
+- Discuss with doctor - executable: False - status: BLOCKED_NON_CRITICAL
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare shopping list - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Walk in the park (morning) - executable: False - status: DEFERRED
+- Read a book (medication list) - executable: False - status: DEFERRED
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Good morning Anna. Right now we can either start your shoulder rehabilitation exercises or take your ibuprofen medication. Which would you like to do first?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #4 -> '07:00'
+[replay] input #5 -> 'Hmm, okay, but how do I know it’s safe to take Ibuprofen right now? What if I haven’t eaten enough? Also, can you confirm the exact dosage and if there are any side effects I should watch for? I want to be sure before I take it'
+[replay] input #6 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Wake patient up, Done: False
+Activity: Walk in the park (tomorrow), Done: False
+Activity: Discuss with doctor, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Read a book, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Take Ibuprofen, Done: False
+Activity: Walk in the park (morning), Done: False
+Activity: Read a book (medication list), Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park (tomorrow)' -> 'walk_in_park'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Discuss with doctor'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Discuss with doctor' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Postpone physical exercises to tomorrow'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list' -> 'unknown'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Physical exercises' -> 'physical_rehabilitation'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Give journal'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Give journal' -> 'unknown'
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Walk in the park (morning)' -> 'walk_in_park'
+canonicalization: 'Read a book (medication list)' -> 'reading_activity'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park (tomorrow)'
+Activity 'Discuss with doctor' not executable: unknown or missing canonical action
+Activity 'Discuss with doctor' not executable: outside time window (09:00)
+Activity 'Postpone physical exercises to tomorrow' not executable: unknown or missing canonical action
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+Activity 'Prepare shopping list' not executable: unknown or missing canonical action
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+Activity 'Give journal' not executable: unknown or missing canonical action
+Activity 'Give journal' not executable: outside time window (15:00)
+Activity 'Walk in the park (morning)' not executable: outside time window (10:00)
+Activity 'Read a book (medication list)' not executable: outside time window (10:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park (tomorrow) - executable: False - status: BLOCKED_NON_CRITICAL
+- Discuss with doctor - executable: False - status: BLOCKED_NON_CRITICAL
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare shopping list - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Walk in the park (morning) - executable: False - status: DEFERRED
+- Read a book (medication list) - executable: False - status: DEFERRED
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, ibuprofen is safe to take as long as you follow the recommended guidelines. The usual over‑the‑counter dose is one 200 mg tablet every six to eight hours, and you should not exceed three tablets (600 mg) in a 24‑hour period without a doctor's advice. It’s best to take it with a full glass of water and with food or a light snack, especially if you haven’t eaten a full meal, to reduce the chance of stomach upset. Common side effects can include mild stomach pain, heartburn, or nausea. More serious reactions, though rare, are allergic responses such as rash, swelling, or difficulty breathing, and signs of stomach bleeding like dark stools or vomiting blood. Ibuprofen does not contain lactose, so it’s fine for your intolerance. Would you like me to give you the tablet now?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #7 -> '07:00'
+[replay] input #8 -> 'Alright, I appreciate the explanation, but what if I just want to skip the medication for now? I sometimes feel okay without it in the morning. Also, what if I’m allergic or have had a bad reaction before—do you remember that? How do you handle those exceptions?'
+[replay] input #9 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Wake patient up, Done: False
+Activity: Walk in the park (tomorrow), Done: False
+Activity: Discuss with doctor, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Read a book, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Take Ibuprofen, Done: False
+Activity: Walk in the park (morning), Done: False
+Activity: Read a book (medication list), Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park (tomorrow)' -> 'walk_in_park'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Discuss with doctor'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Discuss with doctor' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Postpone physical exercises to tomorrow'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list' -> 'unknown'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Physical exercises' -> 'physical_rehabilitation'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Give journal'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Give journal' -> 'unknown'
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Walk in the park (morning)' -> 'walk_in_park'
+canonicalization: 'Read a book (medication list)' -> 'reading_activity'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park (tomorrow)'
+Activity 'Discuss with doctor' not executable: unknown or missing canonical action
+Activity 'Discuss with doctor' not executable: outside time window (09:00)
+Activity 'Postpone physical exercises to tomorrow' not executable: unknown or missing canonical action
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+Activity 'Prepare shopping list' not executable: unknown or missing canonical action
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+Activity 'Give journal' not executable: unknown or missing canonical action
+Activity 'Give journal' not executable: outside time window (15:00)
+Activity 'Walk in the park (morning)' not executable: outside time window (10:00)
+Activity 'Read a book (medication list)' not executable: outside time window (10:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park (tomorrow) - executable: False - status: BLOCKED_NON_CRITICAL
+- Discuss with doctor - executable: False - status: BLOCKED_NON_CRITICAL
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare shopping list - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Walk in the park (morning) - executable: False - status: DEFERRED
+- Read a book (medication list) - executable: False - status: DEFERRED
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, I understand you’re considering skipping the ibuprofen this morning. Ibuprofen is marked as a critical medication because it helps manage inflammation and pain, and taking it as scheduled can keep you comfortable throughout the day. If you choose not to take it now, we can simply wait and you may take it later within the allowed time window, but please remember to have food or a snack with it to protect your stomach.
+
+Regarding allergies or previous bad reactions, I don’t have any record of an allergy to ibuprofen for you, but I can quickly check your medical notes or contact your doctor to confirm. If you ever notice any signs of an allergic reaction—such as rash, swelling, difficulty breathing, or unusual stomach pain—please let me know immediately.
+
+Would you like to postpone the ibuprofen and perhaps start your shoulder‑rehabilitation exercises now, or would you prefer I check your records for any known sensitivities before deciding?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #10 -> '07:15'
+[replay] input #11 -> 'I prefer to discuss with the doctor'
+[replay] input #12 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Wake patient up, Done: False
+Activity: Walk in the park (tomorrow), Done: False
+Activity: Discuss with doctor, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Read a book, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Take Ibuprofen, Done: False
+Activity: Walk in the park (morning), Done: False
+Activity: Read a book (medication list), Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park (tomorrow)' -> 'walk_in_park'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Discuss with doctor'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Discuss with doctor' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Postpone physical exercises to tomorrow'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'unknown'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Prepare shopping list'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Prepare shopping list' -> 'unknown'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Physical exercises' -> 'physical_rehabilitation'
+[33m[WARNING] Canonicalizer returned unknown action 'unknown' for 'Give journal'. Marking as 'unknown' (fail-closed).[0m
+canonicalization: 'Give journal' -> 'unknown'
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Walk in the park (morning)' -> 'walk_in_park'
+canonicalization: 'Read a book (medication list)' -> 'reading_activity'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park (tomorrow)'
+Activity 'Discuss with doctor' not executable: unknown or missing canonical action
+Activity 'Discuss with doctor' not executable: outside time window (09:00)
+Activity 'Postpone physical exercises to tomorrow' not executable: unknown or missing canonical action
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+Activity 'Prepare shopping list' not executable: unknown or missing canonical action
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+Activity 'Give journal' not executable: unknown or missing canonical action
+Activity 'Give journal' not executable: outside time window (15:00)
+Activity 'Walk in the park (morning)' not executable: outside time window (10:00)
+Activity 'Read a book (medication list)' not executable: outside time window (10:00)
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park (tomorrow) - executable: False - status: BLOCKED_NON_CRITICAL
+- Discuss with doctor - executable: False - status: BLOCKED_NON_CRITICAL
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare shopping list - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Walk in the park (morning) - executable: False - status: DEFERRED
+- Read a book (medication list) - executable: False - status: DEFERRED
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, I understand you’d like to talk with your doctor right now. At the moment this activity cannot be started because two things are preventing it:
+1. The system does not have a defined action for "Discuss with doctor" (the canonical action is unknown), so I don’t have the steps needed to set up the conversation.
+2. The scheduled time for this activity is 09:00, and it is currently 07:15, which is before the allowed time window (outside_time_window_early:09:00).
+Because of those reasons, I can’t initiate the doctor discussion right now. Would you like me to note your request and remind you again when the scheduled time arrives, or would you prefer to schedule a new time that works better for you?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+  -> transcript_exhausted in 274.72s, 52 canonicalizzazioni, 0 override
+
+=== SUMMARY ===
+{
+  "tokens_by_node": {
+    "graph": {
+      "calls": 5,
+      "input": 7955,
+      "output": 2967
+    },
+    "task_progress": {
+      "calls": 4,
+      "input": 9090,
+      "output": 6237
+    },
+    "action_canonicalizer": {
+      "calls": 4,
+      "input": 2048,
+      "output": 248
+    },
+    "next_steps": {
+      "calls": 4,
+      "input": 52423,
+      "output": 1642
+    }
+  },
+  "tokens_total": {
+    "calls": 17,
+    "input_tokens": 71516,
+    "output_tokens": 11094
+  },
+  "transcripts": 1,
+  "completed": 1,
+  "errors": 0,
+  "budget_exceeded": 0,
+  "token_budget_exceeded": 0,
+  "stalled": 0,
+  "turns_replayed": 3,
+  "wall_seconds": 274.72,
+  "canonicalizer_calls": 52,
+  "canonicalizer_unknown": 16,
+  "canonicalizer_remapped_same_activity": 0,
+  "canonicalizer_seconds": 24.33,
+  "validator_seconds": 0.06,
+  "goal_planner_calls": 0,
+  "hard_enforcement_firings": 0,
+  "arbitrated_status_counts": {
+    "BLOCKED_NON_CRITICAL": 28,
+    "DEFERRED": 16,
+    "EXECUTABLE": 8
+  }
+}
+
+risultati: evaluation/replay_P08_mixed.json
+righe da rivedere a mano: evaluation/replay_P08_mixed.csv

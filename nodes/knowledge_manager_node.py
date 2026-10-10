@@ -1,18 +1,20 @@
 from datetime import datetime
 import os
-from langchain_ollama import ChatOllama, OllamaEmbeddings
+
+from langchain_ollama import OllamaEmbeddings
 from langchain_core.prompts import PromptTemplate
 from langchain_chroma import Chroma
 import chromadb
-from langchain_community.document_loaders import (
-    DirectoryLoader,
-    TextLoader,
-)
+from colorama import Fore, Style
+
+from langchain_community.document_loaders import TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.docstore.document import Document
+from langchain_core.documents import Document
+
 from langchain_core.messages import SystemMessage, HumanMessage
 
 from graph.graph_init import GraphState
+
 from utils.models import OllamaModel, define_model
 from utils.logs import log_graph_state, log_message
 
@@ -29,6 +31,7 @@ This new knowledge will be used to better assist the patient in the next interac
 Be precise and concise. The key information should be a few sentences long. Include the actual datetime in the summary.
 """
 
+
 NEW_REQUEST_PROMPT = """
 - Conversation history:
 {conversation_history}
@@ -42,40 +45,81 @@ NEW_REQUEST_PROMPT = """
 
 
 def add_knowledge_to_vector_store(vector_store: Chroma):
+
     documents = []
+
     data_path = "./mock_data"
 
     for filename in os.listdir(data_path):
+
         if filename.endswith(".txt"):
+
             file_path = os.path.join(data_path, filename)
 
-            loader = TextLoader(file_path)
-            doc = loader.load()[0]
+            loader = TextLoader(
+                file_path,
+                encoding="utf-8"
+            )
+
+            loaded_docs = loader.load()
+
+            if len(loaded_docs) == 0:
+                continue
 
             patient_id = os.path.splitext(filename)[0]
 
-            document = Document(
-                page_content=doc.page_content, metadata={"patient_id": patient_id}
+            raw_text = loaded_docs[0].page_content
+
+            splitter = RecursiveCharacterTextSplitter(
+                chunk_size=1000,
+                chunk_overlap=200,
             )
 
-            documents.append(document)
+            chunks = splitter.split_text(raw_text)
 
-    vector_store.add_documents(documents=documents)
+            for chunk in chunks:
+
+                document = Document(
+                    page_content=chunk,
+                    metadata={
+                        "patient_id": patient_id
+                    }
+                )
+
+                documents.append(document)
+    #print(f"KNOWLEDGE_MANAGER_NODE - documents: {documents} from {data_path}")
+    if len(documents) > 0:
+
+        vector_store.add_documents(documents)
+
+        log_message(
+            f"KNOWLEDGE_MANAGER_NODE - added {len(documents)} chunks to vector store"
+        )
 
 
 def knowledge_manager_node(state: GraphState) -> GraphState:
+    print(Fore.GREEN + "[position: KNOWLEDGE MANAGER NODE]" + Style.RESET_ALL)
+
     log_graph_state(state, "knowledge_manager_node")
 
-    embeddings_model = os.getenv("EMBEDDINGS_MODEL") or OllamaModel.LLAMA_3_1.value
-    embeddings = OllamaEmbeddings(model=embeddings_model)
+    embeddings_model = (
+        os.getenv("EMBEDDINGS_MODEL")
+        or OllamaModel.LLAMA_3_1.value
+    )
+
+    embeddings = OllamaEmbeddings(
+        model=embeddings_model
+    )
+
     patient_knowledge_collection_name = "patient_knowledge"
 
-    # If the vector store is None, create a new one
+    # ---------------------------------------------------
+    # CREATE VECTOR STORE IF NEEDED
+    # ---------------------------------------------------
+
     if state["vector_store"] is None:
+
         persistent_client = chromadb.PersistentClient()
-        collection = persistent_client.get_or_create_collection(
-            patient_knowledge_collection_name
-        )
 
         vector_store = Chroma(
             client=persistent_client,
@@ -83,21 +127,64 @@ def knowledge_manager_node(state: GraphState) -> GraphState:
             embedding_function=embeddings,
         )
 
-        # If the patient_knowledge collection is empty, add knowledge to the vector store
-        if collection.count() == 0:
-            add_knowledge_to_vector_store(vector_store)
+        state["vector_store"] = vector_store
 
-        return {**state, "vector_store": vector_store}
-
-    # If the vector is already created, add new knowledge to it through the conversation history
     vector_store = state["vector_store"]
 
-    # REMOVE: This is a temporary solution to NOT add knowledge to the vector store
-    return {**state, "vector_store": vector_store, "end": True}
+    # ---------------------------------------------------
+    # GET COLLECTION
+    # ---------------------------------------------------
 
-    formatted_datetime = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
-    initial_prompt_template = PromptTemplate.from_template(INITIAL_PROMPT)
-    initial_prompt = initial_prompt_template.invoke(
+    persistent_client = chromadb.PersistentClient()
+
+    collection = persistent_client.get_or_create_collection(
+        patient_knowledge_collection_name
+    )
+
+    # ---------------------------------------------------
+    # ALWAYS REBUILD VECTOR STORE
+    # ---------------------------------------------------
+
+    try:
+
+        existing = collection.get()
+
+        existing_ids = existing["ids"]
+
+        if len(existing_ids) > 0:
+
+            collection.delete(ids=existing_ids)
+
+            log_message(
+                "KNOWLEDGE_MANAGER_NODE - cleared old vector store"
+            )
+
+    except Exception as e:
+
+        print("Vector store cleanup warning:")
+        print(e)
+
+    # ---------------------------------------------------
+    # RELOAD KNOWLEDGE FROM FILES
+    # ---------------------------------------------------
+
+    add_knowledge_to_vector_store(vector_store)
+
+    log_message(
+        "KNOWLEDGE_MANAGER_NODE - vector store rebuilt from mock_data"
+    )
+
+    # ---------------------------------------------------
+    # GENERATE NEW MEMORY FROM CONVERSATION
+    # ---------------------------------------------------
+
+    formatted_datetime = datetime.now().strftime(
+        "%d-%m-%Y %H:%M:%S"
+    )
+
+    initial_prompt = PromptTemplate.from_template(
+        INITIAL_PROMPT
+    ).invoke(
         {
             "datetime": formatted_datetime,
             "conversation_history": state["conversation_history"],
@@ -105,8 +192,9 @@ def knowledge_manager_node(state: GraphState) -> GraphState:
         }
     )
 
-    new_request_prompt_template = PromptTemplate.from_template(NEW_REQUEST_PROMPT)
-    new_request_prompt = new_request_prompt_template.invoke(
+    request_prompt = PromptTemplate.from_template(
+        NEW_REQUEST_PROMPT
+    ).invoke(
         {
             "datetime": formatted_datetime,
             "task": state["task"],
@@ -116,21 +204,51 @@ def knowledge_manager_node(state: GraphState) -> GraphState:
 
     model = define_model()
 
-    messages = []
-    messages.append(SystemMessage(content=initial_prompt.to_string()))
-    messages.append(HumanMessage(content=new_request_prompt.to_string()))
+    messages = [
+        SystemMessage(content=initial_prompt.to_string()),
+        HumanMessage(content=request_prompt.to_string()),
+    ]
 
-    result = model.invoke(messages).to_json()
+    result = model.invoke(messages)
 
-    conversation_summary = result["kwargs"]["content"]
+    conversation_summary = result.content
+
+    # ---------------------------------------------------
+    # NORMALIZE MODEL OUTPUT
+    # ---------------------------------------------------
+
+    if not isinstance(conversation_summary, str):
+        conversation_summary = str(conversation_summary)
+
     log_message("\nKNOWLEDGE_MANAGER_NODE - result")
+
     log_message(conversation_summary)
 
-    # text_splitter = RecursiveCharacterTextSplitter(
-    #     chunk_size=1000, chunk_overlap=200, add_start_index=True
-    # )
-    # chunks = text_splitter.split_text(conversation_summary)
-    # documents = [Document(page_content=chunk) for chunk in chunks]
-    # vector_store.add_documents(documents=documents)
+    # ---------------------------------------------------
+    # ADD CONVERSATION SUMMARY TO VECTOR STORE
+    # ---------------------------------------------------
 
-    return {**state, "vector_store": vector_store, "end": True}
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1000,
+        chunk_overlap=200,
+    )
+
+    chunks = splitter.split_text(conversation_summary)
+
+    documents = [
+        Document(page_content=chunk)
+        for chunk in chunks
+    ]
+
+    if len(documents) > 0:
+
+        vector_store.add_documents(documents)
+
+    # ---------------------------------------------------
+    # RETURN UPDATED STATE
+    # ---------------------------------------------------
+
+    return {
+        **state,
+        "vector_store": vector_store,
+    }

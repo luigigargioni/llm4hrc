@@ -1,0 +1,76 @@
+============================================================
+  CANONICALIZER STRESS TEST
+  50 informal activity names -> canonical actions
+============================================================
+
+  [OK] 'Take my pills' -> 'take_medication' (expected: 'take_medication') [exact_synonym]
+  [OK] 'Take antibiotics' -> 'take_antibiotic' (expected: 'take_antibiotic') [exact_synonym]
+  [OK] 'Drink a glass of water' -> 'drink_water' (expected: 'drink_water') [exact_synonym]
+  [OK] 'Eat my meal' -> 'eat_meal' (expected: 'eat_meal') [exact_synonym]
+  [OK] 'Have lunch' -> 'have_lunch' (expected: 'have_lunch') [exact_synonym]
+  [OK] 'Do some exercise' -> 'exercise' (expected: 'exercise') [exact_synonym]
+  [OK] 'Read a book' -> 'reading_activity' (expected: 'reading_activity') [exact_synonym]
+  [OK] 'Rest for a while' -> 'rest' (expected: 'rest') [exact_synonym]
+  [OK] 'Check my vitals' -> 'check_vitals' (expected: 'check_vitals') [exact_synonym]
+  [OK] 'Walk in the park' -> 'walk_in_park' (expected: 'walk_in_park') [exact_synonym]
+  [OK] 'I need to pop my pills' -> 'take_medication' (expected: 'take_medication') [colloquial]
+  [OK] 'Time for my meds' -> 'take_medication' (expected: 'take_medication') [colloquial]
+  [OK] 'Gotta take my antibiotics' -> 'take_antibiotic' (expected: 'take_antibiotic') [colloquial]
+  [OK] 'I'm thirsty, need water' -> 'drink_water' (expected: 'drink_water') [colloquial]
+  [OK] 'Let's grab some food' -> 'eat_meal' (expected: 'eat_meal') [colloquial]
+  [OK] 'Time to eat lunch' -> 'have_lunch' (expected: 'have_lunch') [colloquial]
+  [OK] 'I wanna work out' -> 'exercise' (expected: 'exercise') [colloquial]
+  [OK] 'Call my daughter on phone' -> 'call_relative' (expected: 'call_relative') [colloquial]
+  [OK] 'Video chat with my son' -> 'video_call_relative' (expected: 'video_call_relative') [colloquial]
+  [OK] 'I want to talk to the nurse' -> 'speak_with_nurse' (expected: 'speak_with_nurse') [colloquial]
+  [OK] 'I should swallow my morning medicine' -> 'take_medication' (expected: 'take_medication') [paraphrase]
+  [OK] 'I need to take the antibiotic the doctor gave' -> 'take_antibiotic' (expected: 'take_antibiotic') [paraphrase]
+  [OK] 'Please bring me something to drink' -> 'drink_water' (expected: 'drink_water') [paraphrase]
+  [OK] 'I would like to have my dinner now' -> 'eat_meal' (expected: 'eat_meal') [paraphrase]
+  [OK] 'Let's do the midday meal' -> 'have_lunch' (expected: 'have_lunch') [paraphrase]
+  [OK] 'I feel like doing some physical activity' -> 'exercise' (expected: 'exercise') [paraphrase]
+  [OK] 'I'd love to read something for a while' -> 'reading_activity' (expected: 'reading_activity') [paraphrase]
+  [OK] 'I need to lie down and rest my legs' -> 'rest' (expected: 'rest') [paraphrase]
+  [OK] 'Can someone measure my blood pressure' -> 'check_vitals' (expected: 'check_vitals') [paraphrase]
+  [OK] 'I want to go for a stroll outside' -> 'walk_in_park' (expected: 'walk_in_park') [paraphrase]
+  [OK] 'Take my pillz' -> 'take_medication' (expected: 'take_medication') [noisy]
+  [OK] 'antibiotcs' -> 'take_antibiotic' (expected: 'take_antibiotic') [noisy]
+  [OK] 'drink wter' -> 'drink_water' (expected: 'drink_water') [noisy]
+  [OK] 'eat food meal please now' -> 'eat_meal' (expected: 'eat_meal') [noisy]
+  [OK] 'have lunchtime meal' -> 'have_lunch' (expected: 'have_lunch') [noisy]
+  [OK] 'do exercise workout fitness' -> 'exercise' (expected: 'exercise') [noisy]
+  [OK] 'read book reading novel' -> 'reading_activity' (expected: 'reading_activity') [noisy]
+  [OK] 'rest sleep nap tired' -> 'rest' (expected: 'rest') [noisy]
+  [OK] 'check blood pressure heart rate vitals' -> 'check_vitals' (expected: 'check_vitals') [noisy]
+  [OK] 'walk park outdoor stroll nature' -> 'walk_in_park' (expected: 'walk_in_park') [noisy]
+  [OK] 'I want to watch TV' -> 'unknown' (expected: 'unknown') [out_of_scope]
+  [WRONG] 'Turn on the radio' -> 'play_music' (expected: 'unknown') [out_of_scope]
+  [WRONG] 'I want to play chess' -> 'memory_training' (expected: 'unknown') [out_of_scope]
+  [OK] 'Can you open the window' -> 'unknown' (expected: 'unknown') [out_of_scope]
+  [OK] 'I want to go shopping' -> 'unknown' (expected: 'unknown') [out_of_scope]
+  [OK] 'Help me get dressed' -> 'unknown' (expected: 'unknown') [out_of_scope]
+  [OK] 'I want to paint a picture' -> 'unknown' (expected: 'unknown') [out_of_scope]
+  [OK] 'Can you call a taxi' -> 'unknown' (expected: 'unknown') [out_of_scope]
+  [OK] 'I want to knit a sweater' -> 'unknown' (expected: 'unknown') [out_of_scope]
+  [OK] 'Let me water the plants' -> 'unknown' (expected: 'unknown') [out_of_scope]
+
+============================================================
+  SUMMARY
+============================================================
+  Total items:           50
+  Correct:               48 (96.0%)
+  Unknown (fail-closed): 8 (16.0%)
+  Wrong but known:       2 (4.0%)
+  Avg latency:           1.269s
+  Total tokens:          26004
+  Model:                 openai/gpt-oss-120b
+
+  Per category:
+    exact_synonym        10/10 (100%) [unknown: 0, wrong_known: 0]
+    colloquial           10/10 (100%) [unknown: 0, wrong_known: 0]
+    paraphrase           10/10 (100%) [unknown: 0, wrong_known: 0]
+    noisy                10/10 (100%) [unknown: 0, wrong_known: 0]
+    out_of_scope         8/10 (80%) [unknown: 8, wrong_known: 2]
+
+  Results saved to: evaluation/replay_rev3/stress_gptoss_27actions.json
+============================================================

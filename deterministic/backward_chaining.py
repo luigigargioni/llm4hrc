@@ -5,7 +5,10 @@ from dataclasses import dataclass
 from enum import Enum
 import copy
 
-from utils.interfaces import Activity, Task
+#import sys
+#print(sys.executable)
+#print(sys.path)
+
 from utils.logs import log_message
 
 # Constants
@@ -17,7 +20,7 @@ END_DAY_TIME_LIMIT = datetime.combine(
     datetime.today(), datetime.strptime("22:00", "%H:%M").time()
 )
 
-
+# Possible behaviors of a rule (what to do when it triggers)
 class RuleAction(Enum):
     REPLACE = "replace"
     KEEP_EXISTING = "keep_existing"
@@ -26,7 +29,7 @@ class RuleAction(Enum):
     PROVE = "prove"
     DERIVE = "derive"
 
-
+# Rule of the knowledge base
 @dataclass
 class Rule:
     """Represents a rule in the knowledge base"""
@@ -37,10 +40,10 @@ class Rule:
     explanation: str
     priority: int = 0
     # New fields for backward chaining
-    conclusions: List[str] | None = None  # What this rule can prove
-    premises: List[str] | None = None  # What this rule needs to prove its conclusions
+    conclusions: List[str] | None = None  # -> what this rule can prove
+    premises: List[str] | None = None  # -> what needs to be proven to activate this rule
 
-
+# A fact ALREADY PRESENT in working memory
 @dataclass
 class Fact:
     """Represents a fact in the working memory"""
@@ -52,7 +55,7 @@ class Fact:
     confidence: float = 1.0
     source: str = "user"  # user, forward_chain, backward_chain, derived
 
-
+# Goal to be proven
 @dataclass
 class Goal:
     """Represents a goal to be proven in backward chaining"""
@@ -62,7 +65,9 @@ class Goal:
     confidence_threshold: float = 0.7
     max_depth: int = 5
 
-
+# Node of the proof tree. Used to track the proof process of a goal, the applied rules,
+# the generated sub-goals, and the final result (proven or not). This way, we can also generate
+# detailed explanations of the reasoning process.
 @dataclass
 class ProofNode:
     """Represents a node in the proof tree"""
@@ -74,7 +79,8 @@ class ProofNode:
     confidence: float = 0.0
     depth: int = 0
 
-
+# Implements backward chaining, i.e., the ability to work backwards from a desired goal to find
+# the facts and rules needed to prove that goal.
 class BackwardChaining:
     """
     Implements backward chaining inference for goal-driven reasoning.
@@ -82,7 +88,7 @@ class BackwardChaining:
     This class allows the system to work backwards from a desired goal
     to find the facts and rules needed to prove that goal.
     """
-
+    # Initialize knowledge base, working memory, proof cache, and inference trace
     def __init__(self, knowledge_base, working_memory):
         self.knowledge_base = knowledge_base
         self.working_memory = working_memory
@@ -90,6 +96,7 @@ class BackwardChaining:
         self.inference_trace: List[Dict[str, Any]] = []
         self.max_recursion_depth = 10
 
+    # Given a goal, try to prove it (main method). Checks cache - creates proof node - checks facts - finds applicable rules - tries each rule - updates cache and working memory - returns result
     def prove_goal(self, goal: Goal, current_depth: int = 0) -> ProofNode:
         """
         Main entry point for backward chaining.
@@ -160,6 +167,7 @@ class BackwardChaining:
         self._cache_proof(goal_key, proof_node)
         return proof_node
 
+    # Check if the goal is already satisfied in working memory.
     def _check_goal_in_facts(self, goal: Goal) -> bool:
         """
         Check if the goal is already satisfied by existing facts.
@@ -178,6 +186,7 @@ class BackwardChaining:
 
         return False
 
+    # Check if a specific fact satisfies a goal
     def _fact_matches_goal(self, fact: Fact, goal: Goal) -> bool:
         """
         Check if a specific fact matches the goal arguments.
@@ -200,6 +209,8 @@ class BackwardChaining:
         # For more complex matching, implement unification algorithm
         return True
 
+    # Search the knowledge base for all rules that can prove the requested goal. -> e.g., to prove "can_schedule(activity)", find all rules that have "can_schedule" in their conclusions.
+    # Sort rules by priority, so that the most relevant ones are tried first.
     def _find_rules_for_goal(self, goal: Goal) -> List[Rule]:
         """
         Find all rules that can potentially prove the given goal.
@@ -221,6 +232,20 @@ class BackwardChaining:
 
         return applicable_rules
 
+    # Try to prove a goal using a specific rule.
+    # Two cases:
+    # Case 1 - rule without premises: Check the condition directly.
+    # Case 2 - rule with premises: Generate sub-goals.
+
+    # e.g., to prove:
+    # can_schedule
+    # we need to prove:
+    # - time_slot_available
+    # - constraints_satisfied
+
+    # So it recursively calls prove_goal, which will call _find_rules_for_goal again
+    # to find rules that can prove these sub-goals, AND SO ON UNTIL REACHING EXISTING FACTS
+    # IN WORKING MEMORY, OR RULES WITHOUT PREMISES!!!! (BASE CASE OF RECURSION)
     def _try_prove_with_rule(
         self, goal: Goal, rule: Rule, current_depth: int
     ) -> ProofNode:
@@ -280,6 +305,7 @@ class BackwardChaining:
 
         return proof_node
 
+    # Evaluate the rule's condition, executing the condition code with the necessary parameters (e.g., goal arguments) and returning True or False.
     def _evaluate_rule_condition(self, rule: Rule, goal: Goal) -> bool:
         """
         Evaluate if a rule's condition is satisfied for the given goal.
@@ -299,6 +325,8 @@ class BackwardChaining:
             log_message(f"Error evaluating rule condition: {e}")
             return False
 
+    # Transform a rule premise into a new Goal. For example, if the premise is "time_slot_available", create a Goal with predicate "time_slot_available"
+    # and arguments taken from the parent goal
     def _create_subgoal_from_premise(self, premise: str, parent_goal: Goal) -> Goal:
         """
         Create a subgoal from a rule premise.
@@ -318,6 +346,9 @@ class BackwardChaining:
             max_depth=parent_goal.max_depth,
         )
 
+    # When a goal is proven:
+    # automatically adds a new derived fact to working memory.
+    # So the system "learns" new information.
     def _add_derived_fact(self, goal: Goal, confidence: float):
         """
         Add a proven goal as a derived fact to working memory.
@@ -337,6 +368,7 @@ class BackwardChaining:
 
         self.working_memory.facts.append(fact)
 
+    # Generate a unique string key for caching. Used to avoid re-proving the same goals.
     def _create_goal_key(self, goal: Goal) -> str:
         """
         Create a unique key for goal caching.
@@ -350,6 +382,7 @@ class BackwardChaining:
         args_str = "_".join(str(arg) for arg in goal.arguments)
         return f"{goal.predicate}_{args_str}"
 
+    # Log an inference attempt.
     def _log_inference_attempt(self, goal: Goal, depth: int):
         """
         Log an inference attempt for debugging and explanation.
@@ -371,6 +404,7 @@ class BackwardChaining:
             }
         )
 
+    # Save a proof result in the cache
     def _cache_proof(self, goal_key: str, proof_node: ProofNode):
         """
         Cache a proof result for future use.
@@ -381,6 +415,7 @@ class BackwardChaining:
         """
         self.proof_cache[goal_key] = proof_node
 
+    # Generate a human-readable explanation of the proof tree.
     def get_proof_explanation(self, proof_node: ProofNode) -> Dict[str, Any]:
         """
         Generate a human-readable explanation of the proof.
@@ -407,23 +442,27 @@ class BackwardChaining:
 
         return explanation
 
+    # Clear the proof cache, useful to force the system to re-prove goals (e.g., if the knowledge base has been updated)
     def clear_cache(self):
         """Clear the proof cache."""
         self.proof_cache.clear()
 
+    # Return the complete history of executed reasoning.
     def get_inference_trace(self) -> List[Dict[str, Any]]:
         """Get the complete inference trace."""
         return self.inference_trace
 
-
+# Manages current facts of the system
 class WorkingMemory:
     """Manages current facts and inferences with enhanced backward chaining support"""
 
+    # Initialize lists of facts, inferred facts, and conflicts
     def __init__(self):
         self.facts: List[Fact] = []
         self.inferred_facts: List[Fact] = []
         self.conflict_set: List[Dict[str, Any]] = []
 
+    # Add a new fact to memory, with source tracking (e.g., whether it's an original fact or was inferred by a rule)
     def add_fact(
         self,
         subject: str,
@@ -436,6 +475,9 @@ class WorkingMemory:
         fact = Fact(subject, predicate, object, datetime.now(), confidence, source)
         self.facts.append(fact)
 
+    # Retrieve facts matching certain criteria
+    # (e.g., all facts with predicate "time_slot_available").
+    # Useful for backward chaining, when we need to verify if a goal is already satisfied by existing facts.
     def get_facts(
         self, subject: str | None = None, predicate: str | None = None
     ) -> List[Fact]:
@@ -447,8 +489,10 @@ class WorkingMemory:
             results = [f for f in results if f.predicate == predicate]
         return results
 
+    # Record a conflict for resolution (e.g., if two activities overlap, or if one rule suggests
+    # replacing an activity but another rule suggests keeping it)
     def add_conflict(
-        self, new_activity: Activity, existing_activity: Activity, conflict_type: str
+        self, new_activity: Any, existing_activity: Any, conflict_type: str
     ):
         """Record a conflict for resolution"""
         self.conflict_set.append(
@@ -460,16 +504,23 @@ class WorkingMemory:
             }
         )
 
-
+# Contains the system's knowledge, both as facts and rules. The knowledge base is enriched with rules specific to backward chaining,
+# allowing the system to prove complex goals from simpler facts and rules. For example, a rule might state that
+# "an activity can be scheduled if the time slot is available and constraints are satisfied". This way, when the system needs to prove
+# that an activity can be scheduled, it can work backwards to verify if the time slot is available and if constraints are satisfied,
+# proving these sub-goals first and then reaching the final conclusion.
 class EnhancedKnowledgeBase:
     """Enhanced knowledge base with backward chaining support"""
 
+    # Initialize rules and domain knowledge
     def __init__(self):
         self.rules: List[Rule] = []
         self.domain_knowledge: Dict[str, Any] = {}
         self._initialize_rules()
         self._initialize_domain_knowledge()
 
+    # Create all rules, both for forward chaining (e.g., conflict resolution) and backward chaining (e.g., proving complex goals).
+    # Backward chaining rules also include the definition of conclusions and premises, to guide the proof process.
     def _initialize_rules(self):
         """Initialize the rule base with enhanced rules for backward chaining"""
 
@@ -545,6 +596,8 @@ class EnhancedKnowledgeBase:
             )
         )
 
+    # Define global knowledge: daily limits, tolerances, medical constraints, etc. This knowledge is used by rules to evaluate whether an activity
+    # can be scheduled or whether a goal can be proven.
     def _initialize_domain_knowledge(self):
         """Initialize domain-specific knowledge"""
         self.domain_knowledge = {
@@ -558,26 +611,36 @@ class EnhancedKnowledgeBase:
             },
         }
 
+    # Simplified check if an activity can be scheduled in a given time slot, verifying time slot availability,
+    # constraint satisfaction, and medication timing validity. -> bypassed, returns true
     def _check_scheduling_feasibility(self, activity: Any, time_slot: Any) -> bool:
         """Check if an activity can be scheduled at a given time slot"""
         # Simplified implementation - extend based on your needs
         return True
 
+    # Check time slot availability, e.g., verifying that no other activities are scheduled in the same slot, or that the slot falls within daily limits.
+    # -> bypassed, returns true
     def _check_time_availability(self, activity: Any, time_slot: Any) -> bool:
         """Check if time slot is available"""
         # Simplified implementation
         return True
 
+    # Check constraint satisfaction, e.g., verifying that the activity respects daily limits or medical requirements.
+    # -> bypassed, returns true
     def _check_constraints(self, activity: Any, context: Any) -> bool:
         """Check if activity constraints are satisfied"""
         # Simplified implementation
         return True
 
+    # Check validity of medication timing constraints, e.g., verifying that timing respects minimum intervals between doses or meal-related requirements.
+    # -> bypassed, returns true
     def _check_medication_timing(self, activity: Any, context: Any) -> bool:
         """Check if medication timing is valid"""
         # Simplified implementation
         return True
 
+    # Return rules applicable to a specific context (e.g., conflict resolution, goal proving, activity status evaluation).
+    # This allows better organization of rules and applying only the relevant ones based on context.
     def get_applicable_rules(self, context: str) -> List[Rule]:
         """Get rules applicable to a specific context"""
         context_rules = {
@@ -598,7 +661,8 @@ class EnhancedKnowledgeBase:
         }
         return context_rules.get(context, self.rules)
 
-
+# Class that combines both forward chaining (for conflict resolution and general rule application)
+# and backward chaining (for proving specific and complex goals).
 class EnhancedInferenceEngine:
     """Enhanced inference engine with both forward and backward chaining"""
 
@@ -608,6 +672,8 @@ class EnhancedInferenceEngine:
         self.backward_chainer = BackwardChaining(knowledge_base, self.working_memory)
         self.explanation_trace: List[Dict[str, Any]] = []
 
+    # Prove a specific goal using backward chaining. This is the main method called when we want to prove a goal, e.g., "can_schedule(activity)".
+    # Acts as a wrapper for the backward chainer's prove_goal
     def prove_goal(
         self, goal_predicate: str, arguments: List[Any] | None = None
     ) -> ProofNode:
@@ -629,6 +695,7 @@ class EnhancedInferenceEngine:
 
         return self.backward_chainer.prove_goal(goal)
 
+    # Check if an activity can be scheduled in a given time slot, using backward chaining to prove the goal "can_schedule(activity, time_slot)".
     def can_schedule_activity(
         self, activity: Activity, time_slot: str
     ) -> Tuple[bool, Dict[str, Any]]:
@@ -648,6 +715,7 @@ class EnhancedInferenceEngine:
 
         return proof_result.proven, explanation
 
+    # Apply forward chaining rules to resolve conflicts and update activity status.
     def forward_chaining(
         self, activities: List[Activity], context: str | None = None
     ) -> List[Activity]:
@@ -663,11 +731,17 @@ class EnhancedInferenceEngine:
 
         return activities
 
+    # Should apply a rule.
+    # In the future, this function can be extended to implement the specific logic of each rule, e.g.,
+    # replacing an activity with another, keeping both, or skipping an activity based on the rule's conditions.
+    # -> bypassed, returns activities unchanged
     def _apply_rule(self, rule: Rule, activities: List[Activity]) -> List[Activity]:
         """Apply a single rule to the activity list (existing functionality)"""
         # Implementation same as before
         return activities
 
+    # Return a complete explanation of the inference process, including both the rules
+    # applied during forward chaining and the proof process of backward chaining.
     def get_complete_explanation(self) -> Dict[str, Any]:
         """Get complete explanation including both forward and backward chaining"""
         return {
@@ -677,7 +751,9 @@ class EnhancedInferenceEngine:
         }
 
 
-# Example usage
+# ----------------
+# EXAMPLE
+# ----------------
 def demonstrate_backward_chaining():
     """Demonstrate backward chaining functionality"""
 

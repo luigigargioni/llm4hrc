@@ -1,0 +1,45 @@
+============================================================
+  LLM-AS-VERIFIER BASELINE
+  Comparison with symbolic layer on 20 scenarios
+============================================================
+
+  [PASS] S01: All preconditions satisfied for critical medication (accuracy=100%, 2.68s)
+  [PASS] S02: Critical full rehabilitation blocked by missing patient_fed, recovery available (accuracy=100%, 9.14s)
+  [PASS] S03: Non-critical stretching blocked by missing patient_fed (accuracy=100%, 8.80s)
+  [PASS] S04: Unknown canonical action triggers fail-closed (accuracy=100%, 3.07s)
+  [PASS] S05: Critical full rehab blocked by multiple missing preconditions, partial recovery (accuracy=100%, 1.85s)
+  [PASS] S06: Activity within time window -> EXECUTABLE (accuracy=100%, 2.44s)
+  [PASS] S07: Activity too early -> DEFERRED (accuracy=100%, 2.28s)
+  [PASS] S08: Activity expired (past time window + tolerance) -> BLOCKED_NON_CRITICAL (accuracy=100%, 13.28s)
+  [PASS] S09: Activity without_time -> EXECUTABLE if preconditions OK (accuracy=100%, 5.36s)
+  [PASS] S10: Chain: have_lunch (done) -> stretching (done) -> full_rehab (executable) (accuracy=100%, 4.72s)
+  [PASS] S11: Chain: full_rehab requested but patient_fed=False -> recovery suggests have_lunch (accuracy=100%, 8.56s)
+  [PASS] S12: Chain with fatigue: exercise executable, rest allowed although not tired yet (accuracy=100%, 2.60s)
+  [PASS] S13: Goal decomposition: backward chaining for rehabilitation_completed (accuracy=100%, 8.41s)
+  [PASS] S14: Critical activity blocked with recovery available (accuracy=100%, 7.91s)
+  [PASS] S15: Critical activity blocked with NO recovery (patient asleep) (accuracy=100%, 6.83s)
+  [PASS] S16: Critical vs non-critical both blocked, different statuses (accuracy=100%, 1.81s)
+  [PASS] S17: Empty world state -> all activities with preconditions fail (accuracy=100%, 13.35s)
+  [PASS] S18: Activity already done -> world_state_updater applies effects, validator skips it (accuracy=100%, 1.40s)
+  [PASS] S19: Malformed activity_time -> invalid_activity_time (accuracy=100%, 10.50s)
+  [PASS] S20: All activities executable -> no blocks, no overrides (accuracy=100%, 11.83s)
+  [PASS] S21: Real: patient sleeping at medication time (User 2, 07:38) (accuracy=100%, 3.82s)
+  [PASS] S22: Real: medication taken late, window expired (User 9, 08:05 vs 07:30) (accuracy=100%, 1.73s)
+  [PASS] S23: Real: skipped breakfast, antibiotic blocked (User 1, no colazione) (accuracy=100%, 7.96s)
+  [PASS] S24: Real: patient wants walk before scheduled time (User 2, 09:00 vs 10:00) (accuracy=100%, 1.27s)
+  [PASS] S25: Real: tired after walk, rehab blocked (User 5, post-passeggiata) (accuracy=100%, 3.08s)
+  [PASS] S26: Real: correct breakfast-then-antibiotic sequence (User 11, 07:50) (accuracy=100%, 10.37s)
+  [PASS] S27: Real: patient wants to read but no book available (User 11+14) (accuracy=100%, 9.28s)
+  [FAIL] S28: Real: patient wants to rest although not tired, and may (User 14, rest-all-day) (accuracy=0%, 2.07s)
+
+============================================================
+  SUMMARY
+============================================================
+  Scenarios passed:       27/28 (96.4%)
+  Activity accuracy:      34/35 (97.1%)
+  Avg latency:            5.943s
+  Total tokens:           46477
+  Parse errors:           0
+  Model:                  openai/gpt-oss-120b
+  Results saved to:       evaluation/baseline_rev3/gptoss120b_run1.json
+============================================================

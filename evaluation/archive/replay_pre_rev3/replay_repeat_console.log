@@ -1,0 +1,879 @@
+1 sessioni selezionate da C:\Users\Gargioni\Il mio Drive\Academic\_Unibs\PhD\Hybrid Architecture\User Study\Users (>= 3 turni, 3 turni totali)
+
+===== [1/3] P08/30072025_141138#1 (3 turni) =====
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK SYNTHESIZER NODE][0m
+[replay] input #1 -> '789'
+[replay] input #2 -> ''
+[replay] input #3 -> '07:00'
+model defined correctly
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Read a book, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'morning_routine'
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'rest'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Give journal' -> 'social_interaction'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'morning_routine' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Postpone physical exercises to tomorrow' not executable: precondition 'patient_tired' not satisfied
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+[33m[WARNING] Activity 'Postpone physical exercises to tomorrow' mapped to canonical action 'rest' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Good morning, Anna. It is a bit early for the activities scheduled later, but two activities are available now: taking Ibuprofen and preparing the shopping list. Which one would you like to do first?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #4 -> '07:00'
+[replay] input #5 -> 'Hmm, okay, but how do I know it’s safe to take Ibuprofen right now? What if I haven’t eaten enough? Also, can you confirm the exact dosage and if there are any side effects I should watch for? I want to be sure before I take it'
+[replay] input #6 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Read a book, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'social_interaction'
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'rest'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Give journal' -> 'social_interaction'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Postpone physical exercises to tomorrow' not executable: precondition 'patient_tired' not satisfied
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+[33m[WARNING] Activity 'Postpone physical exercises to tomorrow' mapped to canonical action 'rest' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Yes, Anna. The scheduled dose is 1 tablet of Ibuprofen by mouth, with water, preferably after breakfast. If you have not eaten enough yet, it is safer to wait until you have had breakfast or at least some food, because taking Ibuprofen on an empty stomach can irritate the stomach. Possible side effects to watch for include stomach pain, nausea, heartburn, dizziness, or unusual bleeding. If you notice severe stomach pain, black stools, swelling, or trouble breathing, tell me right away. If you would like, I can help you get ready for breakfast first, and then we can take the Ibuprofen.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #7 -> '07:00'
+[replay] input #8 -> 'Alright, I appreciate the explanation, but what if I just want to skip the medication for now? I sometimes feel okay without it in the morning. Also, what if I’m allergic or have had a bad reaction before—do you remember that? How do you handle those exceptions?'
+[replay] input #9 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Read a book, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'social_interaction'
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'rest'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Give journal' -> 'social_interaction'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Postpone physical exercises to tomorrow' not executable: precondition 'patient_tired' not satisfied
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+[33m[WARNING] Activity 'Postpone physical exercises to tomorrow' mapped to canonical action 'rest' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, I can’t skip the Ibuprofen just based on feeling okay, because it is a scheduled critical medication and it has not been given yet. Also, I do not have any information here about a previous allergy or bad reaction, so I cannot confirm one. If you have ever had an allergy or an unusual reaction to Ibuprofen or similar pain medicines, do not take it and tell me right away so I can alert staff. If you are unsure, the safest next step is to wait and let me check with the nurse or doctor before any medication is taken.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #10 -> '07:15'
+[replay] input #11 -> 'I prefer to discuss with the doctor'
+[replay] input #12 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Read a book, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'morning_routine'
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'rest'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Give journal' -> 'social_interaction'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'morning_routine' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Postpone physical exercises to tomorrow' not executable: precondition 'patient_tired' not satisfied
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+[33m[WARNING] Activity 'Postpone physical exercises to tomorrow' mapped to canonical action 'rest' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Read a book - executable: False - status: DEFERRED
+- Take Vitamin D - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Of course, Anna. I’ll note that you prefer to discuss it with the doctor before taking the Ibuprofen. Since it is a scheduled critical medication and it has not been taken yet, I will not proceed on my own. I will inform the care team so they can review it with you and confirm the next step.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+  -> transcript_exhausted in 70.84s, 48 canonicalizzazioni, 0 override
+
+===== [2/3] P08/30072025_141138#2 (3 turni) =====
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK SYNTHESIZER NODE][0m
+[replay] input #1 -> '789'
+[replay] input #2 -> ''
+[replay] input #3 -> '07:00'
+model defined correctly
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'morning_routine'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Give journal' -> 'social_interaction'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'morning_routine' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Take Vitamin D - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: DEFERRED
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Good morning, Anna. You can do the morning shopping list now, and the ibuprofen is due a little later at 7:30. Since there are multiple activities available, which one would you like to do first?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #4 -> '07:00'
+[replay] input #5 -> 'Hmm, okay, but how do I know it’s safe to take Ibuprofen right now? What if I haven’t eaten enough? Also, can you confirm the exact dosage and if there are any side effects I should watch for? I want to be sure before I take it'
+[replay] input #6 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'rest'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Give journal' -> 'reading_activity'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare shopping list' not executable: precondition 'patient_tired' not satisfied
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'rest' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'reading_activity' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: DEFERRED
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Yes, Anna. The ibuprofen is scheduled for 7:30, and it is 1 tablet by mouth with water, preferably after breakfast. If you have not eaten enough yet, it is safer to wait until after breakfast because this medicine can upset the stomach when taken on an empty stomach. Common side effects can include stomach discomfort, nausea, heartburn, or dizziness. Please let me know once you have eaten, and I will help you take the tablet safely.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #7 -> '07:00'
+[replay] input #8 -> 'Alright, I appreciate the explanation, but what if I just want to skip the medication for now? I sometimes feel okay without it in the morning. Also, what if I’m allergic or have had a bad reaction before—do you remember that? How do you handle those exceptions?'
+[replay] input #9 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'morning_routine'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Give journal' -> 'social_interaction'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'morning_routine' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Take Vitamin D - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: DEFERRED
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m I understand, Anna. I cannot decide to skip the ibuprofen on my own because it is a critical medication scheduled for 7:30, and I do not have any information here about a previous allergy or bad reaction to confirm an exception. If you have ever had an allergy or a bad reaction to ibuprofen or similar pain medicines, please tell me right away so I can follow the safety procedure and not give it until this is checked. For now, the safest step is to wait and reassess at 7:30, and I can also help with the shopping list if you would like.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #10 -> '07:15'
+[replay] input #11 -> 'I prefer to discuss with the doctor'
+[replay] input #12 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Wake patient up, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Physical exercises, Done: False
+Activity: Give journal, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'morning_routine'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Physical exercises' -> 'exercise'
+canonicalization: 'Give journal' -> 'reading_activity'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'morning_routine' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'reading_activity' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Take Vitamin D - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Physical exercises - executable: True - status: EXECUTABLE
+- Give journal - executable: False - status: DEFERRED
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Of course, Anna. We can hold the ibuprofen for now while you speak with the doctor. I’ll remind you that it is scheduled for 7:30, and if you have any history of allergy or a bad reaction to ibuprofen or similar pain medicines, that is important to tell the doctor right away. I can help you prepare the question for the doctor if you want.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+  -> transcript_exhausted in 54.0s, 40 canonicalizzazioni, 0 override
+
+===== [3/3] P08/30072025_141138#3 (3 turni) =====
+[32m[position: KNOWLEDGE MANAGER NODE][0m
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK SYNTHESIZER NODE][0m
+[replay] input #1 -> '789'
+[replay] input #2 -> ''
+[replay] input #3 -> '07:00'
+model defined correctly
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Wake patient up, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Give journal, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'morning_routine'
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'rest'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Give journal' -> 'reading_activity'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'morning_routine' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Postpone physical exercises to tomorrow' not executable: precondition 'patient_tired' not satisfied
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+[33m[WARNING] Activity 'Postpone physical exercises to tomorrow' mapped to canonical action 'rest' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'reading_activity' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D - executable: False - status: DEFERRED
+- Give journal - executable: False - status: DEFERRED
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Good morning, Anna. There are two activities available now: taking Ibuprofen and preparing the shopping list. Which one would you like to do first?
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #4 -> '07:00'
+[replay] input #5 -> 'Hmm, okay, but how do I know it’s safe to take Ibuprofen right now? What if I haven’t eaten enough? Also, can you confirm the exact dosage and if there are any side effects I should watch for? I want to be sure before I take it'
+[replay] input #6 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Wake patient up, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Give journal, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'social_interaction'
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'rest'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Give journal' -> 'social_interaction'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Postpone physical exercises to tomorrow' not executable: precondition 'patient_tired' not satisfied
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+[33m[WARNING] Activity 'Postpone physical exercises to tomorrow' mapped to canonical action 'rest' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D - executable: False - status: DEFERRED
+- Give journal - executable: False - status: DEFERRED
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Yes, Anna. The Ibuprofen is scheduled for 1 tablet by mouth. It is best taken with water and preferably after breakfast. If you have not eaten enough yet, it is safer to wait until you have had some food before taking it. Common side effects can include stomach upset, nausea, or heartburn. If you notice severe stomach pain, vomiting, rash, or trouble breathing, tell me right away. When you feel ready and have eaten a little, I can help you take it.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #7 -> '07:00'
+[replay] input #8 -> 'Alright, I appreciate the explanation, but what if I just want to skip the medication for now? I sometimes feel okay without it in the morning. Also, what if I’m allergic or have had a bad reaction before—do you remember that? How do you handle those exceptions?'
+[replay] input #9 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Wake patient up, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Give journal, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'social_interaction'
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'rest'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Give journal' -> 'reading_activity'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Postpone physical exercises to tomorrow' not executable: precondition 'patient_tired' not satisfied
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+[33m[WARNING] Activity 'Postpone physical exercises to tomorrow' mapped to canonical action 'rest' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'reading_activity' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D - executable: False - status: DEFERRED
+- Give journal - executable: False - status: DEFERRED
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Anna, I cannot skip the Ibuprofen on my own because it is a scheduled critical medication and there is no record that it has been taken yet. If you have an allergy or have had a bad reaction before, I do not have that information confirmed here, so we must not take it until a nurse or doctor checks it. If you feel unwell, have stomach pain, a rash, swelling, or trouble breathing, please tell me immediately and I will call for help. If you are ready and there is no known allergy or previous bad reaction, the dose is 1 tablet by mouth with water, preferably after breakfast.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+[replay] input #10 -> '07:15'
+[replay] input #11 -> 'I prefer to discuss with the doctor'
+[replay] input #12 -> 'Patient is speaking'
+reasoning about whether a new activity is needed...
+no new activity detected from perception. Routing to SITUATION_ASSESSMENT
+[32m[position: SITUATION ASSESSMENT NODE][0m
+[32m[position: TASK PROGRESS NODE][0m
+stato eseguite:
+Activity: Take Ibuprofen, Done: False
+Activity: Prepare shopping list, Done: False
+Activity: Postpone physical exercises to tomorrow, Done: False
+Activity: Walk in the park, Done: False
+Activity: Read a book, Done: False
+Activity: Wake patient up, Done: False
+Activity: Take Vitamin D, Done: False
+Activity: Give journal, Done: False
+Activity: Prepare patient for sleep, Done: False
+Activity: Walk in the park, Done: False
+[32m[position: ACTION CANONICALIZER NODE][0m
+canonicalization: 'Take Ibuprofen' -> 'take_medication'
+canonicalization: 'Prepare shopping list' -> 'social_interaction'
+canonicalization: 'Postpone physical exercises to tomorrow' -> 'rest'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+canonicalization: 'Read a book' -> 'reading_activity'
+canonicalization: 'Wake patient up' -> 'wake_patient'
+canonicalization: 'Take Vitamin D' -> 'take_medication'
+canonicalization: 'Give journal' -> 'reading_activity'
+canonicalization: 'Prepare patient for sleep' -> 'prepare_for_sleep'
+canonicalization: 'Walk in the park' -> 'walk_in_park'
+[32m[position: WORLD STATE UPDATER NODE][0m
+[94mWS set true: [][0m
+[32m[position: PLAN VALIDATOR NODE][0m
+[33m[WARNING] Activity 'Take Ibuprofen' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+[33m[WARNING] Activity 'Prepare shopping list' mapped to canonical action 'social_interaction' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Postpone physical exercises to tomorrow' not executable: precondition 'patient_tired' not satisfied
+Activity 'Postpone physical exercises to tomorrow' not executable: outside time window (09:00)
+[33m[WARNING] Activity 'Postpone physical exercises to tomorrow' mapped to canonical action 'rest' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Walk in the park' not executable: outside time window (10:00)
+Activity 'Read a book' not executable: outside time window (10:00)
+Activity 'Wake patient up' not executable: precondition 'patient_sleeping' not satisfied
+Activity 'Wake patient up' not executable: outside time window (11:30)
+Activity 'Take Vitamin D' not executable: outside time window (12:00)
+[33m[WARNING] Activity 'Take Vitamin D' mapped to canonical action 'take_medication' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Give journal' not executable: outside time window (15:00)
+[33m[WARNING] Activity 'Give journal' mapped to canonical action 'reading_activity' — no keyword overlap. Possible wrong canonicalization.[0m
+Activity 'Prepare patient for sleep' not executable: precondition 'patient_tired' not satisfied
+Warning: invalid activity_time '17-09-2026 10:00' for activity 'Walk in the park'
+[32m[position: NEXT STEPS NODE][0m
+activity status:
+- Take Ibuprofen - executable: True - status: EXECUTABLE
+- Prepare shopping list - executable: True - status: EXECUTABLE
+- Postpone physical exercises to tomorrow - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: DEFERRED
+- Read a book - executable: False - status: DEFERRED
+- Wake patient up - executable: False - status: BLOCKED_NON_CRITICAL
+- Take Vitamin D - executable: False - status: DEFERRED
+- Give journal - executable: False - status: DEFERRED
+- Prepare patient for sleep - executable: False - status: BLOCKED_NON_CRITICAL
+- Walk in the park - executable: False - status: BLOCKED_NON_CRITICAL
+[32m[position: PROGRESS CHECKING NODE][0m
+[32m[position: ROBOT EFFECTOR NODE][0m
+[31m
+ROBOT - Play vocal response: [0m Of course, Anna. We should discuss the Ibuprofen with the doctor first, especially since you prefer to check with them before taking it. I will not proceed with it now. If you’d like, I can also remind you of the dosage details to share with the doctor: 1 tablet by mouth, preferably after breakfast, with water.
+[32m
+ROBOT - Execute robot action: [0m SPEAKING
+[32m[position: ROBOT PERCEPTION NODE][0m
+  -> transcript_exhausted in 50.29s, 40 canonicalizzazioni, 0 override
+
+=== SUMMARY ===
+{
+  "tokens_by_node": {
+    "graph": {
+      "calls": 15,
+      "input": 20328,
+      "output": 2660
+    },
+    "task_progress": {
+      "calls": 12,
+      "input": 24599,
+      "output": 9386
+    },
+    "action_canonicalizer": {
+      "calls": 128,
+      "input": 21288,
+      "output": 743
+    },
+    "next_steps": {
+      "calls": 12,
+      "input": 132988,
+      "output": 1284
+    }
+  },
+  "tokens_total": {
+    "calls": 167,
+    "input_tokens": 199203,
+    "output_tokens": 14073
+  },
+  "transcripts": 3,
+  "completed": 3,
+  "errors": 0,
+  "budget_exceeded": 0,
+  "token_budget_exceeded": 0,
+  "stalled": 0,
+  "turns_replayed": 9,
+  "wall_seconds": 175.13,
+  "canonicalizer_calls": 128,
+  "canonicalizer_unknown": 0,
+  "canonicalizer_remapped_same_activity": 0,
+  "canonicalizer_seconds": 78.35,
+  "validator_seconds": 0.39,
+  "goal_planner_calls": 0,
+  "hard_enforcement_firings": 0,
+  "arbitrated_status_counts": {
+    "EXECUTABLE": 31,
+    "BLOCKED_NON_CRITICAL": 45,
+    "DEFERRED": 52
+  }
+}
+
+risultati: evaluation/replay_results_repeat.json
+righe da rivedere a mano: evaluation/replay_review_repeat.csv
